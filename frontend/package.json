@@ -12,8 +12,10 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro"
   },
   "dependencies": {
+    "@iconify-json/tabler": "^1.2.23",
     "@tailwindcss/vite": "^4.1.16",
     "astro": "^5.13.7",
+    "astro-icon": "^1.1.5",
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {
