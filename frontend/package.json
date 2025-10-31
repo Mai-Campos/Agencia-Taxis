@@ -8,7 +8,6 @@
     "preview": "astro preview",
     "astro": "astro",
     "typecheck": "tsc --noEmit",
-    
     "format": "prettier . --write",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro"
   },
