@@ -1,12 +1,15 @@
 ---
 import Hero from '@/components/sections/Hero.astro'
+import Routes from '@/components/sections/Routes.astro'
+import ServiceAirport from '@/components/sections/ServiceAirport.astro'
+import Testimonials from '@/components/sections/Testimonials.astro'
 import MainLayout from '@/layouts/MainLayout.astro'
 import '@/styles/global.css'
 ---
 
 <MainLayout>
   <Hero />
-  <h1 class="text-3xl font-bold underline">
-    ¡Hola, mundo!
-  </h1>
+  <Routes />
+  <ServiceAirport />
+  <Testimonials />
 </MainLayout>
