@@ -1,10 +1,5 @@
 import Reservation from "../models/reservation.model.js";
 
-/**
- * @desc Crear una nueva reserva
- * @route POSt api/reservations
- */
-
 export const createReservation = async (req, res) => {
   try {
     const newReservation = new Reservation(req.body);
@@ -16,11 +11,6 @@ export const createReservation = async (req, res) => {
   }
 };
 
-/**
- * @desc Listar todas las reservas
- * @route GET api/reservations
- */
-
 export const getAllReservations = async (req, res) => {
   try {
     const reservations = await Reservation.find().sort({ createdAt: -1 });
@@ -31,10 +21,6 @@ export const getAllReservations = async (req, res) => {
   }
 };
 
-/**
- * @desc Obtener una reserva por id
- * @route GET api/reservations/:id
- */
 export const getReservationById = async (req, res) => {
   try {
     const { id } = req.params;
@@ -50,10 +36,6 @@ export const getReservationById = async (req, res) => {
   }
 };
 
-/**
- * @desc Eliminar una reserva
- * @route DELETE api/reservation/:id
- */
 export const deleteReservation = async (req, res) => {
   try {
     const { id } = req.params;
@@ -76,10 +58,6 @@ export const deleteReservation = async (req, res) => {
   }
 };
 
-/**
- * @desc Cambiar el estado de una reserva
- * @route PATCH api/reservations/:id/status
- */
 export const updateStatus = async (req, res) => {
   try {
     const { id } = req.params;
