@@ -4,10 +4,18 @@
     --color-primary: #000;
     --color-primary-hover: #000;
     --color-secondary: #000;
-    --color-fg-primary: #000;
-    --color-fg-secondary: #000;
-    --color-bg-primary: #000;
-    --color-bg-card: #000;
+    --color-foreground-primary: #252525;
+    --color-foreground-secondary: #000;
+    --color-background-primary: #f2f2f2;
+    --color-background-secondary: #ffffff;
+}
+
+.body-font {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+.title-font {
+    font-family: 'Poppins', sans-serif;
 }
 
 body {
