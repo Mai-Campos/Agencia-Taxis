@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 //Rutas
-app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 app.use("/api/reservations", reservationRoutes);
 
 export default app;
