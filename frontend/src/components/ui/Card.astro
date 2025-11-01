@@ -10,13 +10,17 @@ import { Icon } from 'astro-icon/components'
       alt="content"
     />
     <div class="p-4">
-      <h3 class="title-font text-xs font-medium tracking-widest text-blue-500">
-        LA HABANA
+      <h3
+        class="title-font flex items-center gap-1 text-xs font-medium tracking-widest"
+      >
+        <Icon name="tabler:location" size={13} /> LA HABANA
       </h3>
       <h2 class="title-font text-lg font-medium text-gray-900">
         Recorrido por La Habana Vieja
       </h2>
-      <a href="#" class="flex justify-end gap-1 font-bold"
+      <a
+        href="#"
+        class="flex items-center justify-end gap-1 font-medium text-blue-500"
         >Detalles <Icon name="tabler:arrow-narrow-right" size={20} /></a
       >
     </div>

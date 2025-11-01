@@ -1,23 +1,17 @@
 ---
 import NavBar from '@/components/layout/NavBar.astro'
-import { Icon } from 'astro-icon/components'
 ---
 
-<header class="body-font text-gray-600">
+<header class="body-font sticky top-0 text-gray-600">
   <div
     class="container mx-auto flex flex-col flex-wrap items-center p-5 md:flex-row"
   >
     <a
-      class="title-font mb-4 flex items-center font-medium text-gray-900 md:mb-0"
+      href="/"
+      class="title-font flex cursor-pointer items-center text-xl font-medium text-gray-900"
     >
-      <span class="ml-3 text-xl">Crystal Sands Ride</span>
+      Crystal Sands Ride
     </a>
     <NavBar />
-    <button
-      class="mt-4 inline-flex items-center rounded border-0 bg-gray-100 px-3 py-1 text-base hover:bg-gray-200 focus:outline-none md:mt-0"
-      >Button
-      <Icon name="tabler:arrow-narrow-right" size={20} />
-    </button>
-
   </div>
 </header>

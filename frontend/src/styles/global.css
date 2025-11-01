@@ -1,1 +1,19 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary: #000;
+    --color-primary-hover: #000;
+    --color-secondary: #000;
+    --color-fg-primary: #000;
+    --color-fg-secondary: #000;
+    --color-bg-primary: #000;
+    --color-bg-card: #000;
+}
+
+body {
+    font-family: 'Inter Variable';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins';
+}
