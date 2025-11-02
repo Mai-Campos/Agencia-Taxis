@@ -1,15 +1,21 @@
 ---
 import Hero from '@/components/sections/Hero.astro'
-import TopRoutes from '@/components/sections/TopRoutes.astro'
+import RoutesContainer from '@/components/sections/RoutesContainer.astro'
 import ServiceAirport from '@/components/sections/ServiceAirport.astro'
 import Testimonials from '@/components/sections/Testimonials.astro'
+import Card from '@/components/ui/Card.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import '@/styles/global.css'
 ---
 
 <BaseLayout>
   <Hero />
-  <TopRoutes />
+  <RoutesContainer>
+    <Card />
+    <Card />
+    <Card />
+    <Card />
+  </RoutesContainer>
   <ServiceAirport />
   <Testimonials />
 </BaseLayout>
