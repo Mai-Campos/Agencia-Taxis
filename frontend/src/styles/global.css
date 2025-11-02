@@ -1,40 +1,39 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary: #1EB5D9;
-  --color-primary-hover: #18A0BF;
+  --color-primary: #1eb5d9;
+  --color-primary-hover: #18a0bf;
 
-  --color-secondary: #4CAF50;
-  --color-secondary-hover: #3E9A42;
+  --color-secondary: #4caf50;
+  --color-secondary-hover: #3e9a42;
 
-  --color-error: #FF6F5E;
-  --color-error-hover: #E65F52;
+  --color-error: #ff6f5e;
+  --color-error-hover: #e65f52;
 
-  --color-warning: #F6C667;
-  --color-warning-hover: #E0B45A;
+  --color-warning: #f6c667;
+  --color-warning-hover: #e0b45a;
 
-  --color-info: #42D8E8;
-  --color-info-hover: #3AC2D0;
+  --color-info: #42d8e8;
+  --color-info-hover: #3ac2d0;
 
-  --color-text-main: #1C2B36;
-  --color-text-secondary: #6C7A86;
+  --color-text-main: #1c2b36;
+  --color-text-secondary: #6c7a86;
 
-  --color-primary-variant: #8EE7F4;
-  --color-secondary-variant: #A6DDA8;
+  --color-primary-variant: #8ee7f4;
+  --color-secondary-variant: #a6dda8;
 
-  --color-background: #FAF8F3;
-  --color-surface: #FFFFFF; /* o #FDFDFC */
-  --color-surface-alt: #FDFDFC;
+  --color-background: #faf8f3;
+  --color-surface: #ffffff; /* o #FDFDFC */
+  --color-surface-alt: #fdfdfc;
 
   --shadow-card: 0 2px 8px rgba(28, 43, 54, 0.06);
 }
 
 .hero-bg {
-  background-image: linear-gradient(
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 0.3)
-    ), url('/hero-image.jpg');
-  
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('/hero-image.jpg');
+
   /* Asegurar que cubra todo el contenedor */
   background-size: cover;
   background-position: center;
