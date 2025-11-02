@@ -1,8 +1,8 @@
 // eslint.config.js
-import js from "@eslint/js";
-import tseslint from "typescript-eslint";
-import astro from "eslint-plugin-astro";
-import prettier from "eslint-plugin-prettier";
+import js from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import astro from 'eslint-plugin-astro'
+import prettier from 'eslint-plugin-prettier'
 
 export default [
   // Reglas base JS
@@ -12,11 +12,11 @@ export default [
   ...tseslint.configs.recommended,
 
   // Reglas para Astro
-  ...astro.configs["recommended"],
-  ...astro.configs["jsx-a11y"],
+  ...astro.configs['recommended'],
+  ...astro.configs['jsx-a11y'],
 
   {
-    files: ["**/*.astro"],
+    files: ['**/*.astro'],
     languageOptions: {
       parser: astro.parser,
     },
@@ -25,10 +25,10 @@ export default [
   // Configuración global
   {
     rules: {
-      "prettier/prettier": "error",
+      'prettier/prettier': 'error',
     },
     plugins: {
       prettier,
     },
   },
-];
+]

@@ -1,27 +1,54 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-    --color-primary: #000;
-    --color-primary-hover: #000;
-    --color-secondary: #000;
-    --color-foreground-primary: #252525;
-    --color-foreground-secondary: #000;
-    --color-background-primary: #f2f2f2;
-    --color-background-secondary: #ffffff;
+  --color-primary: #1EB5D9;
+  --color-primary-hover: #18A0BF;
+
+  --color-secondary: #4CAF50;
+  --color-secondary-hover: #3E9A42;
+
+  --color-error: #FF6F5E;
+  --color-error-hover: #E65F52;
+
+  --color-warning: #F6C667;
+  --color-warning-hover: #E0B45A;
+
+  --color-info: #42D8E8;
+  --color-info-hover: #3AC2D0;
+
+  --color-text-main: #1C2B36;
+  --color-text-secondary: #6C7A86;
+
+  --color-primary-variant: #8EE7F4;
+  --color-secondary-variant: #A6DDA8;
+
+  --color-background: #FAF8F3;
+  --color-surface: #FFFFFF; /* o #FDFDFC */
+  --color-surface-alt: #FDFDFC;
+
+  --shadow-card: 0 2px 8px rgba(28, 43, 54, 0.06);
+}
+
+.hero-bg {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ), url('/hero-image.jpg');
+  
+  /* Asegurar que cubra todo el contenedor */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .body-font {
-    font-family: 'Inter Variable', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .title-font {
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Inter Variable', sans-serif;
 }
 
-body {
-    font-family: 'Inter Variable';
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins';
+.dsdasd {
+  color: #65aed8;
 }
