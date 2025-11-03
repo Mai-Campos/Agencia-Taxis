@@ -3,6 +3,12 @@ import Footer from '@/components/layout/Footer.astro'
 import Header from '@/components/layout/Header.astro'
 import '@fontsource-variable/inter'
 import '@fontsource/poppins'
+
+export interface Props {
+  scrollHeader?: boolean;
+}
+
+const { scrollHeader = true } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,7 +23,7 @@ import '@fontsource/poppins'
   <body
     class="bg-background text-text-main selection:bg-primary-variant selection:text-text-main body-font"
   >
-    <Header />
+    <Header scrollHeader={scrollHeader}/>
     <main>
       <slot />
     </main>

@@ -1,9 +1,17 @@
 ---
 import NavBar from '@/components/layout/NavBar.astro'
+
+export interface Props {
+  scrollHeader?: boolean
+}
+
+const { scrollHeader = true } = Astro.props
 ---
 
 <header
-  class="body-font fixed top-0 z-50 w-full bg-transparent text-white transition-colors duration-300"
+  class={`body-font fixed top-0 z-50 w-full transition-colors duration-300
+    ${scrollHeader ? 'bg-transparent text-white' : 'bg-background text-text-main'}
+  `}
   id="header"
 >
   <div
