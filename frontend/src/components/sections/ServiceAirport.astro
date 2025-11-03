@@ -2,13 +2,13 @@
 import { Icon } from 'astro-icon/components'
 ---
 
-<section class="body-font">
+<section class="body-font bg-plane">
   <div class="container mx-auto flex flex-wrap px-5 py-24 md:max-w-[1100px]">
-    <h2 class="title-font mb-2 text-2xl font-medium sm:text-3xl md:w-2/5">
+    <h2 class="title-font mb-2 text-2xl text-white font-medium sm:text-3xl md:w-2/5">
       Traslados entre aeropuertos y hoteles o casas de alquiler
     </h2>
     <aside class="md:w-3/5 md:pl-6">
-      <p class="text-text-secondary text-base leading-relaxed">
+      <p class="text-gray-100 text-base leading-relaxed">
         Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe
         four dollar toast truffaut, direct trade kombucha brunch williamsburg
         keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.
@@ -21,3 +21,15 @@ import { Icon } from 'astro-icon/components'
     </aside>
   </div>
 </section>
+
+<style>
+  .bg-plane {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('/bg-plane.webp');
+
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+  }
+</style>
