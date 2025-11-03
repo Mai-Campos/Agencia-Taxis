@@ -1,14 +1,15 @@
 ---
 import Footer from '@/components/layout/Footer.astro'
-import Header from '@/components/layout/Header.astro'
+import HeaderScroll from '@/components/layout/HeaderScroll.astro'
+import HeaderStatic from '@/components/layout/HeaderStatic.astro'
 import '@fontsource-variable/inter'
 import '@fontsource/poppins'
 
-export interface Props {
-  scrollHeader?: boolean;
+interface Props {
+  headerType?: 'scroll' | 'static'
 }
 
-const { scrollHeader = true } = Astro.props;
+const { headerType = 'scroll' } = Astro.props;
 ---
 
 <!doctype html>
@@ -23,7 +24,7 @@ const { scrollHeader = true } = Astro.props;
   <body
     class="bg-background text-text-main selection:bg-primary-variant selection:text-text-main body-font"
   >
-    <Header scrollHeader={scrollHeader}/>
+    {headerType === 'scroll' ? <HeaderScroll/> : <HeaderStatic/>}
     <main>
       <slot />
     </main>
