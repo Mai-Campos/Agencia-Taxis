@@ -8,8 +8,7 @@ import { Icon } from 'astro-icon/components'
       class="group shadow-card bg-surface relative h-80 w-full overflow-hidden rounded-xl"
     >
       <div
-        class="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
-        style="background-image: url('/havana.jpg');"
+        class="bg-image absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
       >
       </div>
 
@@ -37,3 +36,9 @@ import { Icon } from 'astro-icon/components'
     </div></a
   >
 </article>
+
+<style>
+  .bg-image {
+    background-image: url('/havana.webp');
+  }
+</style>

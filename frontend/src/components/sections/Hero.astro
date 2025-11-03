@@ -4,7 +4,7 @@ import Button from '../ui/Button.astro'
 ---
 
 <section
-  class="body-font hero-bg flex h-screen min-h-[600px] items-center justify-start text-center text-white"
+  class="body-font bg-hero flex h-screen min-h-[600px] items-center justify-start text-center text-white"
 >
   <main
     class="flex max-w-[800px] flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:grow lg:pl-24"
@@ -30,10 +30,10 @@ import Button from '../ui/Button.astro'
 </section>
 
 <style>
-  .hero-bg {
+  .bg-hero {
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('/hero-image.jpg');
+      url('/hero-image.webp');
 
     /* Asegurar que cubra todo el contenedor */
     background-size: cover;
