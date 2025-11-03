@@ -2,7 +2,10 @@
 import NavBar from '@/components/layout/NavBar.astro'
 ---
 
-<header class="body-font fixed top-0 z-50 w-full bg-transparent text-white">
+<header
+  class="body-font fixed top-0 z-50 w-full bg-transparent text-white transition-colors duration-300"
+  id="header"
+>
   <div
     class="container mx-auto flex flex-col items-center p-4 md:flex-row md:justify-between"
   >
@@ -12,3 +15,19 @@ import NavBar from '@/components/layout/NavBar.astro'
     <NavBar />
   </div>
 </header>
+
+<script>
+  const header = document.getElementById('header')
+
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('bg-background', 'text-text-main')
+        header.classList.remove('bg-transparent', 'text-white')
+      } else {
+        header.classList.remove('bg-background', 'text-text-main')
+        header.classList.add('bg-transparent', 'text-white')
+      }
+    })
+  }
+</script>
