@@ -9,7 +9,7 @@ interface Props {
   headerType?: 'scroll' | 'static'
 }
 
-const { headerType = 'scroll' } = Astro.props;
+const { headerType = 'scroll' } = Astro.props
 ---
 
 <!doctype html>
@@ -24,7 +24,7 @@ const { headerType = 'scroll' } = Astro.props;
   <body
     class="bg-background text-text-main selection:bg-primary-variant selection:text-text-main body-font"
   >
-    {headerType === 'scroll' ? <HeaderScroll/> : <HeaderStatic/>}
+    {headerType === 'scroll' ? <HeaderScroll /> : <HeaderStatic />}
     <main>
       <slot />
     </main>
