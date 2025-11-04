@@ -1,13 +1,18 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import RoutesContainer from '@/components/sections/RoutesContainer.astro'
 import CallToAction from '@/components/sections/CallToAction.astro'
+import AirportTravelCard from '@/components/ui/AirportTravelCard.astro'
+import AirportTravelsContainer from '@/components/sections/AirportTravelsContainer.astro'
 import '@/styles/global.css'
 ---
 
 <BaseLayout headerType="static">
-    <RoutesContainer>
-        
-    </RoutesContainer>
-    <CallToAction />
+  <AirportTravelsContainer>
+    <AirportTravelCard />
+    <AirportTravelCard />
+    <AirportTravelCard />
+    <AirportTravelCard />
+    <AirportTravelCard />
+  </AirportTravelsContainer>
+  <CallToAction />
 </BaseLayout>
