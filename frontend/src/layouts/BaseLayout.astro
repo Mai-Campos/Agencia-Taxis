@@ -4,6 +4,7 @@ import HeaderScroll from '@/components/layout/HeaderScroll.astro'
 import HeaderStatic from '@/components/layout/HeaderStatic.astro'
 import '@fontsource-variable/inter'
 import '@fontsource/poppins'
+import { t, astroI18n, l } from "astro-i18n";
 
 interface Props {
   headerType?: 'scroll' | 'static'
@@ -13,7 +14,7 @@ const { headerType = 'scroll' } = Astro.props
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={astroI18n.locale}>
   <head>
     <meta charset="utf-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
@@ -26,6 +27,10 @@ const { headerType = 'scroll' } = Astro.props
   >
     {headerType === 'scroll' ? <HeaderScroll /> : <HeaderStatic />}
     <main>
+          <nav class="p-4">
+      <a class="mr-4" href={l("/", {}, { locale: "es" })}>ES</a>
+      <a href={l("/", {}, { locale: "en" })}>EN</a>
+    </nav>
       <slot />
     </main>
     <Footer />
