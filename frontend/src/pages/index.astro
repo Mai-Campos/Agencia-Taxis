@@ -8,16 +8,23 @@ import RouteCard from '@/components/ui/RouteCard.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import '@/styles/global.css'
 import ServicesInfo from '@/components/sections/ServicesInfo.astro'
+import { getCollection } from 'astro:content'
+
+const routes = await getCollection('route-cards')
 ---
 
 <BaseLayout headerType="scroll">
   <Hero />
   <ServicesInfo />
   <RoutesContainer>
-    <RouteCard />
-    <RouteCard />
-    <RouteCard />
-    <RouteCard />
+    {
+      routes.map((route) => {
+        const { location, packageName, img } = route.data
+        return (
+          <RouteCard location={location} packageName={packageName} img={img} />
+        )
+      })
+    }
   </RoutesContainer>
   <SeeAllRoutesLink />
   <AirportTravels />

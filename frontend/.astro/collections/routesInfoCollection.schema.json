@@ -4,10 +4,35 @@
     "routesInfoCollection": {
       "type": "object",
       "properties": {
+        "location": {
+          "type": "string"
+        },
+        "packageName": {
+          "type": "string"
+        },
+        "packageDescription": {
+          "type": "string"
+        },
+        "placesToVisit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "price": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
       },
+      "required": [
+        "location",
+        "packageName",
+        "packageDescription",
+        "placesToVisit",
+        "price"
+      ],
       "additionalProperties": false
     }
   },

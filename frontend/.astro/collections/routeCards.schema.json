@@ -1,7 +1,7 @@
 {
-  "$ref": "#/definitions/routeCardsCollection",
+  "$ref": "#/definitions/routeCards",
   "definitions": {
-    "routeCardsCollection": {
+    "routeCards": {
       "type": "object",
       "properties": {
         "location": {

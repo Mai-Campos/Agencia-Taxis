@@ -4,12 +4,22 @@ import { glob, file } from 'astro/loaders'
 
 // route-cards and routes-info collections
 const routeCardsCollection = defineCollection({
-  loader: glob({ pattern: '**/route-cards/*.md', base: './src/content' }),
-  schema: z.object({}),
+  type: 'content',
+  schema: z.object({
+    location: z.string(),
+    packageName: z.string(),
+    img: z.string(),
+  }),
 })
 const routesInfoCollection = defineCollection({
-  loader: glob({ pattern: '**/routes-info/*.md', base: './src/content' }),
-  schema: z.object({}),
+  type: 'content',
+  schema: z.object({
+    location: z.string(),
+    packageName: z.string(),
+    packageDescription: z.string(),
+    placesToVisit: z.array(z.string()),
+    price: z.string(),
+  }),
 })
 
 const serviceCardCollection = defineCollection({
@@ -17,7 +27,7 @@ const serviceCardCollection = defineCollection({
 })
 
 export const collections = {
-  routeCardsCollection,
-  routesInfoCollection,
+  'route-cards': routeCardsCollection,
+  'routes-info': routesInfoCollection,
   serviceCardCollection,
 }

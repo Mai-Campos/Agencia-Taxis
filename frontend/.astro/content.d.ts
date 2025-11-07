@@ -162,11 +162,39 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"routeCardsCollection": Record<string, {
+		"route-cards": Record<string, {
+  id: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
+  collection: "route-cards";
+  data: InferEntrySchema<"route-cards">;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"routeCards": Record<string, {
+  id: string;
+  body?: string;
+  collection: "routeCards";
+  data: any;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"routeCardsCollection": Record<string, {
   id: string;
   body?: string;
   collection: "routeCardsCollection";
-  data: InferEntrySchema<"routeCardsCollection">;
+  data: any;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"routes-info": Record<string, {
+  id: string;
+  render(): Render[".md"];
+  slug: string;
+  body: string;
+  collection: "routes-info";
+  data: InferEntrySchema<"routes-info">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -174,7 +202,15 @@ declare module 'astro:content' {
   id: string;
   body?: string;
   collection: "routesInfoCollection";
-  data: InferEntrySchema<"routesInfoCollection">;
+  data: any;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
+"service-card": Record<string, {
+  id: string;
+  body?: string;
+  collection: "service-card";
+  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;

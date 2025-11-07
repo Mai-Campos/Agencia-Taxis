@@ -1,7 +1,7 @@
 {
-  "$ref": "#/definitions/routeCardsCollection",
+  "$ref": "#/definitions/routes-info",
   "definitions": {
-    "routeCardsCollection": {
+    "routes-info": {
       "type": "object",
       "properties": {
         "location": {
@@ -10,7 +10,16 @@
         "packageName": {
           "type": "string"
         },
-        "img": {
+        "packageDescription": {
+          "type": "string"
+        },
+        "placesToVisit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "price": {
           "type": "string"
         },
         "$schema": {
@@ -20,7 +29,9 @@
       "required": [
         "location",
         "packageName",
-        "img"
+        "packageDescription",
+        "placesToVisit",
+        "price"
       ],
       "additionalProperties": false
     }
