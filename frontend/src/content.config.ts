@@ -29,5 +29,5 @@ const serviceCardCollection = defineCollection({
 export const collections = {
   'route-cards': routeCardsCollection,
   'routes-info': routesInfoCollection,
-  serviceCardCollection,
+  'service-card': serviceCardCollection,
 }

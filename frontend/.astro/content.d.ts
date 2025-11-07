@@ -172,22 +172,6 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"routeCards": Record<string, {
-  id: string;
-  body?: string;
-  collection: "routeCards";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"routeCardsCollection": Record<string, {
-  id: string;
-  body?: string;
-  collection: "routeCardsCollection";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
 "routes-info": Record<string, {
   id: string;
   render(): Render[".md"];
@@ -198,28 +182,12 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"routesInfoCollection": Record<string, {
-  id: string;
-  body?: string;
-  collection: "routesInfoCollection";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
 "service-card": Record<string, {
-  id: string;
-  body?: string;
-  collection: "service-card";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"serviceCardCollection": Record<string, {
   id: string;
   render(): Render[".md"];
   slug: string;
   body: string;
-  collection: "serviceCardCollection";
+  collection: "service-card";
   data: any;
   rendered?: RenderedContent;
   filePath?: string;

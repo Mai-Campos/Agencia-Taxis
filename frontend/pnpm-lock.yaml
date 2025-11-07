@@ -23,6 +23,9 @@ importers:
       astro:
         specifier: ^5.13.7
         version: 5.15.3(@types/node@24.9.2)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.52.5)(typescript@5.9.3)(yaml@2.8.1)
+      astro-i18n:
+        specifier: ^2.2.4
+        version: 2.2.4(esbuild@0.25.11)
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
@@ -887,6 +890,12 @@ packages:
   astro-eslint-parser@1.2.2:
     resolution: {integrity: sha512-JepyLROIad6f44uyqMF6HKE2QbunNzp3mYKRcPoDGt0QkxXmH222FAFC64WTyQu2Kg8NNEXHTN/sWuUId9sSxw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  astro-i18n@2.2.4:
+    resolution: {integrity: sha512-vhvxBtStNLLghtl63aGhBEtU1DqlYz0D3ggz5Nh2QZok36s9Ss3v9b4txN3mH/OZ90JUwkII13CYQL9wozjXBQ==}
+    hasBin: true
+    peerDependencies:
+      esbuild: 0.x
 
   astro-icon@1.1.5:
     resolution: {integrity: sha512-CJYS5nWOw9jz4RpGWmzNQY7D0y2ZZacH7atL2K9DeJXJVaz7/5WrxeyIxO8KASk1jCM96Q4LjRx/F3R+InjJrw==}
@@ -3363,6 +3372,10 @@ snapshots:
       semver: 7.7.3
     transitivePeerDependencies:
       - supports-color
+
+  astro-i18n@2.2.4(esbuild@0.25.11):
+    dependencies:
+      esbuild: 0.25.11
 
   astro-icon@1.1.5:
     dependencies:

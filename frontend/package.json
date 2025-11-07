@@ -1,35 +1,40 @@
 {
-  "name": "curved-corot",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "typecheck": "tsc --noEmit",
-    "format": "prettier . --write",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro"
-  },
-  "dependencies": {
-    "@fontsource-variable/inter": "^5.2.8",
-    "@fontsource/poppins": "^5.2.7",
-    "@iconify-json/tabler": "^1.2.23",
-    "@tailwindcss/vite": "^4.1.16",
-    "astro": "^5.13.7",
-    "astro-icon": "^1.1.5",
-    "tailwindcss": "^4.1.16"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.38.0",
-    "eslint": "^9.38.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-astro": "^1.4.0",
-    "eslint-plugin-prettier": "^5.5.4",
-    "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.7.1",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2"
-  }
+	"name": "curved-corot",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"typecheck": "tsc --noEmit",
+		"format": "prettier . --write",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
+		"i18n:extract": "astro-i18n extract",
+		"i18n:generate:pages": "astro-i18n generate:pages --purge",
+		"i18n:generate:types": "astro-i18n generate:types",
+		"i18n:sync": "npm run i18n:generate:pages && npm run i18n:generate:types"
+	},
+	"dependencies": {
+		"@fontsource-variable/inter": "^5.2.8",
+		"@fontsource/poppins": "^5.2.7",
+		"@iconify-json/tabler": "^1.2.23",
+		"@tailwindcss/vite": "^4.1.16",
+		"astro": "^5.13.7",
+		"astro-i18n": "^2.2.4",
+		"astro-icon": "^1.1.5",
+		"tailwindcss": "^4.1.16"
+	},
+	"devDependencies": {
+		"@eslint/js": "^9.38.0",
+		"eslint": "^9.38.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-astro": "^1.4.0",
+		"eslint-plugin-prettier": "^5.5.4",
+		"prettier": "^3.6.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.7.1",
+		"typescript": "^5.9.3",
+		"typescript-eslint": "^8.46.2"
+	}
 }

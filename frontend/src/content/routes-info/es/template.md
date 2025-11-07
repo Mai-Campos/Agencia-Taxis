@@ -1,7 +1,10 @@
 ---
-  location: string,
-  packageName: string,
-  packageDescription: string,
-  placesToVisit: string[],
-  price: string,
+  location: "string"
+  packageName: "string"
+  packageDescription: "string"
+  placesToVisit: 
+  - "string"
+  - "string"
+  - "string"
+  price: "string"
 ---
