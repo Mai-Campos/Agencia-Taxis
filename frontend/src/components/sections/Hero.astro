@@ -2,6 +2,12 @@
 import { Icon } from 'astro-icon/components'
 import Button from '@/components/ui/Button.astro'
 import ShapeDivider from '@/components/ui/ShapeDivider.astro'
+
+export interface Props {
+  title: string;
+  subtitle: string;
+}
+const { title, subtitle } = Astro.props;
 ---
 
 <section
@@ -11,40 +17,37 @@ import ShapeDivider from '@/components/ui/ShapeDivider.astro'
     class="flex max-w-[800px] flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:grow lg:pl-24"
   >
     <h1 class="title-font mb-4 text-3xl font-bold sm:text-4xl">
-      Before they sold out
-      <br class="hidden lg:inline-block" />readymade gluten
+      {title}
     </h1>
     <p class="mb-8 leading-relaxed text-gray-100">
-      Copper mug try-hard pitchfork pour-over freegan heirloom neutra air plant
-      cold-pressed tacos poke beard tote bag. Heirloom echo park mlkshk tote bag
-      selvage hot chicken authentic tumeric truffaut hexagon try-hard chambray.
+      {subtitle}
     </p>
     <Button text="Reserva Ya!" className="text-xl" />
   </main>
   <aside class="absolute right-4 bottom-14">
     <div class="flex flex-col gap-2">
-      <a href="#"
+      <a href="/"
         ><Icon
           name="tabler:brand-tripadvisor"
           size={28}
           class="hover:text-primary-hover active:text-primary-hover"
         /></a
       >
-      <a href="#"
+      <a href="/"
         ><Icon
           name="tabler:brand-whatsapp"
           size={28}
           class="hover:text-primary-hover active:text-primary-hover"
         /></a
       >
-      <a href="#"
+      <a href="/"
         ><Icon
           name="tabler:brand-instagram"
           size={28}
           class="hover:text-primary-hover active:text-primary-hover"
         /></a
       >
-      <a href="#"
+      <a href="/"
         ><Icon
           name="tabler:brand-facebook"
           size={28}

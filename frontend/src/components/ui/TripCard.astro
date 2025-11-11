@@ -2,16 +2,16 @@
 import { Icon } from 'astro-icon/components'
 
 type Props = {
-  location: string,
-  packageName: string,
-  img: string,
+  location: string
+  packageName: string
+  img: string
 }
 
 const { location, packageName, img } = Astro.props
 ---
 
 <article class="w-full">
-  <a href="/route-x">
+  <a href="/trip">
     <div
       class="group shadow-card bg-surface relative h-80 w-full overflow-hidden rounded-xl"
     >
@@ -31,11 +31,16 @@ const { location, packageName, img } = Astro.props
         <span
           class="title-font flex gap-1 text-xs font-medium tracking-widest uppercase opacity-90 transition-opacity duration-500 group-hover:opacity-100"
         >
-          <Icon name="tabler:map-pin-filled" size={15} class="text-red-500" />{location}</span>
+          <Icon name="tabler:map-pin-filled" size={15} class="text-red-500" />{
+            location
+          }</span
+        >
 
         <h3
           class="title-font text-lg font-medium text-pretty opacity-95 transition-opacity duration-500 group-hover:opacity-100"
-        >{packageName}</h3>
+        >
+          {packageName}
+        </h3>
       </aside>
     </div></a
   >

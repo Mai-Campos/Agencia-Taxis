@@ -4,33 +4,37 @@ import HeaderScroll from '@/components/layout/HeaderScroll.astro'
 import HeaderStatic from '@/components/layout/HeaderStatic.astro'
 import '@fontsource-variable/inter'
 import '@fontsource/poppins'
-import { t, astroI18n, l } from "astro-i18n";
 
 interface Props {
   headerType?: 'scroll' | 'static'
+  title: string
 }
 
-const { headerType = 'scroll' } = Astro.props
+const locale = Astro.currentLocale
+
+const { headerType = 'scroll', title } = Astro.props
 ---
 
 <!doctype html>
-<html lang={astroI18n.locale}>
+<html lang={locale}>
   <head>
     <meta charset="utf-8" />
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Crystal Sands Ride</title>
+    <title>{`Crystal Sands Ride | ${title}`}</title>
   </head>
   <body
     class="bg-background text-text-main selection:bg-primary-variant selection:text-text-main body-font"
   >
-    {headerType === 'scroll' ? <HeaderScroll /> : <HeaderStatic />}
+    {
+      headerType === 'scroll' ? (
+        <HeaderScroll />
+      ) : (
+        <HeaderStatic />
+      )
+    }
     <main>
-          <nav class="p-4">
-      <a class="mr-4" href={l("/", {}, { locale: "es" })}>ES</a>
-      <a href={l("/", {}, { locale: "en" })}>EN</a>
-    </nav>
       <slot />
     </main>
     <Footer />
