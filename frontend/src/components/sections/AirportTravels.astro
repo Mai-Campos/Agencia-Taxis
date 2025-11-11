@@ -1,5 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components'
+
+type Props = {
+  title: string
+  description: string
+  link: string
+}
+
+const { title, description, link } = Astro.props
 ---
 
 <section class="body-font bg-plane">
@@ -7,20 +15,15 @@ import { Icon } from 'astro-icon/components'
     <h2
       class="title-font mb-2 text-2xl font-medium text-white sm:text-3xl md:w-2/5"
     >
-      Traslados entre aeropuertos y hoteles o casas de alquiler
+      {title}
     </h2>
     <aside class="md:w-3/5 md:pl-6">
       <p class="text-base leading-relaxed text-gray-100">
-        Taxidermy bushwick celiac master cleanse microdosing seitan. Fashion axe
-        four dollar toast truffaut, direct trade kombucha brunch williamsburg
-        keffiyeh gastropub tousled squid meh taiyaki drinking vinegar tacos.
+        {description}
       </p>
       <div class="mt-6 flex md:mt-4">
         <a class="go-to" href="/"
-          >Reservar un Traslado<Icon
-            name="tabler:arrow-narrow-right"
-            size={22}
-          /></a
+          >{link}<Icon name="tabler:arrow-narrow-right" size={22} /></a
         >
       </div>
     </aside>

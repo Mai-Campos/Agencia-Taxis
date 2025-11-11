@@ -1,5 +1,12 @@
 ---
 import ServiceCard from '@/components/ui/ServiceCard.astro'
+
+type Props = {
+  title: string
+  subtitle: string
+}
+
+const { title, subtitle } = Astro.props
 ---
 
 <section id="services" class="body-font text-gray-600">
@@ -8,10 +15,10 @@ import ServiceCard from '@/components/ui/ServiceCard.astro'
       <h2
         class="text-primary title-font mb-1 text-xs font-medium tracking-widest"
       >
-        Nuestros Servicios
+        {subtitle}
       </h2>
       <h1 class="title-font text-2xl font-medium text-gray-900 sm:text-3xl">
-        Nuestros Servicios
+        {title}
       </h1>
     </div>
     <div class="flex flex-wrap">

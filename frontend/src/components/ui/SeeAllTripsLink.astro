@@ -1,12 +1,15 @@
 ---
 import { Icon } from 'astro-icon/components'
+
+type Props = {
+  text: string
+}
+
+const { text } = Astro.props
 ---
 
 <section class="-mt-10 mb-10 flex justify-center">
   <a href="/trips" class="go-to"
-    >Ver todos los recorridos <Icon
-      name="tabler:arrow-narrow-right"
-      size={22}
-    /></a
+    >{text} <Icon name="tabler:arrow-narrow-right" size={22} /></a
   >
 </section>

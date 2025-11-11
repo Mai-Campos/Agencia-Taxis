@@ -19,8 +19,8 @@ const t = await getTranslations('home', locale)
 
 <BaseLayout headerType="scroll" title="Inicio" navbar={t.navbar}>
   <Hero {...t.hero} />
-  <ServicesInfo />
-  <TripsContainer>
+  <ServicesInfo {...t.servicesInfo} />
+  <TripsContainer description={t.tripsContainer.description} title={t.tripsContainer.title}>
     {
       trips.map((trip) => {
         const { location, packageName, img } = trip.data
@@ -30,7 +30,7 @@ const t = await getTranslations('home', locale)
       })
     }
   </TripsContainer>
-  <SeeAllTripsLink />
-  <AirportTravels />
-  <CallToAction />
+  <SeeAllTripsLink {...t.seeAllTripsLink} />
+  <AirportTravels {...t.airportTravels} />
+  <CallToAction {...t.callToAction} />
 </BaseLayout>

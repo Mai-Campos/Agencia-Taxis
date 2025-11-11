@@ -1,26 +1,30 @@
 {
-    "navbar": {
-        "services": "Servicios",
-        "travels": "Viajes",
-        "checkBooking": "Consultar Reserva"
-    },
-    "hero": {
-        "title": "Viaja con nosotros y disfruta de una experiencia inolvidable",
-        "subtitle": "Los mejores destinos para visitar en Cuba te esperan, rutas especiales seleccionadas por expertos en turismo local, para mostrarte la verdadera esencia de la isla."
-    },
-    "services": {
-        "title": "Nuestros Servicios",
-        "service1": {
-            "title": "Rutas unicas",
-            "description": "Explora Cuba a tu manera con nuestros tours personalizados adaptados a tus intereses."
-        },
-        "service2": {
-            "title": "Alojamiento",
-            "description": "Encuentra el lugar perfecto para quedarte, desde casas particulares hasta hoteles de lujo."
-        },
-        "service3": {
-            "title": "Transporte",
-            "description": "Viaja cómodamente con nuestras opciones de transporte seguras y confiables."
-        }
-    }
+  "navbar": {
+    "services": "Servicios",
+    "travels": "Viajes",
+    "checkBooking": "Consultar Reservas"
+  },
+  "hero": {
+    "title": "Viaja con nosotros y disfruta de una experiencia inolvidable",
+    "subtitle": "Los mejores destinos para visitar en Cuba te esperan, rutas especiales seleccionadas por expertos en turismo local, para mostrarte la verdadera esencia de la isla."
+  },
+  "servicesInfo": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Que ofrecemos?"
+  },
+  "tripsContainer": {
+    "title": "Viajes",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi hic, consectetur animi explicabo officia doloremque distinctio quibusdam pariatur nostrum voluptatum dignissimos, quam alias earum temporibus tempora exercitationem magni asperiores quis."
+  },
+  "seeAllTripsLink": {
+    "text": "Ver todos los recorridos"
+  },
+  "airportTravels": {
+    "title": "Traslados entre aeropuertos y hoteles o casas de alquiler",
+    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi hic, consectetur animi explicabo officia doloremque distinctio quibusdam pariatur nostrum voluptatum dignissimos, quam alias earum temporibus tempora exercitationem magni asperiores quis.",
+    "link": "Reservar un Traslado"
+  },
+  "callToAction": {
+    "text": "Te interesan nuestros recorridos? Reserva con nosotros"
+  }
 }

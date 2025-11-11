@@ -1,14 +1,23 @@
+---
+type Props = {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
+---
+
 <section class="body-font">
   <div class="container mx-auto px-5 py-24">
     <aside class="mx-auto mb-14 flex w-full flex-wrap md:max-w-[1100px]">
       <div class="mb-4 w-full lg:mb-0 lg:w-1/2">
         <h2 class="title-font mb-2 text-2xl font-medium sm:text-3xl">
-          Viajes
+          {title}
         </h2>
         <div class="bg-primary h-1 w-20 rounded"></div>
       </div>
       <p class="text-text-secondary w-full leading-relaxed lg:w-1/2">
-        :P
+        {description}
       </p>
     </aside>
 
