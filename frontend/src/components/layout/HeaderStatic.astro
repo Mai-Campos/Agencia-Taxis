@@ -1,5 +1,12 @@
 ---
 import NavBar from '@/components/layout/NavBar.astro'
+import type { NavBarTranslations } from '@/i18n/types'
+
+export interface Props {
+  navbar: NavBarTranslations
+}
+
+const { navbar } = Astro.props
 ---
 
 <header
@@ -12,6 +19,6 @@ import NavBar from '@/components/layout/NavBar.astro'
     <a href="/" class="title-font cursor-pointer text-xl font-bold md:mb-0">
       Crystal Sands Ride
     </a>
-    <NavBar />
+    <NavBar navbar={navbar}/>
   </div>
 </header>

@@ -1,6 +1,26 @@
 {
+    "navbar": {
+        "services": "Servicios",
+        "travels": "Viajes",
+        "checkBooking": "Consultar Reserva"
+    },
     "hero": {
-        "title": "Viaja con nosotros ahi nama",
-        "subtitle": "Tu sabe, lo dijite"
+        "title": "Viaja con nosotros y disfruta de una experiencia inolvidable",
+        "subtitle": "Los mejores destinos para visitar en Cuba te esperan, rutas especiales seleccionadas por expertos en turismo local, para mostrarte la verdadera esencia de la isla."
+    },
+    "services": {
+        "title": "Nuestros Servicios",
+        "service1": {
+            "title": "Rutas unicas",
+            "description": "Explora Cuba a tu manera con nuestros tours personalizados adaptados a tus intereses."
+        },
+        "service2": {
+            "title": "Alojamiento",
+            "description": "Encuentra el lugar perfecto para quedarte, desde casas particulares hasta hoteles de lujo."
+        },
+        "service3": {
+            "title": "Transporte",
+            "description": "Viaja cómodamente con nuestras opciones de transporte seguras y confiables."
+        }
     }
 }

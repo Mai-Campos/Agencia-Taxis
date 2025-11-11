@@ -4,15 +4,17 @@ import HeaderScroll from '@/components/layout/HeaderScroll.astro'
 import HeaderStatic from '@/components/layout/HeaderStatic.astro'
 import '@fontsource-variable/inter'
 import '@fontsource/poppins'
+import type { NavBarTranslations } from '@/i18n/types'
 
 interface Props {
   headerType?: 'scroll' | 'static'
   title: string
+  navbar: NavBarTranslations
 }
 
 const locale = Astro.currentLocale
 
-const { headerType = 'scroll', title } = Astro.props
+const { headerType = 'scroll', title, navbar } = Astro.props
 ---
 
 <!doctype html>
@@ -29,9 +31,9 @@ const { headerType = 'scroll', title } = Astro.props
   >
     {
       headerType === 'scroll' ? (
-        <HeaderScroll />
+        <HeaderScroll navbar={navbar} />
       ) : (
-        <HeaderStatic />
+        <HeaderStatic navbar={navbar} />
       )
     }
     <main>

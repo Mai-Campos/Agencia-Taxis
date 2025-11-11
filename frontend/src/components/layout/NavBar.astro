@@ -1,5 +1,11 @@
 ---
+import type { NavBarTranslations } from '@/i18n/types'
 
+export interface Props {
+  navbar: NavBarTranslations
+}
+
+const { navbar } = Astro.props
 ---
 
 <nav
@@ -8,16 +14,16 @@
   <a
     href="/"
     class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
-    >Servicios</a
+    >{navbar.services}</a
   >
   <a
     href="/trips"
     class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
-    >Viajes</a
+    >{navbar.travels}</a
   >
   <a
     href="/check-booking"
     class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
-    >Chequear Reserva</a
+    >{navbar.checkBooking}</a
   >
 </nav>

@@ -1,6 +1,26 @@
 {
+    "navbar": {
+        "services": "KServicios",
+        "travels": "KViajes",
+        "checkBooking": "KConsultar Reservas"
+    },
     "hero": {
-        "title": "Travel with us, you know",
-        "subtitle": "You know, you said it"
+        "title": "KViaja con nosotros y disfruta de una experiencia inolvidable",
+        "subtitle": "KLos mejores destinos para visitar en Cuba te esperan, rutas especiales seleccionadas por expertos en turismo local, para mostrarte la verdadera esencia de la isla."
+    },
+    "services": {
+        "title": "Nuestros Servicios",
+        "service1": {
+            "title": "Rutas unicas",
+            "description": "Explora Cuba a tu manera con nuestros tours personalizados adaptados a tus intereses."
+        },
+        "service2": {
+            "title": "Alojamiento",
+            "description": "Encuentra el lugar perfecto para quedarte, desde casas particulares hasta hoteles de lujo."
+        },
+        "service3": {
+            "title": "Transporte",
+            "description": "Viaja cómodamente con nuestras opciones de transporte seguras y confiables."
+        }
     }
 }
