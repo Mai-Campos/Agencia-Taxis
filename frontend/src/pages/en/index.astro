@@ -13,14 +13,19 @@ import '@/styles/global.css'
 
 const locale = Astro.currentLocale || 'es'
 
-const trips = await getCollection('route-cards')
+const trips = await getCollection('route-cards', ({ slug }) =>
+  slug.startsWith(`${locale}/`)
+)
 const t = await getTranslations('home', locale)
 ---
 
 <BaseLayout headerType="scroll" title="Inicio" navbar={t.navbar}>
   <Hero {...t.hero} />
   <ServicesInfo {...t.servicesInfo} />
-  <TripsContainer description={t.tripsContainer.description} title={t.tripsContainer.title}>
+  <TripsContainer
+    description={t.tripsContainer.description}
+    title={t.tripsContainer.title}
+  >
     {
       trips.map((trip) => {
         const { location, packageName, img } = trip.data

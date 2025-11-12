@@ -1,23 +1,23 @@
 {
-  "$ref": "#/definitions/route-cards",
+  "$ref": "#/definitions/service-card",
   "definitions": {
-    "route-cards": {
+    "service-card": {
       "type": "object",
       "properties": {
-        "location": {
+        "title": {
           "type": "string"
         },
-        "packageName": {
+        "description": {
           "type": "string"
         },
-        "img": {
+        "icon": {
           "type": "string"
         },
         "$schema": {
           "type": "string"
         }
       },
-      "required": ["location", "packageName", "img"],
+      "required": ["title", "description", "icon"],
       "additionalProperties": false
     }
   },

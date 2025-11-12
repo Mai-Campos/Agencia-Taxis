@@ -14,7 +14,10 @@ const t = await getTranslations('home', locale)
 ---
 
 <BaseLayout headerType="static" title="Inicio" navbar={t.navbar}>
-  <TripsContainer description={t.tripsContainer.description} title={t.tripsContainer.title} >
+  <TripsContainer
+    description={t.tripsContainer.description}
+    title={t.tripsContainer.title}
+  >
     {
       trips.map((trip) => {
         const { location, packageName, img } = trip.data

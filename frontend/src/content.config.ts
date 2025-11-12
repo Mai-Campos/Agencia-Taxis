@@ -1,8 +1,5 @@
 import { defineCollection, z } from 'astro:content'
 
-import { glob, file } from 'astro/loaders'
-
-// route-cards and routes-info collections
 const routeCardsCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -23,7 +20,12 @@ const routesInfoCollection = defineCollection({
 })
 
 const serviceCardCollection = defineCollection({
-  /* ... */
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    icon: z.string(),
+  }),
 })
 
 export const collections = {
