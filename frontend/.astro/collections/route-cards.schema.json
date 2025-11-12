@@ -17,7 +17,11 @@
           "type": "string"
         }
       },
-      "required": ["location", "packageName", "img"],
+      "required": [
+        "location",
+        "packageName",
+        "img"
+      ],
       "additionalProperties": false
     }
   },

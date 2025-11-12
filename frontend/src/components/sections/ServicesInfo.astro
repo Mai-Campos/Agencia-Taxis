@@ -1,10 +1,15 @@
 ---
 import ServiceCard from '@/components/ui/ServiceCard.astro'
+import { getCollection } from 'astro:content'
 
 type Props = {
   title: string
   subtitle: string
 }
+const locale = Astro.currentLocale || 'es'
+const services = await getCollection('service-card', ({ slug }) =>
+  slug.startsWith(`${locale}/`)
+)
 
 const { title, subtitle } = Astro.props
 ---
@@ -22,9 +27,12 @@ const { title, subtitle } = Astro.props
       </h1>
     </div>
     <div class="flex flex-wrap">
-      <ServiceCard />
-      <ServiceCard />
-      <ServiceCard />
+      {
+        services.map((service) => {
+          const { title, description, icon } = service.data
+          return <ServiceCard title={title} description={description} icon={icon} />
+        })
+      }
     </div>
   </div>
 </section>
