@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content'
 
-const routeCardsCollection = defineCollection({
+const tripCardCollection = defineCollection({
   type: 'content',
   schema: z.object({
     location: z.string(),
@@ -8,7 +8,17 @@ const routeCardsCollection = defineCollection({
     img: z.string(),
   }),
 })
-const routesInfoCollection = defineCollection({
+
+const recommendedTripCardCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    location: z.string(),
+    packageName: z.string(),
+    img: z.string(),
+  }),
+})
+
+const tripInfoCollection = defineCollection({
   type: 'content',
   schema: z.object({
     location: z.string(),
@@ -29,7 +39,8 @@ const serviceCardCollection = defineCollection({
 })
 
 export const collections = {
-  'route-cards': routeCardsCollection,
-  'routes-info': routesInfoCollection,
+  'trip-card': tripCardCollection,
+  'trip-info': tripInfoCollection,
   'service-card': serviceCardCollection,
+  'recommended-trip-card': recommendedTripCardCollection
 }

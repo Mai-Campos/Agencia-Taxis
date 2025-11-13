@@ -9,7 +9,9 @@ import '@/styles/global.css'
 
 const locale = Astro.currentLocale || 'es'
 
-const trips = await getCollection('route-cards')
+const trips = await getCollection('trip-card', ({ slug }) =>
+  slug.startsWith(`${locale}/`)
+)
 const t = await getTranslations('home', locale)
 ---
 
