@@ -33,6 +33,10 @@
   @apply text-primary hover:text-primary-hover active:text-primary-hover flex cursor-pointer items-center gap-1 text-lg font-semibold;
 }
 
+.lang-label {
+  @apply flex flex-row items-start justify-between p-2 hover:rounded-md hover:bg-gray-200
+}
+
 .body-font {
   font-family: 'Poppins', sans-serif;
 }

@@ -162,45 +162,13 @@ declare module 'astro:content' {
 	};
 
 	type DataEntryMap = {
-		"recomended-trip-cards": Record<string, {
-  id: string;
-  body?: string;
-  collection: "recomended-trip-cards";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"recommended-trip-card": Record<string, {
+		"recommended-trip-card": Record<string, {
   id: string;
   render(): Render[".md"];
   slug: string;
   body: string;
   collection: "recommended-trip-card";
   data: InferEntrySchema<"recommended-trip-card">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"recommended-trip-cards": Record<string, {
-  id: string;
-  body?: string;
-  collection: "recommended-trip-cards";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"route-cards": Record<string, {
-  id: string;
-  body?: string;
-  collection: "route-cards";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"routes-info": Record<string, {
-  id: string;
-  body?: string;
-  collection: "routes-info";
-  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -221,14 +189,6 @@ declare module 'astro:content' {
   body: string;
   collection: "trip-card";
   data: InferEntrySchema<"trip-card">;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
-"trip-cards": Record<string, {
-  id: string;
-  body?: string;
-  collection: "trip-cards";
-  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
