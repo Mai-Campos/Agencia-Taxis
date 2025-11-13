@@ -14,17 +14,19 @@ const { navbar } = Astro.props
 <header
   class="body-font bg-background text-text-main fixed top-0 z-50 w-full transition-colors duration-300"
   id="header"
+>
+  <div
+    class="container mx-auto flex flex-wrap items-center justify-between p-4"
   >
-  <div class="container mx-auto flex flex-wrap items-center justify-between p-4">
-      <a href="/" class="title-font cursor-pointer text-xl font-bold md:mb-0">
-        Crystal Sands Ride
-      </a>
+    <a href="/" class="title-font cursor-pointer text-xl font-bold md:mb-0">
+      Crystal Sands Ride
+    </a>
 
     <div class="flex items-center">
       <button
         id="menu-toggle"
         type="button"
-        class="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none md:hidden"
+        class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none md:hidden"
       >
         <span class="sr-only">Open main menu</span>
         <!-- Hamburger icon -->
@@ -42,7 +44,9 @@ const { navbar } = Astro.props
   const menuToggle = document.getElementById('menu-toggle')
   const mobileMenu = document.getElementById('mobile-menu')
 
-  menuToggle.addEventListener('click', function () {
-    mobileMenu.classList.toggle('hidden')
-  })
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', function () {
+      mobileMenu.classList.toggle('hidden')
+    })
+  }
 </script>
