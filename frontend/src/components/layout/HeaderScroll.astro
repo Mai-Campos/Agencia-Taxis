@@ -36,7 +36,10 @@ const { scrollHeader = true, navbar } = Astro.props
       </button>
     </div>
 
-    <div class="hidden w-full md:block md:w-auto bg-background rounded-xl text-text-main py-8" id="mobile-menu">
+    <div
+      class="bg-background text-text-main hidden w-full rounded-xl py-8 md:block md:w-auto"
+      id="mobile-menu"
+    >
       <NavBar navbar={navbar} />
     </div>
   </div>

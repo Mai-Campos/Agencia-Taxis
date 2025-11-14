@@ -34,7 +34,7 @@
 }
 
 .lang-label {
-  @apply flex flex-row items-start justify-between p-2 hover:rounded-md hover:bg-gray-200
+  @apply flex flex-row items-start justify-between p-2 hover:rounded-md hover:bg-gray-200;
 }
 
 .body-font {

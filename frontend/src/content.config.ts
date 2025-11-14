@@ -42,5 +42,5 @@ export const collections = {
   'trip-card': tripCardCollection,
   'trip-info': tripInfoCollection,
   'service-card': serviceCardCollection,
-  'recommended-trip-card': recommendedTripCardCollection
+  'recommended-trip-card': recommendedTripCardCollection,
 }
