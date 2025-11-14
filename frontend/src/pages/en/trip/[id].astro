@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import TripInfo from '@/components/sections/TripInfo.astro'
+import { getTranslations } from '@/i18n/index'
+import '@/styles/global.css'
+
+const locale = Astro.currentLocale || 'es'
+
+const t = await getTranslations('home', locale)
+---
+
+<BaseLayout headerType="static" title="Inicio" navbar={t.navbar}>
+  <TripInfo />
+</BaseLayout>

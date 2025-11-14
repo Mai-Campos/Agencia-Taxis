@@ -5,13 +5,14 @@ type Props = {
   location: string
   packageName: string
   img: string
+  slug: string
 }
 
-const { location, packageName, img } = Astro.props
+const { location, packageName, img, slug } = Astro.props
 ---
 
 <article class="w-full">
-  <a href="/trip">
+  <a href={`/trip/${slug}`}>
     <div
       class="group shadow-card bg-surface relative h-80 w-full overflow-hidden rounded-xl"
     >

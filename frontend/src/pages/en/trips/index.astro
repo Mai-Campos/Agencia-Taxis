@@ -22,9 +22,16 @@ const t = await getTranslations('home', locale)
   >
     {
       trips.map((trip) => {
-        const { location, packageName, img } = trip.data
+        const { slug, data } = trip
+        const { location, packageName, img } = data
+
         return (
-          <TripCard location={location} packageName={packageName} img={img} />
+          <TripCard
+            location={location}
+            packageName={packageName}
+            img={img}
+            slug={slug}
+          />
         )
       })
     }
