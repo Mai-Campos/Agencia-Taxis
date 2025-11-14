@@ -13,6 +13,15 @@
         "img": {
           "type": "string"
         },
+        "placesToVisit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "price": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
@@ -20,7 +29,9 @@
       "required": [
         "location",
         "packageName",
-        "img"
+        "img",
+        "placesToVisit",
+        "price"
       ],
       "additionalProperties": false
     }

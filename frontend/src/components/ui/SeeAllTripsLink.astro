@@ -5,11 +5,12 @@ type Props = {
   text: string
 }
 
+const locale = Astro.currentLocale
 const { text } = Astro.props
 ---
 
 <section class="-mt-10 mb-10 flex justify-center">
-  <a href="/trips" class="go-to"
+  <a href={`/${locale}/trips`} class="go-to"
     >{text} <Icon name="tabler:arrow-narrow-right" size={22} /></a
   >
 </section>

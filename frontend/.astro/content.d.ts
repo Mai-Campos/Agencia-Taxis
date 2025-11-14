@@ -194,11 +194,9 @@ declare module 'astro:content' {
 }>;
 "trip-info": Record<string, {
   id: string;
-  render(): Render[".md"];
-  slug: string;
-  body: string;
+  body?: string;
   collection: "trip-info";
-  data: InferEntrySchema<"trip-info">;
+  data: any;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
