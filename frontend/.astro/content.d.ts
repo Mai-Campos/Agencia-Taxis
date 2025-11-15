@@ -192,14 +192,6 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
-"trip-info": Record<string, {
-  id: string;
-  body?: string;
-  collection: "trip-info";
-  data: any;
-  rendered?: RenderedContent;
-  filePath?: string;
-}>;
 
 	};
 

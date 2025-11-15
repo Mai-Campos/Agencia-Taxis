@@ -2,17 +2,15 @@
 import { Icon } from 'astro-icon/components'
 import Button from '@/components/ui/Button.astro'
 
-// type Props = {
-//   location: string
-//   packageName: string
-//   packageDescription: string
-//   placesToVisit: string[]
-//   price: string
-//   img: string
-// }
+type Props = {
+  location: string
+  packageName: string
+  placesToVisit: string[]
+  price: string
+  img: string
+}
 
-// const { location, packageName, packageDescription, placesToVisit, price, img } =
-//   Astro.props
+const { location, packageName, placesToVisit, price, img } = Astro.props
 ---
 
 <section class="body-font overflow-hidden">
@@ -27,11 +25,12 @@ import Button from '@/components/ui/Button.astro'
         <span
           class="title-font flex gap-1 text-sm font-medium tracking-widest uppercase"
         >
-          <Icon name="tabler:map-pin-filled" size={18} class="text-red-500" />La
-          Habana
+          <Icon name="tabler:map-pin-filled" size={18} class="text-red-500" />{
+            location
+          }
         </span>
         <h1 class="title-font mb-1 text-3xl font-medium">
-          Recorrido por La Habana
+          {packageName}
         </h1>
         <div class="mb-4 flex gap-1">
           <a href="/"
@@ -96,7 +95,7 @@ import Button from '@/components/ui/Button.astro'
         </div>
         <div class="flex items-center justify-between">
           <span class="title-font text-2xl font-medium text-gray-900"
-            >$58.00</span
+            >{price}</span
           >
           <Button text="Reserva" />
         </div>

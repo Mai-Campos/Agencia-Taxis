@@ -6,6 +6,9 @@ const tripCardCollection = defineCollection({
     location: z.string(),
     packageName: z.string(),
     img: z.string(),
+    placesToVisit: z.array(z.string()),
+    price: z.string(),
+    path: z.string(),
   }),
 })
 
@@ -17,6 +20,7 @@ const recommendedTripCardCollection = defineCollection({
     img: z.string(),
     placesToVisit: z.array(z.string()),
     price: z.string(),
+    path: z.string(),
   }),
 })
 

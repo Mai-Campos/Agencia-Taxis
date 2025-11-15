@@ -22,6 +22,9 @@
         "price": {
           "type": "string"
         },
+        "path": {
+          "type": "string"
+        },
         "$schema": {
           "type": "string"
         }
@@ -31,7 +34,8 @@
         "packageName",
         "img",
         "placesToVisit",
-        "price"
+        "price",
+        "path"
       ],
       "additionalProperties": false
     }
