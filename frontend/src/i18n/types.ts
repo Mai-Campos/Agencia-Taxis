@@ -3,3 +3,4 @@ export interface NavBarTranslations {
   travels: string
   checkBooking: string
 }
+export type Language = 'es' | 'en'

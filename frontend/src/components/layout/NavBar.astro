@@ -1,11 +1,13 @@
 ---
 import type { NavBarTranslations } from '@/i18n/types'
 import LanguagePicker from '../ui/LanguagePicker.astro'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 export interface Props {
   navbar: NavBarTranslations
 }
 
+const currentLang = Astro.currentLocale || 'es'
 const { navbar } = Astro.props
 ---
 
@@ -14,17 +16,17 @@ const { navbar } = Astro.props
 >
   <LanguagePicker />
   <a
-    href="/"
+    href="#services"
     class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
     >{navbar.services}</a
   >
   <a
-    href="/trips"
+    href={getRelativeLocaleUrl(currentLang, 'trips')}
     class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
     >{navbar.travels}</a
   >
   <a
-    href="/check-booking"
+    href={getRelativeLocaleUrl(currentLang, 'check-booking')}
     class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
     >{navbar.checkBooking}</a
   >

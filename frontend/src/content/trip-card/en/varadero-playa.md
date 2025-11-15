@@ -1,6 +1,7 @@
 ---
 location: 'Varadero'
 packageName: 'Varadero Blue Paradise'
+path: 'varadero-playa'
 img: 'varadero-playa.jpg'
 placesToVisit:
   - 'Varadero Beach'
@@ -8,7 +9,6 @@ placesToVisit:
   - 'Ambrosio Cave'
   - 'Varadero Dolphinarium'
 price: '530 USD'
-path: 'varadero-playa'
 ---
 
 Enjoy Cuba’s most famous beach destination. Relax on Varadero’s turquoise coastline, take a boat ride through Josone Park, explore Ambrosio Cave with its prehistoric art, and finish with a show at the Dolphinarium. Perfect for travelers seeking sun, sea, and light adventure.

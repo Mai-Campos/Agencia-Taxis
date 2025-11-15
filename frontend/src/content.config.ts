@@ -5,10 +5,10 @@ const tripCardCollection = defineCollection({
   schema: z.object({
     location: z.string(),
     packageName: z.string(),
+    path: z.string(),
     img: z.string(),
     placesToVisit: z.array(z.string()),
     price: z.string(),
-    path: z.string(),
   }),
 })
 

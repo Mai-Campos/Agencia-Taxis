@@ -10,6 +10,9 @@
         "packageName": {
           "type": "string"
         },
+        "path": {
+          "type": "string"
+        },
         "img": {
           "type": "string"
         },
@@ -22,9 +25,6 @@
         "price": {
           "type": "string"
         },
-        "path": {
-          "type": "string"
-        },
         "$schema": {
           "type": "string"
         }
@@ -32,10 +32,10 @@
       "required": [
         "location",
         "packageName",
+        "path",
         "img",
         "placesToVisit",
-        "price",
-        "path"
+        "price"
       ],
       "additionalProperties": false
     }

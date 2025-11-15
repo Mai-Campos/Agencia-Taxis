@@ -7,12 +7,12 @@ type Props = {
   img: string
   path: string
 }
-const locale = Astro.currentLocale
+const lang = Astro.currentLocale || 'es'
 const { location, packageName, img, path } = Astro.props
 ---
 
 <article class="w-full">
-  <a href={`/${locale}/trip/${path}`}>
+  <a href={`/${lang}/trip/${path}`}>
     <div
       class="group shadow-card bg-surface relative h-80 w-full overflow-hidden rounded-xl"
     >

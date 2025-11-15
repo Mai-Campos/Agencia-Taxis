@@ -1,5 +1,5 @@
 ---
-import { languages } from '@/i18n/ui'
+import { languageList } from '@/i18n/ui'
 ---
 
 <div class="hover:text-primary cursor-pointer">
@@ -41,7 +41,7 @@ import { languages } from '@/i18n/ui'
         class="bg-background text-text-main flex flex-col rounded-md p-2 shadow-lg"
       >
         {
-          Object.entries(languages).map(([lang, label]) => (
+          Object.entries(languageList).map(([lang, label]) => (
             <a href={`/${lang}/`}>
               <li class="lang-label mb-2">
                 {label}

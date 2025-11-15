@@ -10,19 +10,25 @@ import ServicesInfo from '@/components/sections/ServicesInfo.astro'
 import { getCollection } from 'astro:content'
 import { getTranslations } from '@/i18n/index'
 import '@/styles/global.css'
+import type { Language } from '@/i18n/types'
 
-const locale = Astro.currentLocale || 'es'
+export async function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }]
+}
+export const defafultRedirect = '/es'
+
+const lang = Astro.params.lang as Language
 
 const trips = await getCollection('trip-card', ({ slug }) =>
-  slug.startsWith(`${locale}/`)
+  slug.startsWith(`${lang}/`)
 )
-// toma los 4 primeros viajes de la coleccion
+
 const topTrips = trips.slice(0, 4)
 
-const t = await getTranslations('home', locale)
+const t = await getTranslations('literals', lang)
 ---
 
-<BaseLayout headerType="scroll" title="Inicio" navbar={t.navbar}>
+<BaseLayout headerType="scroll" title="Inicio" navbar={t.navbar} lang={lang}>
   <Hero {...t.hero} />
   <ServicesInfo {...t.servicesInfo} />
   <TripsContainer

@@ -1,16 +1,17 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 type Props = {
   text: string
 }
 
-const locale = Astro.currentLocale
+const currentlang = Astro.currentLocale || 'es'
 const { text } = Astro.props
 ---
 
 <section class="-mt-10 mb-10 flex justify-center">
-  <a href={`/${locale}/trips`} class="go-to"
+  <a href={getRelativeLocaleUrl(currentlang, 'trips')} class="go-to"
     >{text} <Icon name="tabler:arrow-narrow-right" size={22} /></a
   >
 </section>

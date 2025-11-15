@@ -6,16 +6,16 @@ type Props = {
   title: string
   subtitle: string
 }
-const locale = Astro.currentLocale || 'es'
+const lang = Astro.params || 'es'
 const services = await getCollection('service-card', ({ slug }) =>
-  slug.startsWith(`${locale}/`)
+  slug.startsWith(`${lang}/`)
 )
 
 const { title, subtitle } = Astro.props
 ---
 
 <section id="services" class="body-font text-gray-600">
-  <div class="container mx-auto px-5 py-8">
+  <div class="container mx-auto px-5 pt-16">
     <div class="mb-10 flex w-full flex-col text-center">
       <h2
         class="text-primary title-font mb-1 text-xs font-medium tracking-widest"

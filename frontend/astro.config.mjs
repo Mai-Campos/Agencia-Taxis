@@ -8,8 +8,8 @@ import icon from 'astro-icon'
 // https://astro.build/config
 export default defineConfig({
   i18n: {
-    locales: ['es', 'en'],
     defaultLocale: 'es',
+    locales: ['es', 'en'],
     routing: {
       prefixDefaultLocale: true,
     },

@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content'
+import { getTranslations } from '@/i18n'
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import TripInfo from '@/components/sections/TripInfo.astro'
+import type { Language } from '@/i18n/types'
+import '@/styles/global.css'
+
+export async function getStaticPaths() {
+  const trips = await getCollection('trip-card')
+
+  const paths = trips.map((trip) => {
+    const [lang, path] = trip.slug.split('/')
+    return {
+      params: { lang, path },
+      props: trip,
+    }
+  })
+  return paths
+}
+
+const lang = Astro.currentLocale as Language
+const trip = Astro.props
+const { data } = trip
+const { Content } = await render(trip)
+const t = await getTranslations('literals', lang)
+---
+
+<BaseLayout headerType="static" title="Inicio" navbar={t.navbar} lang={lang}>
+  <TripInfo
+    location={data.location}
+    packageName={data.packageName}
+    img={data.img}
+    placesToVisit={data.placesToVisit}
+    price={data.price}
+  />
+</BaseLayout>

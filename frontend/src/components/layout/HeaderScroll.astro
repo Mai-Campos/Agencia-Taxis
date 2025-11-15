@@ -2,12 +2,14 @@
 import NavBar from '@/components/layout/NavBar.astro'
 import type { NavBarTranslations } from '@/i18n/types'
 import { Icon } from 'astro-icon/components'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 export interface Props {
   scrollHeader?: boolean
   navbar: NavBarTranslations
 }
 
+const currentLang = Astro.currentLocale || 'es'
 const { scrollHeader = true, navbar } = Astro.props
 ---
 
@@ -20,7 +22,10 @@ const { scrollHeader = true, navbar } = Astro.props
   <div
     class="container mx-auto flex flex-wrap items-center justify-between p-4"
   >
-    <a href="/" class="title-font cursor-pointer text-xl font-bold md:mb-0">
+    <a
+      href={getRelativeLocaleUrl(currentLang, '/')}
+      class="title-font cursor-pointer text-xl font-bold md:mb-0"
+    >
       Crystal Sands Ride
     </a>
 

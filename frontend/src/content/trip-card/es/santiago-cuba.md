@@ -1,6 +1,7 @@
 ---
 location: 'Santiago de Cuba'
 packageName: 'Cuna del Son y la Revolución'
+path: 'santiago-cuba'
 img: 'santiago-cuba.jpg'
 placesToVisit:
   - 'Castillo del Morro'
@@ -8,7 +9,6 @@ placesToVisit:
   - 'Casa de Diego Velázquez'
   - 'Avenida Garzón'
 price: '480 USD'
-path: 'santiago-cuba'
 ---
 
 📝 Descripción del recorrido
