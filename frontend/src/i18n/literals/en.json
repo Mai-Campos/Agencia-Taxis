@@ -1,30 +1,30 @@
 {
   "navbar": {
-    "services": "KServicios",
-    "travels": "KViajes",
-    "checkBooking": "KConsultar Reservas"
+    "services": "Services",
+    "travels": "Trips",
+    "checkBooking": "Check Booking"
   },
   "hero": {
-    "title": "KViaja con nosotros y disfruta de una experiencia inolvidable",
-    "subtitle": "KLos mejores destinos para visitar en Cuba te esperan, rutas especiales seleccionadas por expertos en turismo local, para mostrarte la verdadera esencia de la isla."
+    "title": "Travel with us and enjoy an unforgettable experience",
+    "subtitle": "Discover Cuba’s top destinations with routes designed by local travel experts. Experience the island’s true essence through its culture, history, and natural beauty."
   },
   "servicesInfo": {
-    "title": "Nuestros Servicios",
-    "subtitle": "Que ofrecemos?"
+    "title": "Our Services",
+    "subtitle": "What do we offer?"
   },
   "tripsContainer": {
-    "title": "Viajes",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi hic, consectetur animi explicabo officia doloremque distinctio quibusdam pariatur nostrum voluptatum dignissimos, quam alias earum temporibus tempora exercitationem magni asperiores quis."
+    "title": "Featured Trips",
+    "description": "Explore unique experiences across Cuba — from colonial towns to breathtaking beaches. We've selected the best routes so you can discover the island like a local."
   },
   "seeAllTripsLink": {
-    "text": "Ver todos los recorridos"
+    "text": "View all trips"
   },
   "airportTravels": {
-    "title": "Traslados entre aeropuertos y hoteles o casas de alquiler",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi hic, consectetur animi explicabo officia doloremque distinctio quibusdam pariatur nostrum voluptatum dignissimos, quam alias earum temporibus tempora exercitationem magni asperiores quis.",
-    "link": "Reservar un Traslado"
+    "title": "Airport Transfers to Hotels and Rentals",
+    "description": "We provide comfortable, safe, and punctual private transportation between any airport in the country and your hotel or rental home. Travel stress-free from the moment you arrive.",
+    "link": "Book a Transfer"
   },
   "callToAction": {
-    "text": "Te interesan nuestros recorridos? Reserva con nosotros"
+    "text": "Interested in our trips? Book with us"
   }
 }

@@ -2,29 +2,29 @@
   "navbar": {
     "services": "Servicios",
     "travels": "Viajes",
-    "checkBooking": "Consultar Reservas"
+    "checkBooking": "Consultar reserva"
   },
   "hero": {
     "title": "Viaja con nosotros y disfruta de una experiencia inolvidable",
-    "subtitle": "Los mejores destinos para visitar en Cuba te esperan, rutas especiales seleccionadas por expertos en turismo local, para mostrarte la verdadera esencia de la isla."
+    "subtitle": "Descubre los mejores destinos de Cuba con rutas cuidadosamente diseñadas por expertos en turismo local. Vive la cultura, historia y naturaleza auténtica de la isla."
   },
   "servicesInfo": {
-    "title": "Nuestros Servicios",
-    "subtitle": "Que ofrecemos?"
+    "title": "Nuestros servicios",
+    "subtitle": "¿Qué ofrecemos?"
   },
   "tripsContainer": {
-    "title": "Viajes",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi hic, consectetur animi explicabo officia doloremque distinctio quibusdam pariatur nostrum voluptatum dignissimos, quam alias earum temporibus tempora exercitationem magni asperiores quis."
+    "title": "Viajes destacados",
+    "description": "Explora experiencias únicas por toda Cuba, desde ciudades coloniales hasta playas paradisíacas. Hemos seleccionado los mejores recorridos para que disfrutes del país como un local."
   },
   "seeAllTripsLink": {
-    "text": "Ver todos los recorridos"
+    "text": "Ver todos los viajes"
   },
   "airportTravels": {
-    "title": "Traslados entre aeropuertos y hoteles o casas de alquiler",
-    "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi hic, consectetur animi explicabo officia doloremque distinctio quibusdam pariatur nostrum voluptatum dignissimos, quam alias earum temporibus tempora exercitationem magni asperiores quis.",
-    "link": "Reservar un Traslado"
+    "title": "Traslados entre aeropuertos y alojamientos",
+    "description": "Ofrecemos un servicio cómodo, seguro y puntual de transporte entre cualquier aeropuerto del país y tu hotel o casa de renta. Viaja con confianza desde tu llegada.",
+    "link": "Reservar traslado"
   },
   "callToAction": {
-    "text": "Te interesan nuestros recorridos? Reserva con nosotros"
+    "text": "¿Te interesan nuestros recorridos? Reserva con nosotros"
   }
 }

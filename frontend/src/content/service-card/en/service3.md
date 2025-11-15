@@ -1,5 +1,5 @@
 ---
-title: Otra cosa
-description: Descubra os melhores pontos turísticos da cidade com nosso guia completo.
-icon: tabler:user
+title: Destination Packages
+description: Discover our curated travel packages across Cuba, combining beaches, colonial cities, and unique experiences. The best way to plan your adventure.
+icon: tabler:package
 ---
