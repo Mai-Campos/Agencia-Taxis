@@ -12,18 +12,6 @@ const tripCardCollection = defineCollection({
   }),
 })
 
-const recommendedTripCardCollection = defineCollection({
-  type: 'content',
-  schema: z.object({
-    location: z.string(),
-    packageName: z.string(),
-    img: z.string(),
-    placesToVisit: z.array(z.string()),
-    price: z.string(),
-    path: z.string(),
-  }),
-})
-
 const serviceCardCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -36,5 +24,4 @@ const serviceCardCollection = defineCollection({
 export const collections = {
   'trip-card': tripCardCollection,
   'service-card': serviceCardCollection,
-  'recommended-trip-card': recommendedTripCardCollection,
 }

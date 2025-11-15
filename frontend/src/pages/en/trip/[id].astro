@@ -7,11 +7,8 @@ import '@/styles/global.css'
 
 export async function getStaticPaths() {
   const trips = await getCollection('trip-card')
-  const recommended = await getCollection('recommended-trip-card')
 
-  const allTrips = [...trips, ...recommended]
-
-  return allTrips.map((trip) => {
+  return trips.map((trip) => {
     const [locale] = trip.id.split('/')
 
     return {

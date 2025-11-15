@@ -13,9 +13,12 @@ import '@/styles/global.css'
 
 const locale = Astro.currentLocale || 'es'
 
-const trips = await getCollection('recommended-trip-card', ({ slug }) =>
+const trips = await getCollection('trip-card', ({ slug }) =>
   slug.startsWith(`${locale}/`)
 )
+// toma los 4 primeros viajes de la coleccion
+const topTrips = trips.slice(0, 4)
+
 const t = await getTranslations('home', locale)
 ---
 
@@ -27,18 +30,14 @@ const t = await getTranslations('home', locale)
     title={t.tripsContainer.title}
   >
     {
-      trips.map((trip) => {
-        const { data } = trip
-        const { location, packageName, img, path } = data
-        return (
-          <TripCard
-            location={location}
-            packageName={packageName}
-            img={img}
-            path={path}
-          />
-        )
-      })
+      topTrips.map(({ data }) => (
+        <TripCard
+          location={data.location}
+          packageName={data.packageName}
+          img={data.img}
+          path={data.path}
+        />
+      ))
     }
   </TripsContainer>
   <SeeAllTripsLink {...t.seeAllTripsLink} />
