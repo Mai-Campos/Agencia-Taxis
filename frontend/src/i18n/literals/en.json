@@ -1,8 +1,12 @@
 {
   "navbar": {
+    "language": "Language",
     "services": "Services",
     "travels": "Trips",
     "checkBooking": "Check Booking"
+  },
+  "button": {
+    "text": "Book Now"
   },
   "hero": {
     "title": "Travel with us and enjoy an unforgettable experience",

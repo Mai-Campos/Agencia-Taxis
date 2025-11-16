@@ -3,9 +3,10 @@ import Button from '@/components/ui/Button.astro'
 
 type Props = {
   text: string
+  textBtn: string
 }
 
-const { text } = Astro.props
+const { text, textBtn } = Astro.props
 ---
 
 <section class="body-font">
@@ -16,7 +17,7 @@ const { text } = Astro.props
       <h2 class="title-font mb-10 grow text-2xl font-medium sm:mb-0 sm:pr-14">
         {text}
       </h2>
-      <Button text="Reservar" />
+      <Button text={textBtn} />
     </main>
   </div>
 </section>

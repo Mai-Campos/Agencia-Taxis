@@ -1,8 +1,12 @@
 {
   "navbar": {
+    "language": "Idioma",
     "services": "Servicios",
     "travels": "Viajes",
     "checkBooking": "Consultar reserva"
+  },
+  "button": {
+    "text": "Reservar"
   },
   "hero": {
     "title": "Viaja con nosotros y disfruta de una experiencia inolvidable",

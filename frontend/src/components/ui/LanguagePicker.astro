@@ -1,5 +1,12 @@
 ---
 import { languageList } from '@/i18n/ui'
+
+type Props = {
+  label: string
+}
+
+const currentUrl = Astro.url.href
+const { label } = Astro.props
 ---
 
 <div class="hover:text-primary cursor-pointer">
@@ -12,7 +19,7 @@ import { languageList } from '@/i18n/ui'
       @click="openSort = !openSort"
       class="flex w-40 items-center justify-center gap-1 bg-transparent md:justify-end"
     >
-      <span>Idioma</span>
+      <span>{label}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -22,7 +29,7 @@ import { languageList } from '@/i18n/ui'
         <path
           fill="currentColor"
           d="M15.794 7.733a.75.75 0 0 1-.026 1.06l-5.25 5.001a.75.75 0 0 1-1.035 0l-5.25-5a.75.75 0 0 1 1.034-1.087l4.734 4.509l4.733-4.51a.75.75 0 0 1 1.06.027"
-          class="transform transition-transform duration-200"
+          class="transform transition-transform duration-200 origin-center"
           :class="{'rotate-180': openSort, 'rotate-0': !openSort}"></path>
       </svg>
     </button>
@@ -108,5 +115,3 @@ import { languageList } from '@/i18n/ui'
     </div>
   </div>
 </div>
-
-<script src="//unpkg.com/alpinejs" defer></script>

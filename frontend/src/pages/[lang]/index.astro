@@ -29,7 +29,7 @@ const t = await getTranslations('literals', lang)
 ---
 
 <BaseLayout headerType="scroll" title="Inicio" navbar={t.navbar} lang={lang}>
-  <Hero {...t.hero} />
+  <Hero {...t.hero} textBtn={t.button.text} />
   <ServicesInfo {...t.servicesInfo} />
   <TripsContainer
     description={t.tripsContainer.description}
@@ -48,5 +48,5 @@ const t = await getTranslations('literals', lang)
   </TripsContainer>
   <SeeAllTripsLink {...t.seeAllTripsLink} />
   <AirportTravels {...t.airportTravels} />
-  <CallToAction {...t.callToAction} />
+  <CallToAction {...t.callToAction} textBtn={t.button.text} />
 </BaseLayout>

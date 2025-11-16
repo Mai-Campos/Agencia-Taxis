@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 
 const lang = Astro.currentLocale as Language
 const trip = Astro.props
-const { data } = trip
+const { data, body } = trip
 const { Content } = await render(trip)
 const t = await getTranslations('literals', lang)
 ---
@@ -30,8 +30,10 @@ const t = await getTranslations('literals', lang)
   <TripInfo
     location={data.location}
     packageName={data.packageName}
+    description={body}
     img={data.img}
     placesToVisit={data.placesToVisit}
     price={data.price}
+    textBtn={t.button.text}
   />
 </BaseLayout>

@@ -8,9 +8,11 @@ type Props = {
   placesToVisit: string[]
   price: string
   img: string
+  description: string
+  textBtn: string
 }
 
-const { location, packageName, placesToVisit, price, img } = Astro.props
+const { location, packageName, placesToVisit, price, img, description, textBtn } = Astro.props
 ---
 
 <section class="body-font overflow-hidden">
@@ -56,11 +58,7 @@ const { location, packageName, placesToVisit, price, img } = Astro.props
           >
         </div>
         <p class="leading-relaxed">
-          Fam locavore kickstarter distillery. Mixtape chillwave tumeric
-          sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps
-          cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine
-          tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean
-          shorts keytar banjo tattooed umami cardigan.
+          {description}
         </p>
         <div
           class="mt-6 mb-5 flex items-center border-b-2 border-gray-100 pb-5"
@@ -97,7 +95,7 @@ const { location, packageName, placesToVisit, price, img } = Astro.props
           <span class="title-font text-2xl font-medium text-gray-900"
             >{price}</span
           >
-          <Button text="Reserva" />
+          <Button text={textBtn} />
         </div>
       </div>
     </div>
