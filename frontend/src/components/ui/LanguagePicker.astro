@@ -5,14 +5,22 @@ type Props = {
   label: string
 }
 
+// toma la url actual
 const currentUrl = Astro.url.href
+// crea una nueva url solo con el pathname y elimina el primier '/'
+const u = new URL(currentUrl).pathname.slice(1)
+// si empieza con 'es' o 'en' lo quita
+let restOfUrl = u;
+if (restOfUrl.startsWith("es")) restOfUrl = restOfUrl.replace("es/", "");
+if (restOfUrl.startsWith("en")) restOfUrl = restOfUrl.replace("en/", "");
+
 const { label } = Astro.props
 ---
 
-<div class="hover:text-primary cursor-pointer">
+<div class="hover:text-primary">
   <div
     @click.away="openSort = false"
-    class="relative"
+    class="relative cursor-pointer"
     x-data="{ openSort: false }"
   >
     <button
@@ -49,7 +57,7 @@ const { label } = Astro.props
       >
         {
           Object.entries(languageList).map(([lang, label]) => (
-            <a href={`/${lang}/`}>
+            <a href={`/${lang}/${restOfUrl}`}>
               <li class="lang-label mb-2">
                 {label}
                 {lang === 'en' && (
