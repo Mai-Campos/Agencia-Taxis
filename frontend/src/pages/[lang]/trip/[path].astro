@@ -7,7 +7,7 @@ import type { Language } from '@/i18n/types'
 import '@/styles/global.css'
 
 export async function getStaticPaths() {
-  const trips = await getCollection('trip-card')
+  const trips = await getCollection('trips')
 
   const paths = trips.map((trip) => {
     const [lang, path] = trip.slug.split('/')

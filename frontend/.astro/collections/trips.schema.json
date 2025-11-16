@@ -1,0 +1,44 @@
+{
+  "$ref": "#/definitions/trips",
+  "definitions": {
+    "trips": {
+      "type": "object",
+      "properties": {
+        "location": {
+          "type": "string"
+        },
+        "packageName": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "img": {
+          "type": "string"
+        },
+        "placesToVisit": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "price": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "location",
+        "packageName",
+        "path",
+        "img",
+        "placesToVisit",
+        "price"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

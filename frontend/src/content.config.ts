@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content'
 
-const tripCardCollection = defineCollection({
+const tripsCollection = defineCollection({
   type: 'content',
   schema: z.object({
     location: z.string(),
@@ -12,7 +12,7 @@ const tripCardCollection = defineCollection({
   }),
 })
 
-const serviceCardCollection = defineCollection({
+const servicesCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
@@ -22,6 +22,6 @@ const serviceCardCollection = defineCollection({
 })
 
 export const collections = {
-  'trip-card': tripCardCollection,
-  'service-card': serviceCardCollection,
+  'trips': tripsCollection,
+  'our-services': servicesCollection,
 }

@@ -15,7 +15,7 @@ export const defafultRedirect = '/es'
 
 const lang = Astro.params.lang as Language
 
-const trips = await getCollection('trip-card', ({ slug }) =>
+const trips = await getCollection('trips', ({ slug }) =>
   slug.startsWith(`${lang}/`)
 )
 const t = await getTranslations('literals', lang)

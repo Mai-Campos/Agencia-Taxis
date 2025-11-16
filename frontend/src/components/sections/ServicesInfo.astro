@@ -7,7 +7,7 @@ type Props = {
   subtitle: string
 }
 const lang = Astro.params || 'es'
-const services = await getCollection('service-card', ({ slug }) =>
+const services = await getCollection('our-services', ({ slug }) =>
   slug.startsWith(`${lang}/`)
 )
 
