@@ -17,17 +17,17 @@ const { navbar } = Astro.props
   <LanguagePicker label={navbar.language} />
   <a
     href="#services"
-    class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
+    class="color-transition hover:text-primary-hover active:text-primary-hover cursor-pointer"
     >{navbar.services}</a
   >
   <a
     href={getRelativeLocaleUrl(currentLang, 'trips')}
-    class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
+    class="color-transition hover:text-primary-hover active:text-primary-hover cursor-pointer"
     >{navbar.travels}</a
   >
   <a
     href={getRelativeLocaleUrl(currentLang, 'check-booking')}
-    class="hover:text-primary-hover active:text-primary-hover cursor-pointer"
+    class="color-transition hover:text-primary-hover active:text-primary-hover cursor-pointer"
     >{navbar.checkBooking}</a
   >
 </nav>

@@ -1,5 +1,6 @@
 ---
 import { languageList } from '@/i18n/ui'
+import { Icon } from 'astro-icon/components'
 
 type Props = {
   label: string
@@ -10,23 +11,24 @@ const currentUrl = Astro.url.href
 // crea una nueva url solo con el pathname y elimina el primier '/'
 const u = new URL(currentUrl).pathname.slice(1)
 // si empieza con 'es' o 'en' lo quita
-let restOfUrl = u;
-if (restOfUrl.startsWith("es")) restOfUrl = restOfUrl.replace("es/", "");
-if (restOfUrl.startsWith("en")) restOfUrl = restOfUrl.replace("en/", "");
+let restOfUrl = u
+if (restOfUrl.startsWith('es')) restOfUrl = restOfUrl.replace('es/', '')
+if (restOfUrl.startsWith('en')) restOfUrl = restOfUrl.replace('en/', '')
 
 const { label } = Astro.props
 ---
 
-<div class="hover:text-primary">
+<div>
   <div
     @click.away="openSort = false"
-    class="relative cursor-pointer"
+    class="relative"
     x-data="{ openSort: false }"
   >
     <button
       @click="openSort = !openSort"
-      class="flex w-40 items-center justify-center gap-1 bg-transparent md:justify-end"
+      class="hover:text-primary flex w-40 color-transition cursor-pointer items-center justify-center gap-1 bg-transparent md:justify-end"
     >
+      <Icon name="tabler:language" size={26} />
       <span>{label}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +39,7 @@ const { label } = Astro.props
         <path
           fill="currentColor"
           d="M15.794 7.733a.75.75 0 0 1-.026 1.06l-5.25 5.001a.75.75 0 0 1-1.035 0l-5.25-5a.75.75 0 0 1 1.034-1.087l4.734 4.509l4.733-4.51a.75.75 0 0 1 1.06.027"
-          class="transform transition-transform duration-200 origin-center"
+          class="origin-center transform transition-transform duration-200"
           :class="{'rotate-180': openSort, 'rotate-0': !openSort}"></path>
       </svg>
     </button>

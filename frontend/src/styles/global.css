@@ -37,6 +37,10 @@
   @apply flex flex-row items-start justify-between p-2 hover:rounded-md hover:bg-gray-200;
 }
 
+.color-transition {
+  @apply transition-colors duration-200;
+}
+
 .body-font {
   font-family: 'Poppins', sans-serif;
 }
