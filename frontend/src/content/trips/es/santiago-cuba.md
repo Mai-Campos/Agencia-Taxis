@@ -8,7 +8,7 @@ placesToVisit:
   - 'Céspedes Park'
   - 'Casa de Diego Velázquez'
   - 'Avenida Garzón'
-price: '480 USD'
+price: '$480'
 ---
 
 📝 Descripción del recorrido
