@@ -14,7 +14,7 @@ const { scrollHeader = true, navbar } = Astro.props
 ---
 
 <header
-  class={`body-font fixed top-0 z-50 w-full transition-colors duration-300
+  class={`body-font fixed top-0 z-50 w-full color-transition
     ${scrollHeader ? 'bg-transparent text-white' : 'bg-background text-text-main'}
   `}
   id="header"
@@ -29,6 +29,7 @@ const { scrollHeader = true, navbar } = Astro.props
       Crystal Sands Ride
     </a>
 
+    <!-- Hamburger menu -->
     <div class="flex items-center">
       <button
         id="menu-toggle"
@@ -36,7 +37,6 @@ const { scrollHeader = true, navbar } = Astro.props
         class="ml-3 inline-flex items-center rounded-lg p-2 text-sm hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none md:hidden"
       >
         <span class="sr-only">Open main menu</span>
-        <!-- Hamburger icon -->
         <Icon name="tabler:menu-2" size={24} />
       </button>
     </div>
