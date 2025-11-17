@@ -17,13 +17,13 @@
   --color-info-hover: #3ac2d0;
 
   --color-text-main: #1c2b36;
-  --color-text-secondary: #6c7a86;
+  --color-text-secondary: #545e68;
 
   --color-primary-variant: #8ee7f4;
   --color-secondary-variant: #a6dda8;
 
   --color-background: #faf8f3;
-  --color-surface: #ffffff; /* o #FDFDFC */
+  --color-surface: #ffffff;
   --color-surface-alt: #fdfdfc;
 
   --shadow-card: 0 2px 8px rgba(28, 43, 54, 0.06);
