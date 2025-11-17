@@ -1,5 +1,5 @@
 ---
-import Button from '@/components/ui/Button.astro'
+import BookBtn from '@/components/ui/BookBtn.astro'
 
 type Props = {
   text: string
@@ -17,7 +17,7 @@ const { text, textBtn } = Astro.props
       <h2 class="title-font mb-10 grow text-2xl font-medium sm:mb-0 sm:pr-14">
         {text}
       </h2>
-      <Button text={textBtn} />
+      <BookBtn text={textBtn} />
     </main>
   </div>
 </section>

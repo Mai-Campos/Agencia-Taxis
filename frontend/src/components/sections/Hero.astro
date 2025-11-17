@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components'
-import Button from '@/components/ui/Button.astro'
+import BookBtn from '@/components/ui/BookBtn.astro'
 import ShapeDivider from '@/components/ui/ShapeDivider.astro'
 
 export interface Props {
@@ -24,7 +24,7 @@ const { title, subtitle, textBtn } = Astro.props
     <p class="mb-8 leading-relaxed text-gray-100">
       {subtitle}
     </p>
-    <Button text={textBtn} className="text-xl" />
+    <BookBtn text={textBtn} className="text-xl" />
   </main>
   <aside class="absolute right-4 bottom-14">
     <div class="flex flex-col gap-2">

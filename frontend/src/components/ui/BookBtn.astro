@@ -1,12 +1,17 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
 type Props = {
   text: string
   className?: string[] | string
 }
+
+const currentLang = Astro.currentLocale || 'es'
 const { text, className } = Astro.props
 ---
 
-<button
+<a
+  href={getRelativeLocaleUrl(currentLang, 'book-trip')}
   class={`title-font color-transition bg-primary shadow-card hover:bg-primary-hover active:bg-primary-hover cursor-pointer rounded-xl px-6 py-4 font-semibold text-pretty text-white select-none focus:outline-none ${className}`}
-  >{text}</button
+  >{text}</a
 >
