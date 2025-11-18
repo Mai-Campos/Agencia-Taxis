@@ -6,7 +6,7 @@ type Props = {
   title: string
   subtitle: string
 }
-const lang = Astro.params || 'es'
+const lang = Astro.currentLocale || 'es'
 const services = await getCollection('our-services', ({ slug }) =>
   slug.startsWith(`${lang}/`)
 )
@@ -14,7 +14,7 @@ const services = await getCollection('our-services', ({ slug }) =>
 const { title, subtitle } = Astro.props
 ---
 
-<section id="services" class="body-font text-gray-600">
+<section id="services" class="body-font">
   <div class="container mx-auto px-5 pt-16">
     <div class="mb-10 flex w-full flex-col text-center">
       <h2
@@ -22,7 +22,7 @@ const { title, subtitle } = Astro.props
       >
         {subtitle}
       </h2>
-      <h1 class="title-font text-2xl font-medium text-gray-900 sm:text-3xl">
+      <h1 class="title-font text-2xl font-medium sm:text-3xl">
         {title}
       </h1>
     </div>
@@ -31,7 +31,7 @@ const { title, subtitle } = Astro.props
         services.map((service) => {
           const { title, description, icon } = service.data
           return (
-            <ServiceCard title={title} description={description} icon={icon} />
+          <ServiceCard title={title} description={description} icon={icon} />
           )
         })
       }
