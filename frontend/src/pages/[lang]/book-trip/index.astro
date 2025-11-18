@@ -2,8 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getTranslations } from '@/i18n/index'
 import type { Language } from '@/i18n/types'
+import TripForm from '@/components/sections/TripForm.astro'
 import '@/styles/global.css'
-import Form from '@/components/sections/Form.astro'
 
 export async function getStaticPaths() {
   return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }]
@@ -15,5 +15,5 @@ const t = await getTranslations('literals', lang)
 ---
 
 <BaseLayout headerType="static" title="Inicio" navbar={t.navbar} lang={lang}>
-    <Form/>
+  <TripForm />
 </BaseLayout>

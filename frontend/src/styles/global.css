@@ -29,6 +29,14 @@
   --shadow-card: 0 2px 8px rgba(28, 43, 54, 0.06);
 }
 
+.body-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+.title-font {
+  font-family: 'Inter Variable', sans-serif;
+}
+
 .go-to {
   @apply text-primary hover:text-primary-hover active:text-primary-hover flex cursor-pointer items-center gap-1 text-lg font-semibold;
 }
@@ -41,32 +49,14 @@
   @apply transition-colors duration-200;
 }
 
-.body-font {
-  font-family: 'Poppins', sans-serif;
+.input-component {
+  @apply hover:border-primary focus:border-primary focus:ring-primary/20 hover:ring-primary/20 h-10 w-full overflow-hidden rounded-xl border-2 bg-gray-100 px-2 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
 }
 
-.title-font {
-  font-family: 'Inter Variable', sans-serif;
+.textarea-component {
+  @apply hover:border-primary focus:border-primary focus:ring-primary/20 hover:ring-primary/20 h-32 w-full resize-none overflow-hidden rounded-xl border-2 bg-gray-100 px-3 py-1 text-base leading-6 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
 }
 
-.dsdasd {
-  /* From Uiverse.io by reglobby */ 
-.input {
-  border: 2px solid transparent;
-  width: 15em;
-  height: 2.5em;
-  padding-left: 0.8em;
-  outline: none;
-  overflow: hidden;
-  background-color: #F3F3F3;
-  border-radius: 10px;
-  transition: all 0.5s;
-}
-
-.input:hover,
-.input:focus {
-  border: 2px solid #4A9DEC;
-  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
-  background-color: white;
-}
+.cta-btn {
+  @apply bg-primary shadow-card hover:bg-primary-hover active:bg-primary-hover cursor-pointer rounded-xl px-6 py-4 font-semibold text-pretty text-white select-none;
 }

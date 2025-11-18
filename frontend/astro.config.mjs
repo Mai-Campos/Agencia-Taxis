@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 import icon from 'astro-icon'
 
-import alpinejs from '@astrojs/alpinejs';
+import alpinejs from '@astrojs/alpinejs'
 
 // https://astro.build/config
 export default defineConfig({

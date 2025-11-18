@@ -11,28 +11,33 @@ const currentLang = Astro.currentLocale || 'es'
 const { navbar } = Astro.props
 ---
 
-<nav
-  class="body-font text-lg font-medium"
->
+<nav class="body-font text-lg font-medium">
   <ul class="flex flex-col items-center justify-center gap-6 md:flex-row">
-    <li class="color-transition hover:text-primary-hover active:text-primary-hover"><LanguagePicker label={navbar.language} /></li>
-    <li class="color-transition hover:text-primary-hover active:text-primary-hover">
-      <a
-        href="#services"
-        class="cursor-pointer"
-        >{navbar.services}</a>
+    <li
+      class="color-transition hover:text-primary-hover active:text-primary-hover"
+    >
+      <LanguagePicker label={navbar.language} />
     </li>
-    <li class="color-transition hover:text-primary-hover active:text-primary-hover">
+    <li
+      class="color-transition hover:text-primary-hover active:text-primary-hover"
+    >
+      <a href="#services" class="cursor-pointer">{navbar.services}</a>
+    </li>
+    <li
+      class="color-transition hover:text-primary-hover active:text-primary-hover"
+    >
       <a
         href={getRelativeLocaleUrl(currentLang, 'trips')}
-        class="cursor-pointer"
-        >{navbar.travels}</a>
+        class="cursor-pointer">{navbar.travels}</a
+      >
     </li>
-    <li class="color-transition hover:text-primary-hover active:text-primary-hover">
+    <li
+      class="color-transition hover:text-primary-hover active:text-primary-hover"
+    >
       <a
         href={getRelativeLocaleUrl(currentLang, 'check-booking')}
-        class="cursor-pointer"
-        >{navbar.checkBooking}</a>
+        class="cursor-pointer">{navbar.checkBooking}</a
+      >
     </li>
   </ul>
 </nav>

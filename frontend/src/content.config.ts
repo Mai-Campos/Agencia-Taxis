@@ -22,6 +22,6 @@ const servicesCollection = defineCollection({
 })
 
 export const collections = {
-  'trips': tripsCollection,
+  trips: tripsCollection,
   'our-services': servicesCollection,
 }

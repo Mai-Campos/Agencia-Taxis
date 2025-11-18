@@ -17,11 +17,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "title",
-        "description",
-        "icon"
-      ],
+      "required": ["title", "description", "icon"],
       "additionalProperties": false
     }
   },

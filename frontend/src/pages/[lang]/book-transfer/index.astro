@@ -2,6 +2,7 @@
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getTranslations } from '@/i18n/index'
 import type { Language } from '@/i18n/types'
+import TransferForm from '@/components/sections/TransferForm.astro'
 import '@/styles/global.css'
 
 export async function getStaticPaths() {
@@ -14,5 +15,5 @@ const t = await getTranslations('literals', lang)
 ---
 
 <BaseLayout headerType="static" title="Inicio" navbar={t.navbar} lang={lang}>
-  <h1>Check Booking</h1>
+  <TransferForm />
 </BaseLayout>

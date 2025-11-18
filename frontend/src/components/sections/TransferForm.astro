@@ -1,0 +1,83 @@
+---
+import SubmitBtn from '../ui/SubmitBtn.astro'
+---
+
+<section class="body-font container mx-auto px-5 py-24">
+  <div class="mb-12 flex w-full flex-col text-center">
+    <h1 class="title-font mb-2 text-2xl font-bold sm:text-3xl">Traslados</h1>
+    <p class="text-text-secondary mx-auto text-base lg:w-2/3">
+      Traslados entre aeropuertos y casas de alquiler
+    </p>
+  </div>
+
+  <div class="mx-auto md:w-2/3 lg:w-1/2">
+    <form action="" class="-m-2 flex flex-wrap">
+      <div class="w-full p-2 sm:w-1/2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Name
+          <input type="text" name="ownerName" class="input-component" />
+        </label>
+      </div>
+
+      <div class="w-full p-2 sm:w-1/2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Email
+          <input type="email" name="email" class="input-component" />
+        </label>
+      </div>
+
+      <div class="w-full p-2 sm:w-1/2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Pick up location
+          <input type="text" name="pickupLocation" class="input-component" />
+        </label>
+      </div>
+
+      <div class="w-full p-2 sm:w-1/2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Destination
+          <input type="text" name="destination" class="input-component" />
+        </label>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Pick up date
+          <input type="date" name="pickupDate" class="input-component" />
+        </label>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Pick up time
+          <input type="time" name="pickupTime" class="input-component" />
+        </label>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Passengers
+          <input type="number" name="passengers" class="input-component" />
+        </label>
+      </div>
+
+      <div class="w-1/2 p-2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Vehicle
+          <input type="text" name="passengers" class="input-component" />
+        </label>
+      </div>
+
+      <div class="w-full p-2">
+        <label class="text-text-secondary text-sm leading-7"
+          >Comments
+          <textarea name="comments" class="textarea-component"></textarea>
+        </label>
+      </div>
+
+      <div class="w-full p-2 flex items-center justify-center">
+        <SubmitBtn />
+      </div>
+    </form>
+  </div>
+</section>
