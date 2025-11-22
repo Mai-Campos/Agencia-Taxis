@@ -30,5 +30,32 @@
   },
   "callToAction": {
     "text": "Interested in our trips? Book with us"
+  },
+
+  "transferForm": {
+    "title": "Transfers",
+    "subtitle": "Transfers between airports and rental homes",
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "pickupLocation": "Pick up location",
+      "destination": "Destination",
+      "pickupDate": "Pick up date",
+      "pickupTime": "Pick up time",
+      "flightNumber": "Flight no. (if applicable)",
+      "passengers": "Passengers",
+      "vehicle": "Vehicle",
+      "comments": "Comments"
+    },
+    "vehicleOptions": {
+      "taxi": "Taxi",
+      "classicCar": "Classic Car",
+      "van": "Van"
+    },
+    "validationMessages": {
+      "invalidEmail": "Invalid email address",
+      "futureDate": "Please enter a date after today"
+    },
+    "submitButton": "Submit Reservation"
   }
 }

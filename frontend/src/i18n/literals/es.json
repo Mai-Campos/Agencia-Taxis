@@ -30,5 +30,32 @@
   },
   "callToAction": {
     "text": "¿Te interesan nuestros recorridos? Reserva con nosotros"
+  },
+
+  "transferForm": {
+    "title": "Traslados",
+    "subtitle": "Traslados entre aeropuertos y casas de alquiler",
+    "fields": {
+      "fullName": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "pickupLocation": "Lugar de Recogida",
+      "destination": "Destino",
+      "pickupDate": "Fecha de Recogida",
+      "pickupTime": "Hora de Recogida",
+      "flightNumber": "Número de Vuelo (si aplica)",
+      "passengers": "Pasajeros",
+      "vehicle": "Vehículo",
+      "comments": "Comentarios"
+    },
+    "vehicleOptions": {
+      "taxi": "Taxi",
+      "classicCar": "Auto Clásico",
+      "van": "Van"
+    },
+    "validationMessages": {
+      "invalidEmail": "Correo electrónico no válido",
+      "futureDate": "Ingrese una fecha posterior al día de hoy"
+    },
+    "submitButton": "Enviar Reserva"
   }
 }

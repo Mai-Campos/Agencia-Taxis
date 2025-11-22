@@ -50,11 +50,15 @@
 }
 
 .input-component {
-  @apply hover:border-primary focus:border-primary focus:ring-primary/20 hover:ring-primary/20 h-10 w-full overflow-hidden rounded-xl border-2 bg-gray-100 px-2 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
+  @apply hover:border-primary text-text-main focus:border-primary focus:ring-primary/20 hover:ring-primary/20 h-10 w-full overflow-hidden rounded-xl border-2 bg-white px-2 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
+}
+
+.input-error {
+  @apply text-text-main h-10 w-full overflow-hidden rounded-xl border-2 border-red-500 bg-white px-2 transition-all duration-500 outline-none hover:bg-white hover:ring-4 hover:ring-red-500/20 focus:border-red-500 focus:bg-white focus:ring-4 focus:ring-red-500/20;
 }
 
 .textarea-component {
-  @apply hover:border-primary focus:border-primary focus:ring-primary/20 hover:ring-primary/20 h-32 w-full resize-none overflow-hidden rounded-xl border-2 bg-gray-100 px-3 py-1 text-base leading-6 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
+  @apply hover:border-primary focus:border-primary text-text-main focus:ring-primary/20 hover:ring-primary/20 h-32 w-full resize-none overflow-hidden rounded-xl border-2 bg-white px-3 py-1 text-base leading-6 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
 }
 
 .cta-btn {
