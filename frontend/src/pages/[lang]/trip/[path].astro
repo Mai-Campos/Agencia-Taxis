@@ -1,10 +1,11 @@
 ---
-import { getCollection, render } from 'astro:content'
+import { getCollection } from 'astro:content'
 import { getTranslations } from '@/i18n'
 import BaseLayout from '@/layouts/BaseLayout.astro'
 import TripInfo from '@/components/sections/TripInfo.astro'
 import type { Language } from '@/i18n/types'
 import '@/styles/global.css'
+import TripForm from '@/components/forms/TripForm'
 
 export async function getStaticPaths() {
   const trips = await getCollection('trips')
@@ -22,7 +23,6 @@ export async function getStaticPaths() {
 const lang = Astro.currentLocale as Language
 const trip = Astro.props
 const { data, body } = trip
-const { Content } = await render(trip)
 const t = await getTranslations('literals', lang)
 ---
 
@@ -36,4 +36,5 @@ const t = await getTranslations('literals', lang)
     price={data.price}
     textBtn={t.button.text}
   />
+  <TripForm {...t.tripForm} packageName={data.packageName} client:only />
 </BaseLayout>

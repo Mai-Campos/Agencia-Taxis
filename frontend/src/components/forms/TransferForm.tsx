@@ -52,15 +52,17 @@ function TransferForm({
     register,
     handleSubmit,
     formState: { errors },
-    watch
+    watch,
+    reset,
   } = useForm<TransferFormData>()
 
   const onSubmit = handleSubmit((data) => {
     console.log(data)
+    reset()
   })
 
   return (
-    <section className="body-font container mx-auto px-5 py-24">
+    <section className="body-font container mx-auto px-5 py-18">
       <div className="mb-12 flex w-full flex-col text-center">
         <h1 className="title-font mb-2 text-2xl font-bold sm:text-3xl">
           {title}
@@ -91,7 +93,7 @@ function TransferForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.email}
               {errors.email && (
-                <span className="ml-2 font-semibold text-red-500">
+                <span className="ml-2 font-semibold text-red-500 absolute">
                   {errors.email.message}
                 </span>
               )}
@@ -234,7 +236,7 @@ function TransferForm({
           </div>
 
           <div className="flex w-full items-center justify-center p-2">
-            <button type="submit">{submitButton}</button>
+            <button type="submit" className='cta-btn'>{submitButton}</button>
           </div>
         </form>
       </div>

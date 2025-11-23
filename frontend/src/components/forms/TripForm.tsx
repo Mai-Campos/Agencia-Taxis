@@ -1,122 +1,244 @@
-import SubmitBtn from '../ui/SubmitBtn.astro'
+import { useForm } from 'react-hook-form'
 
-function TripForm() {
+interface TripFormData {
+  ownerName: string
+  email: string
+  pickupLocation: string
+  packageName: string
+  pickupDate: string
+  pickupTime: string
+  passengers: number
+  vehicleType: string
+  comments?: string
+}
+
+interface TripFormProps {
+  packageName?: string
+  title: string
+  subtitle: string
+  fields: {
+    fullName: string
+    email: string
+    pickupLocation: string
+    route: string
+    pickupDate: string
+    pickupTime: string
+    passengers: string
+    vehicle: string
+    comments: string
+  }
+  vehicleOptions: {
+    taxi: string
+    classicCar: string
+    van: string
+  }
+  routeOptions: {
+    baracoa: string
+    cayoCoco: string
+    cienfuegosPerla: string
+    havanaVieja: string
+    santaClaraChe: string
+    santiagoCuba: string
+    trinidadColonial: string
+    varaderoPlaya: string
+    vinalesMogotes: string
+    },
+  validationMessages: {
+    invalidEmail: string
+    futureDate: string
+  }
+  submitButton: string
+}
+
+function TripForm({
+  packageName,
+  title,
+  subtitle,
+  fields,
+  validationMessages,
+  vehicleOptions,
+  routeOptions,
+  submitButton,
+}: TripFormProps) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+    reset,
+  } = useForm<TripFormData>()
+
+  const onSubmit = handleSubmit((data) => {
+    console.log(data)
+    reset()
+  })
+
   return (
-    <section className="body-font container mx-auto px-5 py-24">
+    <section className="body-font container mx-auto px-5 py-18">
       <div className="mb-12 flex w-full flex-col text-center">
         <h1 className="title-font mb-2 text-2xl font-bold sm:text-3xl">
-          Traslados
+          {title}
         </h1>
         <p className="text-text-secondary mx-auto text-base lg:w-2/3">
-          Traslados entre aeropuertos y casas de alquiler
+          {subtitle}
         </p>
       </div>
 
       <div className="mx-auto md:w-2/3 lg:w-1/2">
-        <form action="" className="-m-2 flex flex-wrap">
+        <form onSubmit={onSubmit} noValidate className="-m-2 flex flex-wrap">
+          {/* Nombre completo */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
-              Name
-              <input type="text" name="ownerName" className="input-component" />
-            </label>
-          </div>
-
-          <div className="w-full p-2 sm:w-1/2">
-            <label className="text-text-secondary text-sm leading-7">
-              Email
-              <input type="email" name="email" className="input-component" />
-            </label>
-          </div>
-
-          <div className="w-full p-2 sm:w-1/2">
-            <label className="text-text-secondary text-sm leading-7">
-              Pick up location
+              {fields.fullName}
               <input
                 type="text"
-                name="pickupLocation"
-                className="input-component"
+                className={errors.ownerName ? 'input-error' : 'input-component'}
+                {...register('ownerName', {
+                  required: true,
+                })}
               />
             </label>
           </div>
 
+          {/* Correo electrónico */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
-              Destination
+              {fields.email}
+              {errors.email && (
+                <span className="ml-2 font-semibold text-red-500 absolute">
+                  {errors.email.message}
+                </span>
+              )}
+              <input
+                type="email"
+                className={errors.email ? 'input-error' : 'input-component'}
+                {...register('email', {
+                  required: true,
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: validationMessages.invalidEmail,
+                  },
+                })}
+              />
+            </label>
+          </div>
+
+          {/* Lugar de recogida */}
+          <div className="w-full p-2 sm:w-1/2">
+            <label className="text-text-secondary text-sm leading-7">
+              {fields.pickupLocation}
               <input
                 type="text"
-                name="destination"
-                className="input-component"
+                className={
+                  errors.pickupLocation ? 'input-error' : 'input-component'
+                }
+                {...register('pickupLocation', {
+                  required: true,
+                })}
               />
             </label>
           </div>
 
+          {/* Recorrido (Nombre del paquete) */}
           <div className="w-1/2 p-2">
             <label className="text-text-secondary text-sm leading-7">
-              Pick up date
-              <input
-                type="date"
-                name="pickupDate"
-                className="input-component"
-              />
-            </label>
-          </div>
-
-          <div className="w-1/2 p-2">
-            <label className="text-text-secondary text-sm leading-7">
-              Pick up time
-              <input
-                type="time"
-                name="pickupTime"
-                className="input-component"
-              />
-            </label>
-          </div>
-
-          <div className="w-1/2 p-2">
-            <label className="text-text-secondary text-sm leading-7">
-              Passengers
-              <input
-                type="number"
-                name="passengers"
-                className="input-component"
-              />
-            </label>
-          </div>
-
-          <div className="w-1/2 p-2 sm:w-1/3">
-            <label className="text-text-secondary text-sm leading-7">
-              Vehicle
-              <select name="passengers" className="input-component">
-                <option value="taxi">Taxi</option>
-                <option value="classNameic-car">Auto Clasico</option>
-                <option value="van">Van</option>
+              {fields.route}
+              <select className="input-component" {...register('packageName')}>
+                <option value="baracoa">{routeOptions.baracoa}</option>
+                <option value="cayoCoco">{routeOptions.cayoCoco}</option>
+                <option value="cienfuegosPerla">{routeOptions.cienfuegosPerla}</option>
+                <option value="havanaVieja">{routeOptions.havanaVieja}</option>
+                <option value="santaClaraChe">{routeOptions.santaClaraChe}</option>
+                <option value="santiagoCuba">{routeOptions.santiagoCuba}</option>
+                <option value="trinidadColonial">{routeOptions.trinidadColonial}</option>
+                <option value="varaderoPlaya">{routeOptions.varaderoPlaya}</option>
+                <option value="vinalesMogotes">{routeOptions.vinalesMogotes}</option>
               </select>
             </label>
           </div>
 
+          {/* Fecha de recogida */}
           <div className="w-1/2 p-2">
             <label className="text-text-secondary text-sm leading-7">
-              Guia turistico
+              {fields.pickupDate}
               <input
-                type="checkbox"
-                name="withGuide"
-                className="input-component"
+                type="date"
+                className={
+                  errors.pickupDate ? 'input-error' : 'input-component'
+                }
+                {...register('pickupDate', {
+                  required: true,
+                  validate: (value) => {
+                    const inputValue = new Date(value)
+                    const currentDate = new Date()
+                    currentDate.setHours(0, 0, 0, 0)
+
+                    return (
+                      inputValue >= currentDate || validationMessages.futureDate
+                    )
+                  },
+                })}
               />
             </label>
           </div>
 
+          {/* Hora de recogida */}
+          <div className="w-1/2 p-2">
+            <label className="text-text-secondary text-sm leading-7">
+              {fields.pickupTime}
+              <input
+                type="time"
+                className={
+                  errors.pickupTime ? 'input-error' : 'input-component'
+                }
+                {...register('pickupTime', {
+                  required: true,
+                })}
+              />
+            </label>
+          </div>
+
+          {/* Cantidad de pasajeros */}
+          <div className="w-1/2 p-2">
+            <label className="text-text-secondary text-sm leading-7">
+              {fields.passengers}
+              <input
+                type="number"
+                className={
+                  errors.passengers ? 'input-error' : 'input-component'
+                }
+                {...register('passengers', {
+                  required: true,
+                })}
+              />
+            </label>
+          </div>
+
+          {/* Tipo de vehículo */}
+          <div className="w-1/2 p-2">
+            <label className="text-text-secondary text-sm leading-7">
+              {fields.vehicle}
+              <select className="input-component" {...register('vehicleType')}>
+                <option value="taxi">{vehicleOptions.taxi}</option>
+                <option value="classic-car">{vehicleOptions.classicCar}</option>
+                <option value="van">{vehicleOptions.van}</option>
+              </select>
+            </label>
+          </div>
+
+          {/* Detalles opcionales */}
           <div className="w-full p-2">
             <label className="text-text-secondary text-sm leading-7">
-              Comments
+              {fields.comments}
               <textarea
-                name="comments"
                 className="textarea-component"
+                {...register('comments')}
               ></textarea>
             </label>
           </div>
 
           <div className="flex w-full items-center justify-center p-2">
-            <SubmitBtn />
+            <button type="submit" className='cta-btn'>{submitButton}</button>
           </div>
         </form>
       </div>

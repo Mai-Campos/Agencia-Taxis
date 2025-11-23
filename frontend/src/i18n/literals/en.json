@@ -57,5 +57,41 @@
       "futureDate": "Please enter a date after today"
     },
     "submitButton": "Submit Reservation"
+  },
+  "tripForm": {
+    "title": "Trips",
+    "subtitle": "Trips",
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "pickupLocation": "Pick up location",
+      "route": "Route",
+      "pickupDate": "Pick up date",
+      "pickupTime": "Pick up time",
+      "passengers": "Passengers",
+      "vehicle": "Vehicle",
+      "comments": "Comments"
+    },
+    "vehicleOptions": {
+      "taxi": "Taxi",
+      "classicCar": "Classic Car",
+      "van": "Van"
+    },
+    "routeOptions": {
+      "baracoa": "Authentic Nature of Baracoa",
+      "cayoCoco": "Marine Adventure in Jardines del Rey",
+      "cienfuegosPerla": "Cienfuegos, the Pearl of the South",
+      "havanaVieja": "Old Havana Tour",
+      "santaClaraChe": "Che Guevara Historical Route",
+      "santiagoCuba": "Cradle of Son and Revolution",
+      "trinidadColonial": "Trinidad World Heritage Tour",
+      "varaderoPlaya": "Varadero Blue Paradise",
+      "vinalesMogotes": "Adventure Among Mogotes and Caves"
+    },
+    "validationMessages": {
+      "invalidEmail": "Invalid email address",
+      "futureDate": "Please enter a date after today"
+    },
+    "submitButton": "Submit Reservation"
   }
 }
