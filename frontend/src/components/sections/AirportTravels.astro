@@ -24,7 +24,9 @@ const { title, description, link } = Astro.props
         {description}
       </p>
       <div class="mt-6 flex md:mt-4">
-        <a class="go-to color-transition" href={getRelativeLocaleUrl(currentLang, 'book-transfer')}
+        <a
+          class="go-to color-transition"
+          href={getRelativeLocaleUrl(currentLang, 'book-transfer')}
           >{link}<Icon name="tabler:arrow-narrow-right" size={22} /></a
         >
       </div>

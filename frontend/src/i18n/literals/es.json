@@ -64,14 +64,15 @@
       "fullName": "Nombre Completo",
       "email": "Correo Electrónico",
       "pickupLocation": "Lugar de Recogida",
-      "route": "Recorrido",
+      "trip": "Recorrido",
       "pickupDate": "Fecha de Recogida",
       "pickupTime": "Hora de Recogida",
       "passengers": "Pasajeros",
       "vehicle": "Vehículo",
+      "guide": "Guía Turístico",
       "comments": "Comentarios"
     },
-    "routeOptions": {
+    "tripOptions": {
       "baracoa": "Baracoa Natural y Auténtica",
       "cayoCoco": "Aventura Marina en Jardines del Rey",
       "cienfuegosPerla": "Cienfuegos, la Perla del Sur",
@@ -86,6 +87,14 @@
       "taxi": "Taxi",
       "classicCar": "Auto Clásico",
       "van": "Van"
+    },
+    "languajes": {
+      "noGuide": "Sin Guía",
+      "spanish": "Español",
+      "english": "Inglés",
+      "french": "Francés",
+      "german": "Alemán",
+      "italian": "Italiano"
     },
     "validationMessages": {
       "invalidEmail": "Correo electrónico no válido",

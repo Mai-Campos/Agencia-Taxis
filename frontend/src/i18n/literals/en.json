@@ -65,11 +65,12 @@
       "fullName": "Full Name",
       "email": "Email",
       "pickupLocation": "Pick up location",
-      "route": "Route",
+      "trip": "Route",
       "pickupDate": "Pick up date",
       "pickupTime": "Pick up time",
       "passengers": "Passengers",
       "vehicle": "Vehicle",
+      "guide": "Tourist Guide",
       "comments": "Comments"
     },
     "vehicleOptions": {
@@ -77,7 +78,7 @@
       "classicCar": "Classic Car",
       "van": "Van"
     },
-    "routeOptions": {
+    "tripOptions": {
       "baracoa": "Authentic Nature of Baracoa",
       "cayoCoco": "Marine Adventure in Jardines del Rey",
       "cienfuegosPerla": "Cienfuegos, the Pearl of the South",
@@ -87,6 +88,14 @@
       "trinidadColonial": "Trinidad World Heritage Tour",
       "varaderoPlaya": "Varadero Blue Paradise",
       "vinalesMogotes": "Adventure Among Mogotes and Caves"
+    },
+    "languajes": {
+      "noGuide": "No Guide",
+      "spanish": "Spanish",
+      "english": "English",
+      "french": "French",
+      "german": "German",
+      "italian": "Italian"
     },
     "validationMessages": {
       "invalidEmail": "Invalid email address",

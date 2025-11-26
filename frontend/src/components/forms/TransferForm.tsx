@@ -93,7 +93,7 @@ function TransferForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.email}
               {errors.email && (
-                <span className="ml-2 font-semibold text-red-500 absolute">
+                <span className="absolute ml-2 font-semibold text-red-500">
                   {errors.email.message}
                 </span>
               )}
@@ -189,7 +189,6 @@ function TransferForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.flightNumber}
               <input
-                type="number"
                 className="input-component"
                 {...register('flightNumber')}
               />
@@ -217,9 +216,11 @@ function TransferForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.vehicle}
               <select className="input-component" {...register('vehicleType')}>
-                <option value="taxi">{vehicleOptions.taxi}</option>
-                <option value="classic-car">{vehicleOptions.classicCar}</option>
-                <option value="van">{vehicleOptions.van}</option>
+                {Object.entries(vehicleOptions).map((v) => (
+                  <option key={v[0]} value={v[0]}>
+                    {v[1]}
+                  </option>
+                ))}
               </select>
             </label>
           </div>
@@ -236,7 +237,9 @@ function TransferForm({
           </div>
 
           <div className="flex w-full items-center justify-center p-2">
-            <button type="submit" className='cta-btn'>{submitButton}</button>
+            <button type="submit" className="cta-btn">
+              {submitButton}
+            </button>
           </div>
         </form>
       </div>

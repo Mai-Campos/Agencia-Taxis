@@ -9,6 +9,7 @@ interface TripFormData {
   pickupTime: string
   passengers: number
   vehicleType: string
+  guideLanguaje: string
   comments?: string
 }
 
@@ -20,11 +21,12 @@ interface TripFormProps {
     fullName: string
     email: string
     pickupLocation: string
-    route: string
+    trip: string
     pickupDate: string
     pickupTime: string
     passengers: string
     vehicle: string
+    guide: string
     comments: string
   }
   vehicleOptions: {
@@ -32,7 +34,7 @@ interface TripFormProps {
     classicCar: string
     van: string
   }
-  routeOptions: {
+  tripOptions: {
     baracoa: string
     cayoCoco: string
     cienfuegosPerla: string
@@ -42,7 +44,14 @@ interface TripFormProps {
     trinidadColonial: string
     varaderoPlaya: string
     vinalesMogotes: string
-    },
+  }
+  languajes: {
+    spanish: string
+    english: string
+    french: string
+    german: string
+    italian: string
+  }
   validationMessages: {
     invalidEmail: string
     futureDate: string
@@ -57,14 +66,14 @@ function TripForm({
   fields,
   validationMessages,
   vehicleOptions,
-  routeOptions,
+  tripOptions,
+  languajes,
   submitButton,
 }: TripFormProps) {
   const {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
     reset,
   } = useForm<TripFormData>()
 
@@ -105,7 +114,7 @@ function TripForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.email}
               {errors.email && (
-                <span className="ml-2 font-semibold text-red-500 absolute">
+                <span className="absolute ml-2 font-semibold text-red-500">
                   {errors.email.message}
                 </span>
               )}
@@ -142,17 +151,13 @@ function TripForm({
           {/* Recorrido (Nombre del paquete) */}
           <div className="w-1/2 p-2">
             <label className="text-text-secondary text-sm leading-7">
-              {fields.route}
+              {fields.trip}
               <select className="input-component" {...register('packageName')}>
-                <option value="baracoa">{routeOptions.baracoa}</option>
-                <option value="cayoCoco">{routeOptions.cayoCoco}</option>
-                <option value="cienfuegosPerla">{routeOptions.cienfuegosPerla}</option>
-                <option value="havanaVieja">{routeOptions.havanaVieja}</option>
-                <option value="santaClaraChe">{routeOptions.santaClaraChe}</option>
-                <option value="santiagoCuba">{routeOptions.santiagoCuba}</option>
-                <option value="trinidadColonial">{routeOptions.trinidadColonial}</option>
-                <option value="varaderoPlaya">{routeOptions.varaderoPlaya}</option>
-                <option value="vinalesMogotes">{routeOptions.vinalesMogotes}</option>
+                {Object.entries(tripOptions).map((v) => (
+                  <option key={v[0]} value={v[0]}>
+                    {v[1]}
+                  </option>
+                ))}
               </select>
             </label>
           </div>
@@ -198,8 +203,25 @@ function TripForm({
             </label>
           </div>
 
+          {/* Guía Turístico */}
+          <div className="w-full p-2 sm:w-1/3">
+            <label className="text-text-secondary text-sm leading-7">
+              {fields.guide}
+              <select
+                className="input-component"
+                {...register('guideLanguaje')}
+              >
+                {Object.entries(languajes).map((g) => (
+                  <option key={g[0]} value={g[0]}>
+                    {g[1]}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+
           {/* Cantidad de pasajeros */}
-          <div className="w-1/2 p-2">
+          <div className="w-1/2 p-2 sm:w-1/3">
             <label className="text-text-secondary text-sm leading-7">
               {fields.passengers}
               <input
@@ -215,13 +237,15 @@ function TripForm({
           </div>
 
           {/* Tipo de vehículo */}
-          <div className="w-1/2 p-2">
+          <div className="w-1/2 p-2 sm:w-1/3">
             <label className="text-text-secondary text-sm leading-7">
               {fields.vehicle}
               <select className="input-component" {...register('vehicleType')}>
-                <option value="taxi">{vehicleOptions.taxi}</option>
-                <option value="classic-car">{vehicleOptions.classicCar}</option>
-                <option value="van">{vehicleOptions.van}</option>
+                {Object.entries(vehicleOptions).map((v) => (
+                  <option key={v[0]} value={v[0]}>
+                    {v[1]}
+                  </option>
+                ))}
               </select>
             </label>
           </div>
@@ -238,7 +262,9 @@ function TripForm({
           </div>
 
           <div className="flex w-full items-center justify-center p-2">
-            <button type="submit" className='cta-btn'>{submitButton}</button>
+            <button type="submit" className="cta-btn">
+              {submitButton}
+            </button>
           </div>
         </form>
       </div>
