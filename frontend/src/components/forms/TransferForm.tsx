@@ -1,44 +1,8 @@
 import { useForm } from 'react-hook-form'
-
-interface TransferFormData {
-  ownerName: string
-  email: string
-  pickupLocation: string
-  destination: string
-  pickupDate: string
-  pickupTime: string
-  flightNumber?: string
-  passengers: number
-  vehicleType: string
-  comments?: string
-}
-
-interface TransferFormProps {
-  title: string
-  subtitle: string
-  fields: {
-    fullName: string
-    email: string
-    pickupLocation: string
-    destination: string
-    pickupDate: string
-    pickupTime: string
-    flightNumber: string
-    passengers: string
-    vehicle: string
-    comments: string
-  }
-  vehicleOptions: {
-    taxi: string
-    classicCar: string
-    van: string
-  }
-  validationMessages: {
-    invalidEmail: string
-    futureDate: string
-  }
-  submitButton: string
-}
+import type {
+  TransferFormData,
+  TransferFormProps,
+} from '@/components/forms/types'
 
 function TransferForm({
   title,
@@ -52,7 +16,6 @@ function TransferForm({
     register,
     handleSubmit,
     formState: { errors },
-    watch,
     reset,
   } = useForm<TransferFormData>()
 

@@ -36,5 +36,5 @@ const t = await getTranslations('literals', lang)
     price={data.price}
     textBtn={t.button.text}
   />
-  <TripForm {...t.tripForm} packageName={data.packageName} client:only />
+  <TripForm {...t.tripForm} packageName={data.path} client:only />
 </BaseLayout>

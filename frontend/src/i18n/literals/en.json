@@ -80,14 +80,14 @@
     },
     "tripOptions": {
       "baracoa": "Authentic Nature of Baracoa",
-      "cayoCoco": "Marine Adventure in Jardines del Rey",
-      "cienfuegosPerla": "Cienfuegos, the Pearl of the South",
-      "havanaVieja": "Old Havana Tour",
-      "santaClaraChe": "Che Guevara Historical Route",
-      "santiagoCuba": "Cradle of Son and Revolution",
-      "trinidadColonial": "Trinidad World Heritage Tour",
-      "varaderoPlaya": "Varadero Blue Paradise",
-      "vinalesMogotes": "Adventure Among Mogotes and Caves"
+      "cayo-coco": "Marine Adventure in Jardines del Rey",
+      "cienfuegos-perla": "Cienfuegos, the Pearl of the South",
+      "havana-vieja": "Old Havana Tour",
+      "santa-clara-che": "Che Guevara Historical Route",
+      "santiago-cuba": "Cradle of Son and Revolution",
+      "trinidad-colonial": "Trinidad World Heritage Tour",
+      "varadero-playa": "Varadero Blue Paradise",
+      "vinales-mogotes": "Adventure Among Mogotes and Caves"
     },
     "languajes": {
       "noGuide": "No Guide",

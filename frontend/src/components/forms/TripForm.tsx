@@ -1,63 +1,6 @@
 import { useForm } from 'react-hook-form'
-
-interface TripFormData {
-  ownerName: string
-  email: string
-  pickupLocation: string
-  packageName: string
-  pickupDate: string
-  pickupTime: string
-  passengers: number
-  vehicleType: string
-  guideLanguaje: string
-  comments?: string
-}
-
-interface TripFormProps {
-  packageName?: string
-  title: string
-  subtitle: string
-  fields: {
-    fullName: string
-    email: string
-    pickupLocation: string
-    trip: string
-    pickupDate: string
-    pickupTime: string
-    passengers: string
-    vehicle: string
-    guide: string
-    comments: string
-  }
-  vehicleOptions: {
-    taxi: string
-    classicCar: string
-    van: string
-  }
-  tripOptions: {
-    baracoa: string
-    cayoCoco: string
-    cienfuegosPerla: string
-    havanaVieja: string
-    santaClaraChe: string
-    santiagoCuba: string
-    trinidadColonial: string
-    varaderoPlaya: string
-    vinalesMogotes: string
-  }
-  languajes: {
-    spanish: string
-    english: string
-    french: string
-    german: string
-    italian: string
-  }
-  validationMessages: {
-    invalidEmail: string
-    futureDate: string
-  }
-  submitButton: string
-}
+import type { TripFormData, TripFormProps } from '@/components/forms/types'
+import { useEffect } from 'react'
 
 function TripForm({
   packageName,
@@ -75,7 +18,14 @@ function TripForm({
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<TripFormData>()
+  } = useForm<TripFormData>({
+    defaultValues: {
+      packageName: packageName ?? ''
+    }
+  })
+
+  console.log("prop packageName:", packageName)
+console.log("tripOptions keys:", Object.keys(tripOptions))
 
   const onSubmit = handleSubmit((data) => {
     console.log(data)
@@ -153,6 +103,7 @@ function TripForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.trip}
               <select className="input-component" {...register('packageName')}>
+                <option value="">Selecciona un viaje</option>
                 {Object.entries(tripOptions).map((v) => (
                   <option key={v[0]} value={v[0]}>
                     {v[1]}

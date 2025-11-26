@@ -74,14 +74,14 @@
     },
     "tripOptions": {
       "baracoa": "Baracoa Natural y Auténtica",
-      "cayoCoco": "Aventura Marina en Jardines del Rey",
-      "cienfuegosPerla": "Cienfuegos, la Perla del Sur",
-      "havanaVieja": "Recorrido por La Habana Vieja",
-      "santaClaraChe": "Ruta Histórica del Che",
-      "santiagoCuba": "Cuna del Son y la Revolución",
-      "trinidadColonial": "Trinidad Patrimonio de la Humanidad",
-      "varaderoPlaya": "Varadero Paraíso Azul",
-      "vinalesMogotes": "Aventura entre Mogotes y Cuevas"
+      "cayo-coco": "Aventura Marina en Jardines del Rey",
+      "cienfuegos-perla": "Cienfuegos, la Perla del Sur",
+      "havana-vieja": "Recorrido por La Habana Vieja",
+      "santa-clara-che": "Ruta Histórica del Che",
+      "santiago-cuba": "Cuna del Son y la Revolución",
+      "trinidad-colonial": "Trinidad Patrimonio de la Humanidad",
+      "varadero-playa": "Varadero Paraíso Azul",
+      "vinales-mogotes": "Aventura entre Mogotes y Cuevas"
     },
     "vehicleOptions": {
       "taxi": "Taxi",
