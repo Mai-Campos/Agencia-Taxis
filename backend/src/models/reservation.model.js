@@ -2,32 +2,37 @@ import mongoose from "mongoose";
 
 const reservationSchema = mongoose.Schema(
   {
-    // Nombre del cliente
-    ownerName: {
+    // Tipo del servicio
+    type: {
       type: String,
+      enum: ["Traslado", "Recorrido"],
       required: true,
-      trim: true, // Elimina espacios en blanco al inicio y al final
     },
 
-    // Email del cliente
-    ownerEmail: {
+    // Nombre del paquete si es recorrido
+    packageName: {
       type: String,
-      required: true,
-      lowercase: true, // Convierte a minúscula antes de guardar
-      unique: true,
-      match: [/.+\@.+\..+/, "El email no es válido"],
-    },
-
-    // Destino del viaje
-    destination: {
-      type: String,
-      required: true,
+      required: function () {
+        return this.type === "Recorrido";
+      },
+      default: null,
+      trim: true,
     },
 
     // Lugar de recojida
     pickupLocation: {
       type: String,
       required: true,
+      trim: true,
+    },
+
+    // Destino del viaje solo para traslados
+    destination: {
+      type: String,
+      required: function () {
+        return this.type === "Traslado";
+      },
+      default: null,
       trim: true,
     },
 
@@ -43,17 +48,11 @@ const reservationSchema = mongoose.Schema(
       required: true,
     },
 
-    // Monto total de la reserva
-    totalPrice: {
-      type: Number,
-      required: true,
-      min: 0,
-    },
-
     // Tipo de vehículo
     vehicle: {
       type: String,
       required: true,
+      trim: true,
     },
 
     // Cantidad de pasajeros
@@ -63,11 +62,27 @@ const reservationSchema = mongoose.Schema(
       min: 1,
     },
 
-    // Estado de la reserva
-    status: {
+    // Número de vuelo
+    flightNumber: {
       type: String,
-      enum: ["pendiente", "cancelada", "completada"],
-      default: "pendiente",
+      deafult: null,
+      trim: true,
+    },
+
+    // Nombre del cliente
+    ownerName: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+
+    // Email del cliente
+    ownerEmail: {
+      type: String,
+      required: true,
+      lowercase: true, // Convierte a minúscula antes de guardar
+      unique: true,
+      match: [/.+\@.+\..+/, "El email no es válido"],
     },
 
     // Observaciones o descripcion de la reserva
@@ -77,16 +92,31 @@ const reservationSchema = mongoose.Schema(
     },
 
     // Guía turístico (en principio siempre false)
-    guide: {
+    withGuide: {
       type: Boolean,
       default: false,
     },
 
-    // Número de vuelo
-    flightNumber: {
+    guideLanguaje: {
       type: String,
-      required: false,
-      trim: true,
+      required: function () {
+        return this.withGuide === true;
+      },
+      default: null,
+    },
+
+    // Monto total de la reserva
+    totalPrice: {
+      type: Number,
+      required: true,
+      min: 0,
+    },
+
+    // Estado de la reserva
+    status: {
+      type: String,
+      enum: ["pendiente", "cancelada", "completada"],
+      default: "pendiente",
     },
   },
   {
