@@ -6,9 +6,8 @@ import { LANG_PATHS } from '@/i18n/ui'
 import '@/styles/global.css'
 
 export async function getStaticPaths() {
-  return LANG_PATHS
+  return LANG_PATHS.map(({ params }) => ({ params: { lang: params.lang } }))
 }
-export const defafultRedirect = '/es'
 const lang = Astro.params.lang as Language
 
 const t = await getTranslations('literals', lang)

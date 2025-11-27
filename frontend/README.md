@@ -2,18 +2,16 @@
 
 ## 📖 Descripción general
 
-Crystal Sands Ride es una plataforma que permite a los visitantes visualizar y reservar viajes a través de Cuba. Esta documentación cubre los aspectos técnicos del frontend desarrollado con Astro.
+Crystal Sands Ride es sitio de contenido estático, desarrollada con Astro y React, con soporte para múltiples idiomas. La web permite a los visitantes visualizar y reservar viajes a través de Cuba. Esta documentación cubre los aspectos técnicos del frontend.
 
 ## 🛠 Tecnologías y Stack
 
-- Frameworks: React + Astro
-- Lenguaje: TypeScript
-- Estilos: Tailwind CSS + alpinejs
-- Gestión de formularios: React Hook Form
-- Estado y peticiones: Fetch API
-- Package Manager: pnpm
-
-**Internacionalización:** Español (idioma principal), Inglés
+- **Frameworks:** React + Astro
+- **Lenguaje:** TypeScript
+- **Estilos y animaciones:** Tailwind CSS + alpinejs
+- **Gestión de formularios:** React Hook Form
+- **Estado y peticiones:** Fetch API
+- **Package Manager:** pnpm
 
 ## 📂 Estructura del proyecto
 
@@ -54,7 +52,7 @@ pnpm dev
 
 ## ⚡ Funcionalidades principales
 
-- Listado de paquetes turísticos y recorridos por Cuba.
+- Listado de paquetes de recorridos por Cuba.
 - Formularios de reserva y traslado con validación.
 - Selección de idioma (español, inglés).
 - Visualización de destinos con foto, descripción y precio.
@@ -62,7 +60,7 @@ pnpm dev
 
 ## 🌐 Internacionalización
 
-Se soportan varios idiomas mediante archivos de traducción (i18n).
+Se soportan varios idiomas mediante archivos de traducción.
 
 ### Añadir más idiomas:
 
@@ -74,7 +72,7 @@ Se soportan varios idiomas mediante archivos de traducción (i18n).
 
 ## Colecciones de datos
 
-Las colecciones de datos se encuentran en `src/content/` y contienen información estática sobre paquetes turísticos, servicios. Cada colección está estructurada por idioma para facilitar la internacionalización.
+Las colecciones de datos se encuentran en `src/content/` y contienen información estática sobre paquetes de recorridos turísticos y servicios. Cada colección está estructurada por idioma para facilitar la internacionalización.
 
 ### Añadir nuevos archivos de colección:
 

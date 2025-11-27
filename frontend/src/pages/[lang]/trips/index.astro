@@ -10,9 +10,8 @@ import type { Language } from '@/i18n/types'
 import { LANG_PATHS } from '@/i18n/ui'
 
 export async function getStaticPaths() {
-  return LANG_PATHS
+  return LANG_PATHS.map(({ params }) => ({ params: { lang: params.lang } }))
 }
-export const defafultRedirect = '/es'
 
 const lang = Astro.params.lang as Language
 

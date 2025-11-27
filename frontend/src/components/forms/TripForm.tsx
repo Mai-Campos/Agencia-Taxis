@@ -230,6 +230,7 @@ function TripForm({
               {fields.comments}
               <textarea
                 className="textarea-component textarea-scroll"
+                spellCheck="false"
                 {...register('comments')}
               ></textarea>
             </label>
