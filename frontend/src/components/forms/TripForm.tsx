@@ -1,6 +1,6 @@
-import { useForm } from 'react-hook-form'
-import type { TripFormData, TripFormProps } from '@/components/forms/types'
 import { submitTrip } from '@/api/trips'
+import type { TripFormData, TripFormProps } from '@/components/forms/types'
+import { useForm } from 'react-hook-form'
 
 function TripForm({
   packageName,
@@ -29,7 +29,7 @@ function TripForm({
   const onSubmit = handleSubmit(async (data) => {
     const withGuide = data.guideLanguaje !== 'noGuide'
 
-    const {guideLanguaje, ...cleaned} = data
+    const { guideLanguaje, ...cleaned } = data
     const payload = {
       type: 'Recorrido',
       withGuide,

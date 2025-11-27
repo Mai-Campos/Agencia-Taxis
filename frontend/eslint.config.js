@@ -1,8 +1,8 @@
 // eslint.config.js
 import js from '@eslint/js'
-import tseslint from 'typescript-eslint'
 import astro from 'eslint-plugin-astro'
 import prettier from 'eslint-plugin-prettier'
+import tseslint from 'typescript-eslint'
 
 export default [
   // Reglas base JS

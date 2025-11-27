@@ -1,6 +1,6 @@
 # Crystal Sands Ride | Documentación del Frontend
 
-## Descripción
+## 📖 Descripción general
 
 Crystal Sands Ride es una plataforma que permite a los visitantes visualizar y reservar viajes a través de Cuba. Esta documentación cubre los aspectos técnicos del frontend desarrollado con Astro.
 
@@ -13,7 +13,7 @@ Crystal Sands Ride es una plataforma que permite a los visitantes visualizar y r
 - Estado y peticiones: Fetch API
 - Package Manager: pnpm
 
-**Internacionalización:** i18n (idiomas: español, inglés)
+**Internacionalización:** Español (idioma principal), Inglés
 
 ## 📂 Estructura del proyecto
 
@@ -27,6 +27,7 @@ src/
  ├─ pages/           # Páginas principales
  ├─ styles/          # Estilos globales
 ```
+
 ## 🚀 Instalación y ejecución
 
 1. Clonar el repositorio:
@@ -61,9 +62,21 @@ pnpm dev
 
 ## 🌐 Internacionalización
 
-Se soportan varios idiomas mediante archivos de traducción (i18n). 
+Se soportan varios idiomas mediante archivos de traducción (i18n).
 
-### Para añadir más idiomas:
+### Añadir más idiomas:
 
-1. Crear un nuevo archivo JSON en la carpeta `src/i18n/literals` con las traducciones.
-2. Añadir el nuevo idioma a la lista de lenguajes en `src/i18n/ui.ts`.
+1. Añadir nuevo idioma a `astro.config.mjs`.
+2. Crear un nuevo archivo JSON en la carpeta `src/i18n/literals` con las traducciones.
+3. Añadir nuevo idioma a las listas de lenguajes en `src/i18n/ui.ts`.
+4. Añadir nuevas colecciones en `src/content/` con el nuevo idioma.
+5. Añadir nuevo idioma con icono a `src/components/ui/LanguagePicker.astro`.
+
+## Colecciones de datos
+
+Las colecciones de datos se encuentran en `src/content/` y contienen información estática sobre paquetes turísticos, servicios. Cada colección está estructurada por idioma para facilitar la internacionalización.
+
+### Añadir nuevos archivos de colección:
+
+1. Crear un nuevo archivo de colección por cada idioma en `src/content/:collection/:lang/`
+2. Seguir la estructura y sintáxis existente en las colecciones actuales.

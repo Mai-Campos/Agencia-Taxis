@@ -1,9 +1,9 @@
-import { useForm } from 'react-hook-form'
+import { submitTransfer } from '@/api/transfers'
 import type {
   TransferFormData,
   TransferFormProps,
 } from '@/components/forms/types'
-import { submitTransfer } from '@/api/transfers'
+import { useForm } from 'react-hook-form'
 
 function TransferForm({
   title,

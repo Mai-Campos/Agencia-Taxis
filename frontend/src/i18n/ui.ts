@@ -5,5 +5,5 @@ export const languageList = {
 
 export const LANG_PATHS = [
   { params: { lang: 'es' } },
-  { params: { lang: 'en' } }
-];
+  { params: { lang: 'en' } },
+]
