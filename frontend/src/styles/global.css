@@ -29,6 +29,14 @@
   --shadow-card: 0 2px 8px rgba(28, 43, 54, 0.06);
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px #f9f8f5 inset;
+}
+
 .body-font {
   font-family: 'Poppins', sans-serif;
 }
