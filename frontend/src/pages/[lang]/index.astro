@@ -9,11 +9,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import ServicesInfo from '@/components/sections/ServicesInfo.astro'
 import { getCollection } from 'astro:content'
 import { getTranslations } from '@/i18n/index'
+import { LANG_PATHS } from '@/i18n/ui'
 import '@/styles/global.css'
 import type { Language } from '@/i18n/types'
 
 export async function getStaticPaths() {
-  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }]
+  return LANG_PATHS
 }
 export const defafultRedirect = '/es'
 

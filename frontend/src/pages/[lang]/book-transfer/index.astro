@@ -4,9 +4,10 @@ import { getTranslations } from '@/i18n/index'
 import type { Language } from '@/i18n/types'
 import TransferForm from '@/components/forms/TransferForm'
 import '@/styles/global.css'
+import { LANG_PATHS } from '@/i18n/ui'
 
 export async function getStaticPaths() {
-  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }]
+  return LANG_PATHS
 }
 export const defafultRedirect = '/es'
 const lang = Astro.params.lang as Language

@@ -3,10 +3,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import { getTranslations } from '@/i18n/index'
 import type { Language } from '@/i18n/types'
 import TripForm from '@/components/forms/TripForm'
+import { LANG_PATHS } from '@/i18n/ui'
 import '@/styles/global.css'
 
 export async function getStaticPaths() {
-  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }]
+  return LANG_PATHS
 }
 export const defafultRedirect = '/es'
 const lang = Astro.params.lang as Language
