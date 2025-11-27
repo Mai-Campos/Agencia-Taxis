@@ -70,20 +70,20 @@ function TransferForm({
           {/* Correo electrónico */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
-              {fields.email}
-              {errors.email && (
+              {fields.ownerEmail}
+              {errors.ownerEmail && (
                 <span className="absolute ml-2 font-semibold text-red-500">
-                  {errors.email.message}
+                  {errors.ownerEmail.message}
                 </span>
               )}
               <input
-                type="email"
-                className={errors.email ? 'input-error' : 'input-component'}
-                {...register('email', {
+                type="ownerEmail"
+                className={errors.ownerEmail ? 'input-error' : 'input-component'}
+                {...register('ownerEmail', {
                   required: true,
                   pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: validationMessages.invalidEmail,
+                    message: validationMessages.invalidownerEmail,
                   },
                 })}
               />
@@ -196,7 +196,7 @@ function TransferForm({
           <div className="w-1/2 p-2 sm:w-1/3">
             <label className="text-text-secondary text-sm leading-7">
               {fields.vehicle}
-              <select className="input-component" {...register('vehicleType')}>
+              <select className="input-component" {...register('vehicle')}>
                 {Object.entries(vehicleOptions).map((v) => (
                   <option key={v[0]} value={v[0]}>
                     {v[1]}

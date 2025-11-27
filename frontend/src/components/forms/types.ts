@@ -1,14 +1,14 @@
 // data que envia el formulario de Traslados
 export type TransferFormData = {
   ownerName: string
-  email: string
+  ownerEmail: string
   pickupLocation: string
   pickupDate: string
   pickupTime: string
   destination: string
   flightNumber: string | null
   passengers: number
-  vehicleType: string
+  vehicle: string
   comments?: string
 }
 
@@ -27,7 +27,7 @@ export type TransferFormProps = {
   subtitle: string
   fields: {
     fullName: string
-    email: string
+    ownerEmail: string
     pickupLocation: string
     destination: string
     pickupDate: string
@@ -43,7 +43,7 @@ export type TransferFormProps = {
     van: string
   }
   validationMessages: {
-    invalidEmail: string
+    invalidownerEmail: string
     futureDate: string
   }
   submitButton: string
