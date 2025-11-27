@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form'
 import type { TripFormData, TripFormProps } from '@/components/forms/types'
-import { useEffect } from 'react'
+import { submitTrip } from '@/api/trips'
 
 function TripForm({
   packageName,
@@ -20,16 +20,23 @@ function TripForm({
     reset,
   } = useForm<TripFormData>({
     defaultValues: {
-      packageName: packageName ?? ''
-    }
+      passengers: 1,
+      packageName: packageName ?? '',
+    },
   })
 
-  console.log("prop packageName:", packageName)
-console.log("tripOptions keys:", Object.keys(tripOptions))
-
-  const onSubmit = handleSubmit((data) => {
-    console.log(data)
-    reset()
+  const onSubmit = handleSubmit(async (data) => {
+    const payload = {
+      type: 'Recorrido',
+      ...data,
+    }
+    try {
+      const resData = await submitTrip(payload)
+      console.log('Response:', resData)
+      reset()
+    } catch (err) {
+      console.error('Error:', err)
+    }
   })
 
   return (
@@ -99,7 +106,7 @@ console.log("tripOptions keys:", Object.keys(tripOptions))
           </div>
 
           {/* Recorrido (Nombre del paquete) */}
-          <div className="w-1/2 p-2">
+          <div className="w-2/2 p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.trip}
               <select className="input-component" {...register('packageName')}>
@@ -124,6 +131,7 @@ console.log("tripOptions keys:", Object.keys(tripOptions))
                 }
                 {...register('pickupDate', {
                   required: true,
+                  valueAsDate: true,
                   validate: (value) => {
                     const inputValue = new Date(value)
                     const currentDate = new Date()
@@ -182,6 +190,7 @@ console.log("tripOptions keys:", Object.keys(tripOptions))
                 }
                 {...register('passengers', {
                   required: true,
+                  valueAsNumber: true,
                 })}
               />
             </label>

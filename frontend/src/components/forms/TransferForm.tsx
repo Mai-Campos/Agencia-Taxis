@@ -3,6 +3,7 @@ import type {
   TransferFormData,
   TransferFormProps,
 } from '@/components/forms/types'
+import { submitTransfer } from '@/api/transfers'
 
 function TransferForm({
   title,
@@ -17,11 +18,24 @@ function TransferForm({
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm<TransferFormData>()
+  } = useForm<TransferFormData>({
+    defaultValues: {
+      passengers: 1,
+    },
+  })
 
-  const onSubmit = handleSubmit((data) => {
-    console.log(data)
-    reset()
+  const onSubmit = handleSubmit(async (data) => {
+    const payload = {
+      type: 'Traslado',
+      ...data,
+    }
+    try {
+      const resData = await submitTransfer(payload)
+      console.log('Response:', resData)
+      reset()
+    } catch (err) {
+      console.error('Error:', err)
+    }
   })
 
   return (
@@ -117,6 +131,7 @@ function TransferForm({
                 }
                 {...register('pickupDate', {
                   required: true,
+                  valueAsDate: true,
                   validate: (value) => {
                     const inputValue = new Date(value)
                     const currentDate = new Date()
@@ -169,6 +184,7 @@ function TransferForm({
                 }
                 {...register('passengers', {
                   required: true,
+                  valueAsNumber: true,
                 })}
               />
             </label>
