@@ -5,7 +5,11 @@ export const submitTransfer = async (payload: Object) => {
     body: JSON.stringify(payload),
   })
 
-  if (!res.ok) throw new Error('Server Error')
+  const data = await res.json()
+  if (!res.ok) {
+    const errorMsg = data?.message || 'Unknown server error'
+    throw new Error(errorMsg)
+  }
 
-  return res.json()
+  return data
 }

@@ -63,7 +63,7 @@
     "subtitle": "Trips",
     "fields": {
       "fullName": "Full Name",
-      "email": "Email",
+      "ownerEmail": "Email",
       "pickupLocation": "Pick up location",
       "trip": "Route",
       "pickupDate": "Pick up date",

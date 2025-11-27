@@ -62,7 +62,7 @@
     "subtitle": "Viajes",
     "fields": {
       "fullName": "Nombre Completo",
-      "email": "Correo Electrónico",
+      "ownerEmail": "Correo Electrónico",
       "pickupLocation": "Lugar de Recogida",
       "trip": "Recorrido",
       "pickupDate": "Fecha de Recogida",

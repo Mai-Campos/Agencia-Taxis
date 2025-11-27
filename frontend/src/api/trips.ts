@@ -1,3 +1,5 @@
+import { unknown } from "astro:schema"
+
 export const submitTrip = async (payload: Object) => {
   const res = await fetch('https://enterprising-florida-chunkily.ngrok-free.dev/api/reservations', {
     method: 'POST',
@@ -5,7 +7,11 @@ export const submitTrip = async (payload: Object) => {
     body: JSON.stringify(payload),
   })
 
-  if (!res.ok) throw new Error('Server error')
+  const data = await res.json()
+  if (!res.ok) {
+    const errorMsg = data?.message || 'Unknown server error'
+    throw new Error(errorMsg)
+  }
 
-  return res.json()
+  return data
 }
