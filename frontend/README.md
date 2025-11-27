@@ -1,43 +1,69 @@
-# Astro Starter Kit: Minimal
+# Crystal Sands Ride | Documentación del Frontend
 
-```sh
-pnpm create astro@latest -- --template minimal
+## Descripción
+
+Crystal Sands Ride es una plataforma que permite a los visitantes visualizar y reservar viajes a través de Cuba. Esta documentación cubre los aspectos técnicos del frontend desarrollado con Astro.
+
+## 🛠 Tecnologías y Stack
+
+- Frameworks: React + Astro
+- Lenguaje: TypeScript
+- Estilos: Tailwind CSS + alpinejs
+- Gestión de formularios: React Hook Form
+- Estado y peticiones: Fetch API
+- Package Manager: pnpm
+
+**Internacionalización:** i18n (idiomas: español, inglés)
+
+## 📂 Estructura del proyecto
+
+```
+src/
+ ├─ api/             # Funciones para consumir API externa
+ ├─ components/      # Componentes reutilizables (formularios, botones, cards)
+ ├─ content/         # Collección de datos estáticos (paquetes, servicios)
+ ├─ i18n/            # Archivos de traducciones
+ ├─ layouts/         # Layout principal (BaseLayout)
+ ├─ pages/           # Páginas principales
+ ├─ styles/          # Estilos globales
+```
+## 🚀 Instalación y ejecución
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/tu-usuario/web-viajes-cuba-frontend.git
+
+cd web-viajes-cuba-frontend
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Instalar dependencias:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+pnpm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+3. Ejecutar servidor de desarrollo:
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+pnpm dev
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+4. Abrir en el navegador: **http://localhost:4321**
 
-## 🧞 Commands
+## ⚡ Funcionalidades principales
 
-All commands are run from the root of the project, from a terminal:
+- Listado de paquetes turísticos y recorridos por Cuba.
+- Formularios de reserva y traslado con validación.
+- Selección de idioma (español, inglés).
+- Visualización de destinos con foto, descripción y precio.
+- Integración con API para enviar reservas y datos del usuario.
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+## 🌐 Internacionalización
 
-## 👀 Want to learn more?
+Se soportan varios idiomas mediante archivos de traducción (i18n). 
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Para añadir más idiomas:
+
+1. Crear un nuevo archivo JSON en la carpeta `src/i18n/literals` con las traducciones.
+2. Añadir el nuevo idioma a la lista de lenguajes en `src/i18n/ui.ts`.

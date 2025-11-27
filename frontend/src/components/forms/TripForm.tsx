@@ -10,6 +10,7 @@ function TripForm({
   validationMessages,
   vehicleOptions,
   tripOptions,
+  noGuide,
   languajes,
   submitButton,
 }: TripFormProps) {
@@ -26,10 +27,16 @@ function TripForm({
   })
 
   const onSubmit = handleSubmit(async (data) => {
+    const withGuide = data.guideLanguaje !== 'noGuide'
+
+    const {guideLanguaje, ...cleaned} = data
     const payload = {
       type: 'Recorrido',
-      ...data,
+      withGuide,
+      languaje: withGuide ? data.guideLanguaje : null,
+      ...cleaned,
     }
+    console.log(payload)
     try {
       const resData = await submitTrip(payload)
       console.log('Response:', resData)
@@ -109,8 +116,14 @@ function TripForm({
           <div className="w-2/2 p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.trip}
-              <select className="input-component" {...register('packageName')}>
-                <option value="">Selecciona un viaje</option>
+              <select
+                className={
+                  errors.packageName ? 'input-error' : 'input-component'
+                }
+                {...register('packageName', {
+                  required: true,
+                })}
+              >
                 {Object.entries(tripOptions).map((v) => (
                   <option key={v[0]} value={v[0]}>
                     {v[1]}
@@ -170,6 +183,7 @@ function TripForm({
                 className="input-component"
                 {...register('guideLanguaje')}
               >
+                <option value="noGuide">{noGuide}</option>
                 {Object.entries(languajes).map((g) => (
                   <option key={g[0]} value={g[0]}>
                     {g[1]}
@@ -215,7 +229,7 @@ function TripForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.comments}
               <textarea
-                className="textarea-component"
+                className="textarea-component textarea-scroll"
                 {...register('comments')}
               ></textarea>
             </label>

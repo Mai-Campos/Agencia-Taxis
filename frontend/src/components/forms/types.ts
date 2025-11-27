@@ -6,7 +6,7 @@ export type TransferFormData = {
   pickupDate: string
   pickupTime: string
   destination: string
-  flightNumber?: string
+  flightNumber: string | null
   passengers: number
   vehicleType: string
   comments?: string
@@ -77,4 +77,5 @@ export type TripFormProps = Omit<TransferFormProps, 'fields'> & {
     german: string
     italian: string
   }
+  noGuide: string
 }

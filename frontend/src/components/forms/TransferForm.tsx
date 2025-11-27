@@ -20,6 +20,7 @@ function TransferForm({
     reset,
   } = useForm<TransferFormData>({
     defaultValues: {
+      flightNumber: null,
       passengers: 1,
     },
   })
@@ -29,6 +30,7 @@ function TransferForm({
       type: 'Traslado',
       ...data,
     }
+    console.log(payload)
     try {
       const resData = await submitTransfer(payload)
       console.log('Response:', resData)
@@ -209,7 +211,7 @@ function TransferForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.comments}
               <textarea
-                className="textarea-component"
+                className="textarea-component textarea-scroll"
                 {...register('comments')}
               ></textarea>
             </label>

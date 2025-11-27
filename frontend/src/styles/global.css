@@ -50,7 +50,7 @@
 }
 
 .input-component {
-  @apply hover:border-primary text-text-main focus:border-primary focus:ring-primary/20 hover:ring-primary/20 h-10 w-full overflow-hidden rounded-xl border-2 bg-white px-2 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
+  @apply hover:border-primary text-text-main focus:border-primary focus:ring-primary/20 hover:ring-primary/20 h-10 w-full overflow-hidden rounded-xl border-2 bg-white px-2 transition-all duration-500 outline-none invalid:bg-white hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
 }
 
 .input-error {
@@ -58,7 +58,11 @@
 }
 
 .textarea-component {
-  @apply hover:border-primary focus:border-primary text-text-main focus:ring-primary/20 hover:ring-primary/20 h-32 w-full resize-none overflow-hidden rounded-xl border-2 bg-white px-3 py-1 text-base leading-6 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
+  @apply hover:border-primary focus:border-primary text-text-main focus:ring-primary/20 hover:ring-primary/20 h-32 w-full resize-none overflow-y-auto overflow-x-hidden rounded-xl border-2 bg-white px-3 py-1 text-base leading-6 transition-all duration-500 outline-none hover:bg-white hover:ring-4 focus:bg-white focus:ring-4;
+}
+
+.textarea-scroll {
+  scrollbar-color: theme('colors.gray-400') transparent;
 }
 
 .cta-btn {

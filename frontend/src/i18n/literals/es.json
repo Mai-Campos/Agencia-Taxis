@@ -88,8 +88,8 @@
       "classicCar": "Auto Clásico",
       "van": "Van"
     },
+    "noGuide": "Sin Guía",
     "languajes": {
-      "noGuide": "Sin Guía",
       "spanish": "Español",
       "english": "Inglés",
       "french": "Francés",
