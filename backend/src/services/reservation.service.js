@@ -13,8 +13,8 @@ export const createReservationService = async (data) => {
     errors.push("La cantidad de pasajeros debe ser al menos de 1 ");
   if (!data.pickupTime) errors.push("La hora de recojida es obligatorio");
   if (!data.vehicle) errors.push("El tipo de vehiculo es obligatorio");
-  if (!data.totalPrice)
-    errors.push("El precio total de la reserva es obligatorio");
+  /*  if (!data.totalPrice)
+    errors.push("El precio total de la reserva es obligatorio"); */
 
   if (!data.type) errors.push("El tipo de reserva es obligatorio");
 

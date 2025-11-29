@@ -108,7 +108,8 @@ const reservationSchema = mongoose.Schema(
     // Monto total de la reserva
     totalPrice: {
       type: Number,
-      required: true,
+      required: false,
+      deafult: 0,
       min: 0,
     },
 
