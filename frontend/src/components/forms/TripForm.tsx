@@ -84,7 +84,9 @@ function TripForm({
               )}
               <input
                 type="ownerEmail"
-                className={errors.ownerEmail ? 'input-error' : 'input-component'}
+                className={
+                  errors.ownerEmail ? 'input-error' : 'input-component'
+                }
                 {...register('ownerEmail', {
                   required: true,
                   pattern: {

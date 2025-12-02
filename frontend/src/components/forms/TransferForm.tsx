@@ -53,6 +53,7 @@ function TransferForm({
 
       <div className="mx-auto md:w-2/3 lg:w-1/2">
         <form onSubmit={onSubmit} noValidate className="-m-2 flex flex-wrap">
+          
           {/* Nombre completo */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
@@ -78,7 +79,9 @@ function TransferForm({
               )}
               <input
                 type="ownerEmail"
-                className={errors.ownerEmail ? 'input-error' : 'input-component'}
+                className={
+                  errors.ownerEmail ? 'input-error' : 'input-component'
+                }
                 {...register('ownerEmail', {
                   required: true,
                   pattern: {
