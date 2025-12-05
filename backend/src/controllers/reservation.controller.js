@@ -1,4 +1,5 @@
 import { sendNewReservationEmail } from "../services/email.service.js";
+import { notifyAdminReservation } from "../services/telegram.service.js";
 import {
   createReservationService,
   getAllReservationsService,
@@ -13,6 +14,8 @@ export const createReservation = async (req, res) => {
 
     // Enviar email de notificación a la empresa
     await sendNewReservationEmail(reservation);
+
+    await notifyAdminReservation(reservation);
 
     res.status(201).json(reservation);
   } catch (error) {
