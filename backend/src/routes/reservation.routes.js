@@ -17,71 +17,115 @@ const router = Router();
  *     Reservation:
  *       type: object
  *       required:
- *         - ownerName
- *         - ownerEmail
+ *         - type
  *         - pickupLocation
- *         - destination
- *         - totalPrice
  *         - pickupDate
  *         - pickupTime
- *         - passengers
  *         - vehicle
- *         - comments
+ *         - passengers
+ *         - ownerName
+ *         - ownerEmail
  *       properties:
  *         _id:
  *           type: string
  *           description: ID autogenerado por MongoDB
- *         ownerName:
+
+ *         type:
  *           type: string
- *           description: Nombre del propietario de la reserva
- *         ownerEmail:
+ *           enum: [Traslado, Recorrido]
+ *           description: Tipo de servicio solicitado
+
+ *         packageName:
  *           type: string
- *           description: Correo del propietario de la reserva
- *         flightNumber:
- *           type: string
- *           description: Número identificador de vuelo (opcional)
+ *           nullable: true
+ *           description: Nombre del paquete (solo si type = Recorrido)
+
  *         pickupLocation:
  *           type: string
- *           description: Dirección de recogida
+ *           description: Lugar donde se recogerá al cliente
+
  *         destination:
  *           type: string
- *           description: Lugar de destino
- *         totalPrice:
- *           type: number
- *           description: Precio total de la reserva
+ *           nullable: true
+ *           description: Destino del traslado (solo si type = Traslado)
+
  *         pickupDate:
  *           type: string
  *           format: date
  *           description: Fecha de recogida
+
  *         pickupTime:
  *           type: string
- *           description: Hora de recogida
- *         passengers:
- *           type: number
- *           description: Cantidad de pasajeros
+ *           description: 'Hora de recogida (ej: 14:30)'
+
  *         vehicle:
  *           type: string
- *           description: Vehiculo seleccionado
+ *           description: Tipo de vehículo elegido
+
+ *         passengers:
+ *           type: number
+ *           description: Número de pasajeros
+
+ *         flightNumber:
+ *           type: string
+ *           nullable: true
+ *           description: Número de vuelo (solo si la recogida es en aeropuerto)
+
+ *         ownerName:
+ *           type: string
+ *           description: Nombre del cliente que realiza la reserva
+
+ *         ownerEmail:
+ *           type: string
+ *           description: Correo electrónico del cliente
+
+ *         comments:
+ *           type: string
+ *           nullable: true
+ *           description: Comentarios adicionales del cliente
+
+ *         withGuide:
+ *           type: boolean
+ *           description: Indica si se solicita guía turístico
+
+ *         guideLanguage:
+ *           type: string
+ *           nullable: true
+ *           description: Idioma solicitado del guía (solo si withGuide = true)
+
+ *         totalPrice:
+ *           type: number
+ *           description: Precio total de la reserva
+
  *         status:
  *           type: string
  *           enum: [pendiente, cancelada, completada]
  *           description: Estado actual de la reserva
- *         guide:
- *           type: boolean
- *           description: Indica si el cliente solicita un guía (por defecto false)
+
+ *         createdAt:
+ *           type: string
+ *           format: date-time
+
+ *         updatedAt:
+ *           type: string
+ *           format: date-time
+
  *       example:
- *         ownerName: Juan Pérez
- *         ownerEmail: juan@example.com
- *         pickupLocation: "Av. Bolívar 123"
- *         destination: "Aeropuerto Internacional"
- *         totalPrice: 35
+ *         type: "Traslado"
+ *         pickupLocation: "Aeropuerto José Martí"
+ *         destination: "Vedado, La Habana"
  *         pickupDate: "2025-11-01"
  *         pickupTime: "10:30"
  *         passengers: 2
+ *         vehicle: "SUV"
+ *         flightNumber: "CU-123"
+ *         ownerName: "Juan Pérez"
+ *         ownerEmail: "juan@example.com"
+ *         comments: "Viajo con equipaje adicional"
+ *         withGuide: false
+ *         guideLanguage: null
+ *         totalPrice: 45
  *         status: "pendiente"
- *         comments: "LLevo una maleta y 3 mochilas"
- *         guide: false
- *         vehicle: "Engrand"
  */
 
 /**

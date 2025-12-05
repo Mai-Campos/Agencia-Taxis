@@ -1,3 +1,4 @@
+import { sendNewReservationEmail } from "../services/email.service.js";
 import {
   createReservationService,
   getAllReservationsService,
@@ -9,6 +10,10 @@ import {
 export const createReservation = async (req, res) => {
   try {
     const reservation = await createReservationService(req.body);
+
+    // Enviar email de notificación a la empresa
+    await sendNewReservationEmail(reservation);
+
     res.status(201).json(reservation);
   } catch (error) {
     res.status(error.status || 500).json({ message: error.message });

@@ -2,7 +2,9 @@ import express from "express";
 import cors from "cors";
 import reservationRoutes from "./routes/reservation.routes.js";
 import { swaggerSpecs, swaggerUi } from "./docs/swagger.js";
+import { config } from "dotenv";
 
+config();
 const app = express();
 
 // Middlewares
