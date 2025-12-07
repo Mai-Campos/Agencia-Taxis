@@ -24,8 +24,13 @@ const { scrollHeader = true, navbar } = Astro.props
   >
     <a
       href={getRelativeLocaleUrl(currentLang, '/')}
-      class="title-font cursor-pointer text-xl font-bold md:mb-0"
+      class="title-font flex cursor-pointer gap-4 text-xl font-bold md:mb-0"
     >
+      <img
+        alt="Crystal Sands Ride Logo"
+        src="/favicon.svg"
+        class="h-auto w-10"
+      />
       Crystal Sands Ride
     </a>
 
