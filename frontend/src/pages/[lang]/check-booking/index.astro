@@ -4,6 +4,7 @@ import { getTranslations } from '@/i18n/index'
 import type { Language } from '@/i18n/types'
 import { LANG_PATHS } from '@/i18n/ui'
 import '@/styles/global.css'
+import CheckBookInput from '@/components/sections/CheckBookInput.astro'
 
 export async function getStaticPaths() {
   return LANG_PATHS.map(({ params }) => ({ params: { lang: params.lang } }))
@@ -14,5 +15,5 @@ const t = await getTranslations('literals', lang)
 ---
 
 <BaseLayout headerType="static" title="Inicio" navbar={t.navbar} lang={lang}>
-  <h1>Check Booking</h1>
+  <CheckBookInput/>
 </BaseLayout>

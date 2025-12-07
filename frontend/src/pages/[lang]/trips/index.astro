@@ -41,5 +41,9 @@ const t = await getTranslations('literals', lang)
       })
     }
   </TripsContainer>
-  <CallToAction {...t.callToAction} textBtn={t.button.text} />
+  <CallToAction
+    {...t.callToAction}
+    tripBtn={t.button.tripText}
+    transferBtn={t.button.transferText}
+  />
 </BaseLayout>
