@@ -53,7 +53,7 @@
       "van": "Van"
     },
     "validationMessages": {
-      "invalidEmail": "Correo electrónico no válido",
+      "invalidEmail": "Correo electrónico inválido",
       "futureDate": "Ingrese una fecha posterior al día de hoy"
     },
     "submitButton": "Enviar Reserva"
@@ -98,9 +98,15 @@
       "italian": "Italiano"
     },
     "validationMessages": {
-      "invalidEmail": "Correo electrónico no válido",
+      "invalidEmail": "Correo electrónico inválido",
       "futureDate": "Ingrese una fecha posterior al día de hoy"
     },
     "submitButton": "Enviar Reserva"
+  },
+  "checkBook": {
+    "title": "Consultar Reserva",
+    "description": "¿Ya realizaste tu reserva? Ingresa tu número de reserva a continuación para consultar los detalles de tu viaje.",
+    "button": "Consultar",
+    "invalidNumber": "Número de reserva inválido o vacío"
   }
 }

@@ -103,5 +103,11 @@
       "futureDate": "Please enter a date after today"
     },
     "submitButton": "Submit Reservation"
+  },
+  "checkBook": {
+    "title": "Check Booking",
+    "description": "Already made your reservation? Simply enter your booking number below to view your travel details.",
+    "button": "Check",
+    "invalidNumber": "Invalid or empty book number"
   }
 }

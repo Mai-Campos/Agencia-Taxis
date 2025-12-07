@@ -43,7 +43,7 @@ export type TransferFormProps = {
     van: string
   }
   validationMessages: {
-    invalidownerEmail: string
+    invalidEmail: string
     futureDate: string
   }
   submitButton: string
@@ -78,4 +78,13 @@ export type TripFormProps = Omit<TransferFormProps, 'fields'> & {
     italian: string
   }
   noGuide: string
+}
+
+export type CheckBookFormData = {
+  bookNumber: string
+}
+
+export type CheckBookFormProps = {
+    buttonText: string
+    invalidNumber: string
 }
