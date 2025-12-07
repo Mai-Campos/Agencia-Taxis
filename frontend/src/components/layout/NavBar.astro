@@ -21,23 +21,28 @@ const { navbar } = Astro.props
     <li
       class="color-transition hover:text-primary-hover active:text-primary-hover"
     >
-      <a href="/#services" class="cursor-pointer">{navbar.services}</a>
-    </li>
-    <li
-      class="color-transition hover:text-primary-hover active:text-primary-hover"
-    >
       <a
-        href={getRelativeLocaleUrl(currentLang, 'trips')}
-        class="cursor-pointer">{navbar.travels}</a
+        href={`${getRelativeLocaleUrl(currentLang, '/')}#services`}
+        class="cursor-pointer"
       >
-    </li>
-    <li
-      class="color-transition hover:text-primary-hover active:text-primary-hover"
-    >
-      <a
-        href={getRelativeLocaleUrl(currentLang, 'check-booking')}
-        class="cursor-pointer">{navbar.checkBooking}</a
+        {navbar.services}
+      </a>
+      <li
+        class="color-transition hover:text-primary-hover active:text-primary-hover"
       >
+        <a
+          href={getRelativeLocaleUrl(currentLang, 'trips')}
+          class="cursor-pointer">{navbar.travels}</a
+        >
+      </li>
+      <li
+        class="color-transition hover:text-primary-hover active:text-primary-hover"
+      >
+        <a
+          href={getRelativeLocaleUrl(currentLang, 'check-booking')}
+          class="cursor-pointer">{navbar.checkBooking}</a
+        >
+      </li>
     </li>
   </ul>
 </nav>
