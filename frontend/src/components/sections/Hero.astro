@@ -1,15 +1,17 @@
 ---
 import { Icon } from 'astro-icon/components'
-import BookBtn from '@/components/ui/BookBtn.astro'
+import BookTripBtn from '@/components/ui/BookTripBtn.astro'
 import ShapeDivider from '@/components/ui/ShapeDivider.astro'
+import BookTransferBtn from '@/components/ui/BookTransferBtn.astro'
 
 export interface Props {
   title: string
   subtitle: string
-  textBtn: string
+  tripBtn: string
+  transferBtn: string
 }
 
-const { title, subtitle, textBtn } = Astro.props
+const { title, subtitle, tripBtn, transferBtn } = Astro.props
 ---
 
 <section
@@ -24,7 +26,10 @@ const { title, subtitle, textBtn } = Astro.props
     <p class="mb-8 leading-relaxed text-gray-100">
       {subtitle}
     </p>
-    <BookBtn text={textBtn} className="text-xl" />
+    <div class="flex flex-col gap-4 sm:flex-row">
+      <BookTripBtn text={tripBtn} className="text-lg sm:text-xl" />
+      <BookTransferBtn text={transferBtn} className="text-lg sm:text-xl text-white" />
+    </div>
   </main>
   <aside class="absolute right-4 bottom-14">
     <div class="flex flex-col gap-2">

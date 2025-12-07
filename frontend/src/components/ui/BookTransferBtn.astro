@@ -1,0 +1,16 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n'
+
+type Props = {
+  text: string
+  className?: string[] | string
+}
+
+const currentLang = Astro.currentLocale || 'es'
+const { text, className } = Astro.props
+---
+
+<a
+  href={getRelativeLocaleUrl(currentLang, 'book-transfer')}
+  class={`cta-btn-outline title-font color-transition ${className}`}>{text}</a
+>

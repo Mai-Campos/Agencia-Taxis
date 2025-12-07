@@ -74,5 +74,9 @@ input:-webkit-autofill:active {
 }
 
 .cta-btn {
-  @apply bg-primary shadow-card hover:bg-primary-hover active:bg-primary-hover cursor-pointer rounded-xl px-6 py-4 font-semibold text-pretty text-white select-none;
+  @apply bg-primary shadow-card hover:bg-primary-hover active:bg-primary-hover text-center cursor-pointer rounded-xl px-6 py-4 font-semibold text-pretty text-white select-none;
+}
+
+.cta-btn-outline {
+  @apply bg-transparent border-2 border-primary shadow-card hover:bg-primary/10 text-center active:bg-primary/20 cursor-pointer rounded-xl px-6 py-4 font-semibold text-pretty select-none;
 }

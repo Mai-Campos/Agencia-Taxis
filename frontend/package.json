@@ -28,8 +28,8 @@
     "alpinejs": "^3.15.2",
     "astro": "^5.13.7",
     "astro-icon": "^1.1.5",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
     "react-hook-form": "^7.66.1",
     "tailwindcss": "^4.1.16"
   },

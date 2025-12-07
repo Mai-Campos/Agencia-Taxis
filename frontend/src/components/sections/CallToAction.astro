@@ -1,23 +1,28 @@
 ---
-import BookBtn from '@/components/ui/BookBtn.astro'
+import BookTripBtn from '@/components/ui/BookTripBtn.astro'
+import BookTransferBtn from '@/components/ui/BookTransferBtn.astro'
 
 type Props = {
   text: string
-  textBtn: string
+  tripBtn: string
+  transferBtn: string
 }
 
-const { text, textBtn } = Astro.props
+const { text, tripBtn, transferBtn } = Astro.props
 ---
 
 <section class="body-font">
   <div class="container mx-auto px-5 py-24">
     <main
-      class="mx-auto flex flex-col items-start sm:flex-row sm:items-center lg:w-3/4"
+      class="mx-auto flex flex-col items-center sm:flex-row justify-around"
     >
-      <h2 class="title-font mb-10 grow text-2xl font-medium sm:mb-0 sm:pr-14">
+      <h2 class="title-font mb-10 text-2xl font-medium sm:mb-0">
         {text}
       </h2>
-      <BookBtn text={textBtn} />
+      <div class="flex gap-4 sm:flex-row flex-col">
+        <BookTripBtn text={tripBtn} />
+        <BookTransferBtn text={transferBtn} className="text-primary" />
+      </div>
     </main>
   </div>
 </section>

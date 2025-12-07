@@ -6,7 +6,8 @@
     "checkBooking": "Consultar reserva"
   },
   "button": {
-    "text": "Reservar"
+    "tripText": "Reservar Viaje",
+    "transferText": "Reservar Traslado"
   },
   "hero": {
     "title": "Viaja con nosotros y disfruta de una experiencia inolvidable",
@@ -29,14 +30,14 @@
     "link": "Reservar traslado"
   },
   "callToAction": {
-    "text": "¿Te interesan nuestros recorridos? Reserva con nosotros"
+    "text": "¿Te interesan nuestros recorridos o traslados? Reserva con nosotros"
   },
   "transferForm": {
     "title": "Traslados",
     "subtitle": "Traslados entre aeropuertos y casas de alquiler",
     "fields": {
       "fullName": "Nombre Completo",
-      "email": "Correo Electrónico",
+      "ownerEmail": "Correo Electrónico",
       "pickupLocation": "Lugar de Recogida",
       "destination": "Destino",
       "pickupDate": "Fecha de Recogida",
