@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro'
+import TransferForm from '@/components/forms/TransferForm'
 import { getTranslations } from '@/i18n/index'
 import type { Language } from '@/i18n/types'
-import TransferForm from '@/components/forms/TransferForm'
-import '@/styles/global.css'
 import { LANG_PATHS } from '@/i18n/ui'
+import '@/styles/global.css'
 
 export async function getStaticPaths() {
   return LANG_PATHS.map(({ params }) => ({ params: { lang: params.lang } }))

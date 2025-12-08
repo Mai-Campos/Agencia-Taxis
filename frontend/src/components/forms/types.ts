@@ -85,6 +85,6 @@ export type CheckBookFormData = {
 }
 
 export type CheckBookFormProps = {
-    buttonText: string
-    invalidNumber: string
+  buttonText: string
+  invalidNumber: string
 }

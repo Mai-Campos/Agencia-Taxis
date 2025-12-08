@@ -1,5 +1,5 @@
-import { submitTrip } from '@/api/trips'
 import type { TripFormData, TripFormProps } from '@/components/forms/types'
+import { submitTrip } from '@/api/trips'
 import { useForm } from 'react-hook-form'
 
 function TripForm({

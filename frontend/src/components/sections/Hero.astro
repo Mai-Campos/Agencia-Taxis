@@ -1,8 +1,8 @@
 ---
-import { Icon } from 'astro-icon/components'
 import BookTripBtn from '@/components/ui/BookTripBtn.astro'
 import ShapeDivider from '@/components/ui/ShapeDivider.astro'
 import BookTransferBtn from '@/components/ui/BookTransferBtn.astro'
+import { Icon } from 'astro-icon/components'
 
 export interface Props {
   title: string
@@ -28,7 +28,10 @@ const { title, subtitle, tripBtn, transferBtn } = Astro.props
     </p>
     <div class="flex flex-col gap-4 sm:flex-row">
       <BookTripBtn text={tripBtn} className="text-lg sm:text-xl" />
-      <BookTransferBtn text={transferBtn} className="text-lg sm:text-xl text-white" />
+      <BookTransferBtn
+        text={transferBtn}
+        className="text-lg text-white sm:text-xl"
+      />
     </div>
   </main>
   <aside class="absolute right-4 bottom-14">

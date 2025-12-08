@@ -1,8 +1,8 @@
-import { submitTransfer } from '@/api/transfers'
 import type {
   TransferFormData,
   TransferFormProps,
 } from '@/components/forms/types'
+import { submitTransfer } from '@/api/transfers'
 import { useForm } from 'react-hook-form'
 
 function TransferForm({
@@ -53,7 +53,6 @@ function TransferForm({
 
       <div className="mx-auto md:w-2/3 lg:w-1/2">
         <form onSubmit={onSubmit} noValidate className="-m-2 flex flex-wrap">
-          
           {/* Nombre completo */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">

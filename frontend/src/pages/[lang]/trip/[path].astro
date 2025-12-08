@@ -1,11 +1,11 @@
 ---
-import { getCollection } from 'astro:content'
-import { getTranslations } from '@/i18n'
+import TripDetails from '@/components/sections/details-sections/TripDetails.astro'
 import BaseLayout from '@/layouts/BaseLayout.astro'
-import TripInfo from '@/components/sections/TripInfo.astro'
-import type { Language } from '@/i18n/types'
-import '@/styles/global.css'
 import TripForm from '@/components/forms/TripForm'
+import { getTranslations } from '@/i18n'
+import type { Language } from '@/i18n/types'
+import { getCollection } from 'astro:content'
+import '@/styles/global.css'
 
 export async function getStaticPaths() {
   const trips = await getCollection('trips')
@@ -27,7 +27,7 @@ const t = await getTranslations('literals', lang)
 ---
 
 <BaseLayout headerType="static" title="Inicio" navbar={t.navbar} lang={lang}>
-  <TripInfo
+  <TripDetails
     location={data.location}
     packageName={data.packageName}
     description={body}

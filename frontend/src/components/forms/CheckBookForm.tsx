@@ -1,8 +1,8 @@
-import { checkBook } from '@/api/checkBook'
 import type {
   CheckBookFormProps,
   CheckBookFormData,
 } from '@/components/forms/types'
+import { checkBook } from '@/api/checkBook'
 import { useForm } from 'react-hook-form'
 
 function CheckBookForm({ buttonText, invalidNumber }: CheckBookFormProps) {

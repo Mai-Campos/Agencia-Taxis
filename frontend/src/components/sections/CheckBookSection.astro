@@ -1,6 +1,6 @@
 ---
+import BookDetails from '@/components/sections/details-sections/BookDetails.astro'
 import CheckBookForm from '@/components/forms/CheckBookForm'
-import BookDetails from '@/components/sections/BookDetails.astro'
 
 interface Props {
   title: string
@@ -9,17 +9,27 @@ interface Props {
   invalidNumber: string
 }
 
-const {title, description, button, invalidNumber} = Astro.props
+const { title, description, button, invalidNumber } = Astro.props
 ---
 
 <section class="body-font">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-col text-center w-full mb-12">
-      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-text-main">{title}</h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-text-secondary">{description}</p>
+  <div class="container mx-auto px-5 py-24">
+    <div class="mb-12 flex w-full flex-col text-center">
+      <h1
+        class="title-font text-text-main mb-4 text-2xl font-medium sm:text-3xl"
+      >
+        {title}
+      </h1>
+      <p class="text-text-secondary mx-auto leading-relaxed lg:w-2/3">
+        {description}
+      </p>
     </div>
     <div class="flex justify-center">
-      <CheckBookForm client:load buttonText={button} invalidNumber={invalidNumber} />
+      <CheckBookForm
+        client:load
+        buttonText={button}
+        invalidNumber={invalidNumber}
+      />
     </div>
     <div>
       <h2>Detalles del viaje</h2>
