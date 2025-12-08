@@ -9,11 +9,7 @@
     "astro": "astro",
     "typecheck": "tsc --noEmit",
     "format": "prettier . --write",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro",
-    "i18n:extract": "astro-i18n extract",
-    "i18n:generate:pages": "astro-i18n generate:pages --purge",
-    "i18n:generate:types": "astro-i18n generate:types",
-    "i18n:sync": "npm run i18n:generate:pages && npm run i18n:generate:types"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.astro"
   },
   "dependencies": {
     "@astrojs/alpinejs": "^0.4.9",
@@ -31,6 +27,7 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-hook-form": "^7.66.1",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.16"
   },
   "devDependencies": {

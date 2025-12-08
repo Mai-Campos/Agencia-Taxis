@@ -1,7 +1,6 @@
 ---
-import BookTripBtn from '@/components/ui/BookTripBtn.astro'
 import Chip from '@/components/ui/Chip.astro'
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
 type Props = {
@@ -11,18 +10,10 @@ type Props = {
   price: string
   img: string
   description: string
-  textBtn: string
 }
 
-const {
-  location,
-  packageName,
-  placesToVisit,
-  price,
-  img,
-  description,
-  textBtn,
-} = Astro.props
+const { location, packageName, placesToVisit, price, img, description } =
+  Astro.props
 ---
 
 <section class="body-font overflow-hidden">
@@ -56,7 +47,6 @@ const {
           <span class="title-font text-2xl font-medium text-gray-900"
             >{price}</span
           >
-          <BookTripBtn text={textBtn} />
         </div>
       </div>
     </div>
