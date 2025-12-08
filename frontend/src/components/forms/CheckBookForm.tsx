@@ -15,9 +15,8 @@ function CheckBookForm({ buttonText, invalidNumber }: CheckBookFormProps) {
 
   const onSubmit = handleSubmit(async (data) => {
     console.log(data)
-
     try {
-      const resData = await checkBook(data)
+      const resData = await checkBook(data.bookNumber)
       console.log('Response:', resData)
       reset()
     } catch (err) {

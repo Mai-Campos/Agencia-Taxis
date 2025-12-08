@@ -1,10 +1,9 @@
-export const checkBook = async (bookNumber: Object) => {
+export const checkBook = async (bookNumber: string) => {
   const res = await fetch(
     `https://enterprising-florida-chunkily.ngrok-free.dev/api/reservations/${bookNumber}`,
     {
-      method: 'POST',
-      headers: { 'Content-Type': 'application-json' },
-      body: JSON.stringify(bookNumber),
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
     }
   )
 

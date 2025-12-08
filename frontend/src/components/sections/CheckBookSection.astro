@@ -1,5 +1,6 @@
 ---
 import CheckBookForm from '@/components/forms/CheckBookForm'
+import BookDetails from '@/components/sections/BookDetails.astro'
 
 interface Props {
   title: string
@@ -19,6 +20,12 @@ const {title, description, button, invalidNumber} = Astro.props
     </div>
     <div class="flex justify-center">
       <CheckBookForm client:load buttonText={button} invalidNumber={invalidNumber} />
+    </div>
+    <div>
+      <h2>Detalles del viaje</h2>
+      <div>
+        <BookDetails />
+      </div>
     </div>
   </div>
 </section>

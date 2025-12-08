@@ -3,7 +3,7 @@ export const submitTransfer = async (payload: Object) => {
     'https://enterprising-florida-chunkily.ngrok-free.dev/api/reservations',
     {
       method: 'POST',
-      headers: { 'Content-Type': 'application-json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
     }
   )
