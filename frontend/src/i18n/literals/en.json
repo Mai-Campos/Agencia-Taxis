@@ -109,5 +109,25 @@
     "description": "Already made your reservation? Simply enter your booking number below to view your travel details.",
     "button": "Check",
     "invalidNumber": "Invalid or empty book number"
+  },
+  "footer": {
+    "brand": {
+      "name": "Crystal Sands Ride",
+      "description": "We are an agency specialized in authentic experiences across Cuba, offering expert guides, private transfers, and travel packages designed by local tourism professionals."
+    },
+    "links": {
+      "title": "Links",
+      "about": "About us",
+      "tours": "Destinations",
+      "categories": "Types of excursions",
+      "faq": "Frequently asked questions",
+      "blog": "Blog & guides"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "legal": {
+      "copyright": "© 2025 Crystal Sands Ride. All rights reserved."
+    }
   }
 }

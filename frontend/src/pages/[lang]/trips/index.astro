@@ -21,7 +21,7 @@ const trips = await getCollection('trips', ({ slug }) =>
 const t = await getTranslations('literals', lang)
 ---
 
-<BaseLayout headerType="static" title="Inicio" navbar={t.navbar} lang={lang}>
+<BaseLayout headerType="static" title="Inicio" footer={t.footer} navbar={t.navbar} lang={lang}>
   <TripsSection
     description={t.tripsContainer.description}
     title={t.tripsContainer.title}

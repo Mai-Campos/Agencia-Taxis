@@ -14,6 +14,6 @@ const lang = Astro.params.lang as Language
 const t = await getTranslations('literals', lang)
 ---
 
-<BaseLayout headerType="static" title="Inicio" navbar={t.navbar} lang={lang}>
+<BaseLayout headerType="static" title="Inicio" footer={t.footer} navbar={t.navbar} lang={lang}>
   <TransferForm {...t.transferForm} client:load />
 </BaseLayout>

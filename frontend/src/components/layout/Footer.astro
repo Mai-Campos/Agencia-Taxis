@@ -1,56 +1,96 @@
 ---
-import FooterCard from '@/components/ui/FooterCard.astro'
 import { Icon } from 'astro-icon/components'
+import type { FooterProps } from '@/components/layout/types/types'
+
+interface Props {
+  footer: FooterProps
+}
+
+const { footer } = Astro.props
+const { brand, links, contact, legal } = footer
 ---
 
-<footer class="body-font bg-surface">
-  <div
-    class="container mx-auto flex flex-col flex-wrap px-5 py-8 md:flex-row md:flex-nowrap md:items-center lg:items-start"
-  >
-    <div class="mx-auto w-64 shrink-0 text-center md:mx-0 md:text-left">
-      <a
-        class="title-font flex items-center justify-center font-medium md:justify-start"
-      >
-        <span class="ml-3 text-xl">Crystal Sands Ride</span>
-      </a>
+<footer class="bg-gray-50 text-gray-700">
+  <div class="container mx-auto px-6 pt-12 pb-6">
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+      <div class="space-y-4">
+        <a href="/" class="inline-flex items-center gap-3">
+          <img src="/favicon.svg" alt="Crystal Travels Logo" class="h-8 w-8" />
+          <span class="text-lg font-semibold">Crystal Sands Ride</span>
+        </a>
+        <p class="text-text-secondary text-sm">
+          {brand.description}
+        </p>
+
+        <div class="mt-2 flex gap-3">
+          <a aria-label="TripAdvisor" href="#">
+            <Icon
+              name="tabler:brand-tripadvisor"
+              size={28}
+              class="hover:text-primary-hover active:text-primary-hover color-transition"
+            />
+          </a>
+          <a aria-label="Instagram" href="#">
+            <Icon
+              name="tabler:brand-instagram"
+              size={28}
+              class="hover:text-primary-hover active:text-primary-hover color-transition"
+            />
+          </a>
+          <a aria-label="Facebook" href="#">
+            <Icon
+              name="tabler:brand-facebook"
+              size={28}
+              class="hover:text-primary-hover active:text-primary-hover color-transition"
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Enlaces rápidos -->
+      <div>
+        <h3 class="mb-4 font-semibold">{links.title}</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/about" class="hover:underline">{links.about}</a></li>
+          <li><a href="/tours" class="hover:underline">{links.tours}</a></li>
+          <li>
+            <a href="/categories" class="hover:underline">{links.categories}</a>
+          </li>
+          <li>
+            <a href="/faq" class="hover:underline">{links.faq}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="mb-4 font-semibold">{contact.title}</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="/about" class="hover:underline"
+              ><Icon
+                name="tabler:brand-whatsapp"
+                size={16}
+                class="mr-2 inline-block"
+              />
+              +555 5555 555</a
+            >
+          </li>
+          <li>
+            <a href="/tours" class="hover:underline"
+              ><Icon name="tabler:mail" size={16} class="mr-2 inline-block" />
+              email@email.com</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
+
     <div
-      class="mt-10 -mb-10 flex grow flex-wrap text-center md:mt-0 md:pl-20 md:text-left"
+      class="mt-10 flex flex-col items-center justify-between gap-4 border-gray-200 sm:flex-row"
     >
-      <FooterCard />
-      <FooterCard />
-      <FooterCard />
-    </div>
-  </div>
-  <div class="bg-gray-100">
-    <div
-      class="container mx-auto flex flex-col flex-wrap px-5 py-4 sm:flex-row"
-    >
-      <p class="text-center text-sm text-gray-500 sm:text-left">
-        © 2020 Tailblocks —
-        <a
-          href="https://twitter.com/knyttneve"
-          rel="noopener noreferrer"
-          class="ml-1 text-gray-600"
-          target="_blank">@knyttneve</a
-        >
+      <p class="text-sm">
+        {legal.copyright}
       </p>
-      <span
-        class="mt-2 inline-flex justify-center sm:mt-0 sm:ml-auto sm:justify-start"
-      >
-        <a class="text-gray-500">
-          <Icon name="tabler:brand-tripadvisor" size={24} />
-        </a>
-        <a class="ml-3 text-gray-500">
-          <Icon name="tabler:brand-whatsapp" size={24} />
-        </a>
-        <a class="ml-3 text-gray-500">
-          <Icon name="tabler:brand-facebook" size={24} />
-        </a>
-        <a class="ml-3 text-gray-500">
-          <Icon name="tabler:brand-instagram" size={24} />
-        </a>
-      </span>
     </div>
   </div>
 </footer>

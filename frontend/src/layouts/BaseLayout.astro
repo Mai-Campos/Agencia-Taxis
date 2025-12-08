@@ -1,5 +1,5 @@
 ---
-import Footer from '@/components/layout/Footer.astro'
+import Footer, { type FooterProps } from '@/components/layout/Footer.astro'
 import HeaderScroll from '@/components/layout/HeaderScroll.astro'
 import HeaderStatic from '@/components/layout/HeaderStatic.astro'
 import type { Language, NavBarTranslations } from '@/i18n/types'
@@ -10,10 +10,11 @@ interface Props {
   headerType?: 'scroll' | 'static'
   title: string
   navbar: NavBarTranslations
+  footer: FooterProps
   lang: Language
 }
 
-const { headerType = 'scroll', title, navbar, lang } = Astro.props
+const { headerType = 'scroll', title, navbar, lang, footer } = Astro.props
 ---
 
 <!doctype html>
@@ -38,6 +39,6 @@ const { headerType = 'scroll', title, navbar, lang } = Astro.props
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer footer={footer} />
   </body>
 </html>
