@@ -33,7 +33,7 @@
     "text": "¿Te interesan nuestros recorridos o traslados? Reserva con nosotros"
   },
   "transferForm": {
-    "title": "Traslados",
+    "title": "Reservar Traslado",
     "subtitle": "Traslados entre aeropuertos y casas de alquiler",
     "fields": {
       "fullName": "Nombre Completo",
@@ -59,7 +59,7 @@
     "submitButton": "Enviar Reserva"
   },
   "tripForm": {
-    "title": "Viajes",
+    "title": "Reservar Viaje",
     "subtitle": "Viajes",
     "fields": {
       "fullName": "Nombre Completo",

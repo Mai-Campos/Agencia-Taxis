@@ -34,7 +34,7 @@
   },
 
   "transferForm": {
-    "title": "Transfers",
+    "title": "Book a Transfer",
     "subtitle": "Transfers between airports and rental homes",
     "fields": {
       "fullName": "Full Name",
@@ -60,7 +60,7 @@
     "submitButton": "Submit Reservation"
   },
   "tripForm": {
-    "title": "Trips",
+    "title": "Book a Trip",
     "subtitle": "Trips",
     "fields": {
       "fullName": "Full Name",
