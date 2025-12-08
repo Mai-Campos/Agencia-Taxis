@@ -2,7 +2,7 @@
 location: 'La Habana'
 packageName: 'Recorrido por La Habana Vieja'
 path: 'havana-vieja'
-img: 'havana-vieja.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'El Malecón'
   - 'El Capitolio'

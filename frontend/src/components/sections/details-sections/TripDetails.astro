@@ -1,6 +1,7 @@
 ---
 import BookTripBtn from '@/components/ui/BookTripBtn.astro'
 import Chip from '@/components/ui/Chip.astro'
+import { Image } from "astro:assets";
 import { Icon } from 'astro-icon/components'
 
 type Props = {
@@ -27,10 +28,12 @@ const {
 <section class="body-font overflow-hidden">
   <div class="container mx-auto px-5 pt-20">
     <div class="mx-auto flex flex-wrap lg:w-4/5">
-      <img
-        alt="ecommerce"
+      <Image
+        src={img}
+        alt={location}
+        width={700}
+        height={700}
         class="h-64 w-full rounded-xl object-cover object-center lg:h-auto lg:w-1/2"
-        src="/havana.webp"
       />
       <div class="mt-6 w-full lg:mt-0 lg:w-1/2 lg:py-6 lg:pl-10">
         <span

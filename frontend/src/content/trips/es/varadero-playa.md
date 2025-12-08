@@ -2,7 +2,7 @@
 location: 'Varadero'
 packageName: 'Varadero Paraíso Azul'
 path: 'varadero-playa'
-img: 'varadero-playa.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'Playa Varadero'
   - 'Parque Josone'

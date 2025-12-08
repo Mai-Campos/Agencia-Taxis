@@ -2,7 +2,7 @@
 location: 'Varadero'
 packageName: 'Varadero Blue Paradise'
 path: 'varadero-playa'
-img: 'varadero-playa.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'Varadero Beach'
   - 'Josone Park'

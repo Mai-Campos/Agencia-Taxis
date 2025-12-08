@@ -2,7 +2,7 @@
 location: 'Trinidad'
 packageName: 'Trinidad Patrimonio de la Humanidad'
 path: 'trinidad-colonial'
-img: 'trinidad-colonial.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'Plaza Mayor'
   - 'Museo Romántico'

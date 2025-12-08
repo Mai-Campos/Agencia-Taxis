@@ -2,7 +2,7 @@
 location: 'Trinidad'
 packageName: 'Trinidad World Heritage Tour'
 path: 'trinidad-colonial'
-img: 'trinidad-colonial.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'Main Square'
   - 'Romantic Museum'

@@ -2,7 +2,7 @@
 location: 'Santiago de Cuba'
 packageName: 'Cuna del Son y la Revolución'
 path: 'santiago-cuba'
-img: 'santiago-cuba.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'Castillo del Morro'
   - 'Céspedes Park'

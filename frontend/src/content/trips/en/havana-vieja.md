@@ -2,7 +2,7 @@
 location: 'Havana'
 packageName: 'Old Havana Tour'
 path: 'havana-vieja'
-img: 'havana-vieja.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'El Malecón'
   - 'The Capitol Building'

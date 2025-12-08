@@ -2,7 +2,7 @@
 location: 'Cayo Coco'
 packageName: 'Marine Adventure in Jardines del Rey'
 path: 'cayo-coco'
-img: 'cayo-coco.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'Flamenco Beach'
   - 'La Leche Lagoon'

@@ -2,7 +2,7 @@
 location: 'Santa Clara'
 packageName: 'Ruta Histórica del Che'
 path: 'santa-clara-che'
-img: 'santa-clara-che.jpg'
+img: '../trips-images/havana.webp'
 placesToVisit:
   - 'Monumento al Tren Blindado'
   - 'Mausoleo del Che'

@@ -2,14 +2,15 @@ import { defineCollection, z } from 'astro:content'
 
 const tripsCollection = defineCollection({
   type: 'content',
-  schema: z.object({
-    location: z.string(),
-    packageName: z.string(),
-    path: z.string(),
-    img: z.string(),
-    placesToVisit: z.array(z.string()),
-    price: z.string(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      location: z.string(),
+      packageName: z.string(),
+      path: z.string(),
+      img: image(),
+      placesToVisit: z.array(z.string()),
+      price: z.string(),
+    }),
 })
 
 const servicesCollection = defineCollection({
