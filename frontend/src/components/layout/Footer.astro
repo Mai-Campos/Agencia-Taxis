@@ -1,11 +1,14 @@
 ---
 import { Icon } from 'astro-icon/components'
 import type { FooterProps } from '@/components/layout/types/types'
+import LanguagePicker from '@/components/ui/LanguagePicker.astro'
+import { getRelativeLocaleUrl } from 'astro:i18n'
 
 interface Props {
   footer: FooterProps
 }
 
+const currentLang = Astro.currentLocale || 'es'
 const { footer } = Astro.props
 const { brand, links, contact, legal } = footer
 ---
@@ -47,26 +50,37 @@ const { brand, links, contact, legal } = footer
         </div>
       </div>
 
-      <!-- Enlaces rápidos -->
-      <div>
+      <div class="space-y-4">
         <h3 class="mb-4 font-semibold">{links.title}</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="/about" class="hover:underline">{links.about}</a></li>
-          <li><a href="/tours" class="hover:underline">{links.tours}</a></li>
           <li>
-            <a href="/categories" class="hover:underline">{links.categories}</a>
-          </li>
-          <li>
-            <a href="/faq" class="hover:underline">{links.faq}</a>
+            <a
+              href={`${getRelativeLocaleUrl(currentLang, '/')}#services`}
+              class="footer-link"
+            >
+              {links.services}
+            </a>
+            <li>
+              <a
+                href={getRelativeLocaleUrl(currentLang, 'trips')}
+                class="footer-link">{links.trips}</a
+              >
+            </li>
+            <li>
+              <a
+                href={getRelativeLocaleUrl(currentLang, 'check-booking')}
+                class="footer-link">{links.checkBook}</a
+              >
+            </li>
           </li>
         </ul>
       </div>
 
-      <div>
+      <div class="space-y-4">
         <h3 class="mb-4 font-semibold">{contact.title}</h3>
         <ul class="space-y-2 text-sm">
           <li>
-            <a href="/about" class="hover:underline"
+            <a href="/about" class="footer-link"
               ><Icon
                 name="tabler:brand-whatsapp"
                 size={16}
@@ -76,7 +90,7 @@ const { brand, links, contact, legal } = footer
             >
           </li>
           <li>
-            <a href="/tours" class="hover:underline"
+            <a href="/tours" class="footer-link"
               ><Icon name="tabler:mail" size={16} class="mr-2 inline-block" />
               email@email.com</a
             >

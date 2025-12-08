@@ -117,11 +117,9 @@
     },
     "links": {
       "title": "Links",
-      "about": "About us",
-      "tours": "Destinations",
-      "categories": "Types of excursions",
-      "faq": "Frequently asked questions",
-      "blog": "Blog & guides"
+      "services": "Services",
+      "trips": "Trips",
+      "checkBook": "Check Booking"
     },
     "contact": {
       "title": "Contact"

@@ -46,7 +46,7 @@ input:-webkit-autofill:active {
 }
 
 .go-to {
-  @apply text-primary hover:text-primary-hover active:text-primary-hover flex cursor-pointer items-center gap-1 text-lg font-semibold;
+  @apply text-primary hover:text-primary-hover hover:underline active:text-primary-hover flex cursor-pointer items-center gap-1 text-lg font-semibold;
 }
 
 .lang-label {
@@ -79,4 +79,8 @@ input:-webkit-autofill:active {
 
 .cta-btn-outline {
   @apply border-primary shadow-card hover:bg-primary/10 active:bg-primary/20 cursor-pointer rounded-xl border-2 bg-transparent px-6 py-4 text-center font-semibold text-pretty select-none;
+}
+
+.footer-link {
+  @apply hover:text-primary-hover hover:underline active:text-primary-hover cursor-pointer;
 }

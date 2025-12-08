@@ -1,3 +1,10 @@
+export type NavBarTranslations = {
+  language: string
+  services: string
+  travels: string
+  checkBooking: string
+}
+
 export type FooterProps = {
   brand: {
     name: string
@@ -5,10 +12,9 @@ export type FooterProps = {
   }
   links: {
     title: string
-    about: string
-    tours: string
-    categories: string
-    faq: string
+    services: string
+    trips: string
+    checkBook: string
   }
   contact: {
     title: string
@@ -16,11 +22,4 @@ export type FooterProps = {
   legal: {
     copyright: string
   }
-}
-
-export type NavBarTranslations = {
-  language: string
-  services: string
-  travels: string
-  checkBooking: string
 }
