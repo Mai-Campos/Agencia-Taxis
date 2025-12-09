@@ -2,6 +2,8 @@
 import BookTripBtn from '@/components/ui/BookTripBtn.astro'
 import ShapeDivider from '@/components/ui/ShapeDivider.astro'
 import BookTransferBtn from '@/components/ui/BookTransferBtn.astro'
+import heroImage from '@/assets/hero-image.webp'
+import { Image } from "astro:assets";
 import { Icon } from 'astro-icon/components'
 
 export interface Props {
@@ -14,70 +16,73 @@ export interface Props {
 const { title, subtitle, tripBtn, transferBtn } = Astro.props
 ---
 
-<section
-  class="body-font bg-hero flex h-screen min-h-[600px] items-center justify-start text-center text-white"
->
-  <main
-    class="flex max-w-[800px] flex-col items-center text-center md:w-1/2 md:items-start md:pl-16 md:text-left lg:grow lg:pl-24"
-  >
-    <h1 class="title-font mb-4 text-3xl font-bold sm:text-4xl">
-      {title}
-    </h1>
-    <p class="mb-8 leading-relaxed text-gray-100">
-      {subtitle}
-    </p>
-    <div class="flex flex-col gap-4 sm:flex-row">
-      <BookTripBtn text={tripBtn} className="text-lg sm:text-xl" />
-      <BookTransferBtn
-        text={transferBtn}
-        className="text-lg text-white sm:text-xl"
-      />
-    </div>
-  </main>
-  <aside class="absolute right-4 bottom-14">
+<section class="body-font text-white relative h-screen min-h-[600px] overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <Image
+      src={heroImage}
+      alt=""
+      width={1920}
+      height={1080}
+      class="h-full w-full object-cover object-center"
+      aria-hidden="true"
+      loading="eager"
+      quality={90}
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
+  </div>
+
+  <div class="relative z-10 flex h-full items-center">
+    <main class="container mx-auto px-4 md:pl-16 lg:pl-24">
+      <div class="max-w-[800px]">
+        <h1 class="title-font mb-4 text-3xl font-bold sm:text-4xl">
+          {title}
+        </h1>
+        <p class="mb-8 text-lg leading-relaxed text-gray-100">
+          {subtitle}
+        </p>
+        <div class="flex flex-col gap-4 sm:flex-row">
+          <BookTripBtn text={tripBtn} className="text-lg sm:text-xl" />
+          <BookTransferBtn
+            text={transferBtn}
+            className="text-lg text-white sm:text-xl"
+          />
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <aside class="absolute right-4 bottom-14 z-10">
     <div class="flex flex-col gap-2">
-      <a href="/"
-        ><Icon
+      <a href="/" aria-label="TripAdvisor">
+        <Icon
           name="tabler:brand-tripadvisor"
           size={28}
           class="hover:text-primary-hover active:text-primary-hover color-transition"
-        /></a
-      >
-      <a href="/"
-        ><Icon
+        />
+      </a>
+      <a href="/" aria-label="WhatsApp">
+        <Icon
           name="tabler:brand-whatsapp"
           size={28}
           class="hover:text-primary-hover active:text-primary-hover color-transition"
-        /></a
-      >
-      <a href="/"
-        ><Icon
+        />
+      </a>
+      <a href="/" aria-label="Instagram">
+        <Icon
           name="tabler:brand-instagram"
           size={28}
           class="hover:text-primary-hover active:text-primary-hover color-transition"
-        /></a
-      >
-      <a href="/"
-        ><Icon
+        />
+      </a>
+      <a href="/" aria-label="Facebook">
+        <Icon
           name="tabler:brand-facebook"
           size={28}
           class="hover:text-primary-hover active:text-primary-hover color-transition"
-        /></a
-      >
+        />
+      </a>
     </div>
   </aside>
+  
   <ShapeDivider />
 </section>
-
-<style>
-  .bg-hero {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url('/hero-image.webp');
-
-    /* Asegurar que cubra todo el contenedor */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-</style>
