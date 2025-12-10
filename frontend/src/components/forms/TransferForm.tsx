@@ -125,7 +125,7 @@ function TransferForm({
           </div>
 
           {/* Fecha de recogida */}
-          <div className="w-1/2 p-2">
+          <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.pickupDate}
               <input
@@ -151,7 +151,7 @@ function TransferForm({
           </div>
 
           {/* Hora de recogida */}
-          <div className="w-1/2 p-2">
+          <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.pickupTime}
               <input
