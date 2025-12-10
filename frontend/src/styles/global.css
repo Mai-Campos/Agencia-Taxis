@@ -1,3 +1,4 @@
+@import './fonts.css';
 @import 'tailwindcss';
 
 @theme {
@@ -27,6 +28,9 @@
   --color-surface-alt: #fdfdfc;
 
   --shadow-card: 0 2px 8px rgba(28, 43, 54, 0.06);
+
+  --font-body-font: 'Inter Variable', sans-serif;
+  --font-title-font: 'Poppins', sans-serif;
 }
 
 input:-webkit-autofill,
@@ -37,13 +41,15 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px #f9f8f5 inset;
 }
 
-.body-font {
+/* .body-font {
   font-family: 'Poppins', sans-serif;
+  font-display: swap;
 }
 
 .title-font {
   font-family: 'Inter Variable', sans-serif;
-}
+  font-display: swap;
+} */
 
 .go-to {
   @apply text-primary hover:text-primary-hover active:text-primary-hover flex cursor-pointer items-center gap-1 text-lg font-semibold hover:underline;

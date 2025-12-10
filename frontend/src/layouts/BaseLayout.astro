@@ -1,8 +1,10 @@
 ---
-import Footer, { type FooterProps } from '@/components/layout/Footer.astro'
+import Footer from '@/components/layout/Footer.astro'
+import type { FooterProps } from '@/components/layout/types/types'
 import HeaderScroll from '@/components/layout/HeaderScroll.astro'
 import HeaderStatic from '@/components/layout/HeaderStatic.astro'
-import type { Language, NavBarTranslations } from '@/i18n/types'
+import type { Language } from '@/i18n/types'
+import type { NavBarTranslations } from '@/components/layout/types/types'
 import '@fontsource-variable/inter'
 import '@fontsource/poppins'
 
@@ -27,7 +29,7 @@ const { headerType = 'scroll', title, navbar, lang, footer } = Astro.props
     <title>{`Crystal Sands Ride | ${title}`}</title>
   </head>
   <body
-    class="bg-background text-text-main selection:text-text-main body-font selection:bg-blue-300"
+    class="bg-background text-text-main selection:text-text-main font-body-font selection:bg-blue-300"
   >
     {
       headerType === 'scroll' ? (
