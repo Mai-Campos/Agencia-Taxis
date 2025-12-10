@@ -178,7 +178,7 @@ function TransferForm({
           </div>
 
           {/* Cantidad de pasajeros */}
-          <div className="w-1/2 p-2 sm:w-1/3">
+          <div className="w-full p-2 sm:w-1/3">
             <label className="text-text-secondary text-sm leading-7">
               {fields.passengers}
               <input
@@ -195,7 +195,7 @@ function TransferForm({
           </div>
 
           {/* Tipo de vehículo */}
-          <div className="w-1/2 p-2 sm:w-1/3">
+          <div className="w-full p-2 sm:w-1/3">
             <label className="text-text-secondary text-sm leading-7">
               {fields.vehicle}
               <select className="input-component" {...register('vehicle')}>
