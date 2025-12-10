@@ -3,7 +3,7 @@ import BookTripBtn from '@/components/ui/BookTripBtn.astro'
 import ShapeDivider from '@/components/ui/ShapeDivider.astro'
 import BookTransferBtn from '@/components/ui/BookTransferBtn.astro'
 import heroImage from '@/assets/hero-image.webp'
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
 export interface Props {
@@ -16,11 +16,13 @@ export interface Props {
 const { title, subtitle, tripBtn, transferBtn } = Astro.props
 ---
 
-<section class="body-font text-white relative h-screen min-h-[600px] overflow-hidden">
+<section
+  class="body-font relative h-screen min-h-[600px] overflow-hidden text-white"
+>
   <div class="absolute inset-0 z-0">
     <Image
       src={heroImage}
-      alt=""
+      alt="Hero Background"
       width={1920}
       height={1080}
       class="h-full w-full object-cover object-center"
@@ -33,11 +35,17 @@ const { title, subtitle, tripBtn, transferBtn } = Astro.props
 
   <div class="relative z-10 flex h-full items-center">
     <main class="container mx-auto px-4 md:pl-16 lg:pl-24">
-      <div class="max-w-[800px]">
-        <h1 class="title-font mb-4 text-3xl font-bold sm:text-4xl">
+      <div
+        class="flex flex-col items-center justify-center sm:items-start lg:max-w-[50%]"
+      >
+        <h1
+          class="title-font mb-4 text-center text-3xl font-bold sm:text-left sm:text-4xl"
+        >
           {title}
         </h1>
-        <p class="mb-8 text-lg leading-relaxed text-gray-100">
+        <p
+          class="mb-8 text-center text-lg leading-relaxed text-pretty text-gray-100 sm:text-left"
+        >
           {subtitle}
         </p>
         <div class="flex flex-col gap-4 sm:flex-row">
@@ -83,6 +91,6 @@ const { title, subtitle, tripBtn, transferBtn } = Astro.props
       </a>
     </div>
   </aside>
-  
+
   <ShapeDivider />
 </section>

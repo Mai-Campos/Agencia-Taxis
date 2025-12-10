@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
 type Props = {
@@ -18,12 +18,12 @@ const { location, packageName, img, path } = Astro.props
       class="group shadow-card bg-surface relative h-80 w-full overflow-hidden rounded-xl"
     >
       <Image
-    src={img}
-    alt={location}
-    width={680}
-    height={600}
-    class="absolute inset-0 h-full w-full object-cover object-center"
-  />
+        src={img}
+        alt={location}
+        width={680}
+        height={600}
+        class="absolute inset-0 h-full w-full object-cover object-center"
+      />
       <div
         class="bg-image absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
       >

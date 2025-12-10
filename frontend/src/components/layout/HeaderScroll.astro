@@ -24,7 +24,7 @@ const { scrollHeader = true, navbar } = Astro.props
   >
     <a
       href={getRelativeLocaleUrl(currentLang, '/')}
-      class="title-font flex cursor-pointer gap-4 text-xl font-bold md:mb-0"
+      class="title-font flex cursor-pointer gap-4 text-xl font-bold lg:mb-0"
     >
       <img
         alt="Crystal Sands Ride Logo"
@@ -39,7 +39,7 @@ const { scrollHeader = true, navbar } = Astro.props
       <button
         id="menu-toggle"
         type="button"
-        class="ml-3 inline-flex items-center rounded-lg p-2 text-sm hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none md:hidden"
+        class="ml-3 inline-flex cursor-pointer items-center rounded-lg p-2 text-sm focus:ring-2 focus:ring-gray-200 focus:outline-none lg:hidden"
       >
         <span class="sr-only">Open main menu</span>
         <Icon name="tabler:menu-2" size={24} />
@@ -47,7 +47,7 @@ const { scrollHeader = true, navbar } = Astro.props
     </div>
 
     <div
-      class="bg-background text-text-main hidden w-full rounded-xl py-6 md:block md:w-auto md:bg-transparent md:py-0 md:text-inherit"
+      class="bg-background text-text-main hidden w-full rounded-xl py-6 lg:block lg:w-auto lg:bg-transparent lg:py-0 lg:text-inherit"
       id="mobile-menu"
     >
       <NavBar navbar={navbar} />

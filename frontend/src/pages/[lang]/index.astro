@@ -28,7 +28,13 @@ const topTrips = trips.slice(0, 4)
 const t = await getTranslations('literals', lang)
 ---
 
-<BaseLayout headerType="scroll" title="Inicio" footer={t.footer} navbar={t.navbar} lang={lang}>
+<BaseLayout
+  headerType="scroll"
+  title="Inicio"
+  footer={t.footer}
+  navbar={t.navbar}
+  lang={lang}
+>
   <Hero
     {...t.hero}
     tripBtn={t.button.tripText}

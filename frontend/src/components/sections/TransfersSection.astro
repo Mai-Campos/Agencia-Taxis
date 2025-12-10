@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { getRelativeLocaleUrl } from 'astro:i18n'
+import planeImage from '@/assets/bg-plane.webp'
+import { Image } from 'astro:assets'
 
 type Props = {
   title: string
@@ -12,10 +14,26 @@ const currentLang = Astro.currentLocale || 'es'
 const { title, description, link } = Astro.props
 ---
 
-<section class="body-font bg-plane">
-  <div class="container mx-auto flex flex-wrap px-5 py-24 md:max-w-[1100px]">
+<section class="body-font relative overflow-hidden py-24 text-white">
+  <div class="absolute inset-0 z-0">
+    <Image
+      src={planeImage}
+      alt="Airplane picture"
+      width={1000}
+      height={600}
+      class="h-full w-full object-cover object-center"
+      aria-hidden="true"
+      quality={85}
+    />
+
+    <div class="absolute inset-0 bg-black/50"></div>
+  </div>
+
+  <div
+    class="relative z-10 container mx-auto flex flex-wrap px-5 lg:max-w-[1100px]"
+  >
     <h2
-      class="title-font mb-2 text-2xl font-medium text-white sm:text-3xl md:w-2/5"
+      class="title-font mb-6 text-2xl font-medium text-white sm:text-3xl md:mb-0 md:w-2/5"
     >
       {title}
     </h2>
@@ -25,23 +43,13 @@ const { title, description, link } = Astro.props
       </p>
       <div class="mt-6 flex md:mt-4">
         <a
-          class="go-to color-transition"
+          class="go-to color-transition inline-flex items-center gap-2 transition-all hover:gap-3"
           href={getRelativeLocaleUrl(currentLang, 'book-transfer')}
-          >{link}<Icon name="tabler:arrow-narrow-right" size={22} /></a
         >
+          {link}
+          <Icon name="tabler:arrow-narrow-right" size={22} />
+        </a>
       </div>
     </aside>
   </div>
 </section>
-
-<style>
-  .bg-plane {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url('/bg-plane.webp');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-</style>

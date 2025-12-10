@@ -26,7 +26,13 @@ const { data, body } = trip
 const t = await getTranslations('literals', lang)
 ---
 
-<BaseLayout headerType="static" title="Inicio" footer={t.footer} navbar={t.navbar} lang={lang}>
+<BaseLayout
+  headerType="static"
+  title="Inicio"
+  footer={t.footer}
+  navbar={t.navbar}
+  lang={lang}
+>
   <TripDetails
     location={data.location}
     packageName={data.packageName}

@@ -6,11 +6,11 @@ type Props = {
   label: string
 }
 
-// toma la url actual
+// Take current URL
 const currentUrl = Astro.url.href
-// crea una nueva url solo con el pathname y elimina el primer '/'
+// Create a new URL with the pathname and remove first '/'
 const u = new URL(currentUrl).pathname.slice(1)
-// si empieza con 'es' o 'en' lo quita
+// If starts with 'es' or 'en' remove's it
 let restOfUrl = u
 if (restOfUrl.startsWith('es')) restOfUrl = restOfUrl.replace('es/', '')
 if (restOfUrl.startsWith('en')) restOfUrl = restOfUrl.replace('en/', '')
