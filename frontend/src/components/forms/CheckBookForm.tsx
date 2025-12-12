@@ -14,7 +14,7 @@ function CheckBookForm({ buttonText, invalidNumber }: CheckBookFormProps) {
   } = useForm<CheckBookFormData>()
 
   const onSubmit = handleSubmit(async (data) => {
-    console.log(data)
+    console.log(data.bookNumber)
     try {
       const resData = await checkBook(data.bookNumber)
       console.log('Response:', resData)
