@@ -1,12 +1,9 @@
 export const submitTransfer = async (payload: Object) => {
-  const res = await fetch(
-    'https://enterprising-florida-chunkily.ngrok-free.dev/api/reservations',
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    }
-  )
+  const res = await fetch(`http://localhost:3000/api/reservations}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
 
   const data = await res.json()
   if (!res.ok) {
