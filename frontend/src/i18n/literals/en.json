@@ -108,7 +108,34 @@
     "title": "Check Booking",
     "description": "Already made your reservation? Simply enter your booking number below to view your travel details.",
     "button": "Check",
-    "invalidNumber": "Invalid or empty book number"
+    "invalidNumber": "Invalid or empty book number",
+    "bookDetails": {
+      "title": "Detalles del Viaje",
+      "subtitle": "Aquí puedes consultar la información de tu reserva.",
+      "clientInfo": {
+        "title": "Información del Cliente:",
+        "name": "Nombre",
+        "email": "Correo electrónico"
+      },
+      "pickupDetails": {
+        "title": "Detalles de Recogida",
+        "pickupLocation": "Lugar de Recogida",
+        "date": "Fecha",
+        "time": "Time"
+      },
+      "serviceInfo": {
+        "title": "Información del Servicio",
+        "trip": "Recorrido",
+        "flightNumber": "Número de Vuelo (si aplica)",
+        "guideLanguage": "Idioma del guía"
+      },
+      "aditionalInfo": {
+        "title": "Información Adicional",
+        "passengers": "Pasajeros",
+        "vehicle": "Vehículo",
+        "comments": "Comentarios"
+      }
+    }
   },
   "footer": {
     "brand": {
