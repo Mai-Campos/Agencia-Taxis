@@ -33,12 +33,17 @@ function CheckBookForm({ buttonText, invalidNumber }: CheckBookFormProps) {
       >
         <input
           {...register('bookNumber', {
-            required: true,
+            required: invalidNumber,
+            validate: (value) => {
+              const trimmed = String(value || '').trim()
+              return trimmed.length > 0
+            },
+            setValueAs: (value) =>
+              typeof value === 'string' ? value.trim() : value,
           })}
           type="text"
           className={errors.bookNumber ? 'input-error' : 'input-component'}
         />
-
         <button className="cta-btn">{buttonText}</button>
       </form>
       {/* {errors.id && (

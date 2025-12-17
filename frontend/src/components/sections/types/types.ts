@@ -21,7 +21,7 @@ export type bookDetails = {
     flightNumber: string
     guideLanguage: string
   }
-  aditionalInfo: {
+  additionalInfo: {
     title: string
 
     passengers: string

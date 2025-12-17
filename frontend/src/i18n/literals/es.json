@@ -124,11 +124,12 @@
       },
       "serviceInfo": {
         "title": "Información del Servicio:",
+        "destination": "Destino",
         "trip": "Recorrido",
         "flightNumber": "Número de Vuelo (si aplica)",
         "guideLanguage": "Idioma del guía"
       },
-      "aditionalInfo": {
+      "additionalInfo": {
         "title": "Información Adicional:",
         "passengers": "Pasajeros",
         "vehicle": "Vehículo",

@@ -110,30 +110,31 @@
     "button": "Check",
     "invalidNumber": "Invalid or empty book number",
     "bookDetails": {
-      "title": "Detalles del Viaje",
-      "subtitle": "Aquí puedes consultar la información de tu reserva.",
+      "title": "Trip Details",
+      "subtitle": "Here you can check your booking information.",
       "clientInfo": {
-        "title": "Información del Cliente:",
-        "name": "Nombre",
-        "email": "Correo electrónico"
+        "title": "Client Information:",
+        "name": "Name",
+        "email": "Email"
       },
       "pickupDetails": {
-        "title": "Detalles de Recogida",
-        "pickupLocation": "Lugar de Recogida",
-        "date": "Fecha",
+        "title": "Pickup Details:",
+        "pickupLocation": "Pickup Location",
+        "date": "Date",
         "time": "Time"
       },
       "serviceInfo": {
-        "title": "Información del Servicio",
-        "trip": "Recorrido",
-        "flightNumber": "Número de Vuelo (si aplica)",
-        "guideLanguage": "Idioma del guía"
+        "title": "Service Information:",
+        "destination": "Destination",
+        "trip": "Route",
+        "flightNumber": "Flight Number (if applicable)",
+        "guideLanguage": "Guide Language"
       },
-      "aditionalInfo": {
-        "title": "Información Adicional",
-        "passengers": "Pasajeros",
-        "vehicle": "Vehículo",
-        "comments": "Comentarios"
+      "additionalInfo": {
+        "title": "Additional Information:",
+        "passengers": "Passengers",
+        "vehicle": "Vehicle",
+        "comments": "Comments"
       }
     }
   },
