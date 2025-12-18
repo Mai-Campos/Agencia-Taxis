@@ -110,8 +110,6 @@
     "button": "Check",
     "invalidNumber": "Invalid or empty book number",
     "bookDetails": {
-      "title": "Trip Details",
-      "subtitle": "Here you can check your booking information.",
       "clientInfo": {
         "title": "Client Information:",
         "name": "Name",
@@ -138,6 +136,10 @@
       }
     }
   },
+"confirmBook": {
+  "title": "Confirm Booking",
+  "subtitle": "Review your booking details before confirming."
+},
   "footer": {
     "brand": {
       "name": "Crystal Sands Ride",

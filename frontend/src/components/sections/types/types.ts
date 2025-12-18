@@ -1,6 +1,4 @@
 export type bookDetails = {
-  title: string
-  subtitle: string
   clientInfo: {
     title: string
     name: string
@@ -8,14 +6,12 @@ export type bookDetails = {
   }
   pickupDetails: {
     title: string
-
     pickupLocation: string
     date: string
     time: string
   }
   serviceInfo: {
     title: string
-
     destination: string
     trip: string
     flightNumber: string
@@ -23,7 +19,6 @@ export type bookDetails = {
   }
   additionalInfo: {
     title: string
-
     passengers: string
     vehicle: string
     comments: string

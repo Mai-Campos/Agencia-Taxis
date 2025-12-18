@@ -7,8 +7,6 @@ interface Props {
 
 const { bookDetails } = Astro.props
 const {
-  title,
-  subtitle,
   clientInfo,
   pickupDetails,
   serviceInfo,
@@ -18,12 +16,6 @@ const {
 
 <section>
   <div class="container mx-auto px-5 py-12">
-    <div class="mb-10 text-center">
-      <h1 class="text-3xl font-semibold">{title}</h1>
-      <p class="text-text-secondary mt-2">
-        {subtitle}
-      </p>
-    </div>
 
     <div class="bg-surface mx-auto space-y-10 rounded-lg p-8 lg:w-2/3">
       <!-- Datos del Cliente -->
@@ -34,11 +26,11 @@ const {
         <div class="grid gap-4 md:grid-cols-2">
           <div>
             <p class="text-text-secondary text-sm">{clientInfo.name}</p>
-            <p class="font-medium text-gray-800">Juan Pérez</p>
+            <p class="font-medium">Juan Pérez</p>
           </div>
           <div>
             <p class="text-text-secondary text-sm">{clientInfo.email}</p>
-            <p class="font-medium text-gray-800">juanperez@mail.com</p>
+            <p class="font-medium">juanperez@mail.com</p>
           </div>
         </div>
       </div>
@@ -54,17 +46,17 @@ const {
             <p class="text-text-secondary text-sm">
               {pickupDetails.pickupLocation}
             </p>
-            <p class="font-medium text-gray-800">Aeropuerto Internacional</p>
+            <p class="font-medium">Aeropuerto Internacional</p>
           </div>
 
           <div>
             <p class="text-text-secondary text-sm">{pickupDetails.date}</p>
-            <p class="font-medium text-gray-800">2025-06-22</p>
+            <p class="font-medium">2025-06-22</p>
           </div>
 
           <div>
             <p class="text-text-secondary text-sm">{pickupDetails.time}</p>
-            <p class="font-medium text-gray-800">14:30</p>
+            <p class="font-medium">14:30</p>
           </div>
         </div>
       </div>
@@ -79,7 +71,7 @@ const {
           <!-- Solo aparece si es Traslado -->
           <div>
             <p class="text-text-secondary text-sm">{serviceInfo.destination}</p>
-            <p class="font-medium text-gray-800">Hotel Central</p>
+            <p class="font-medium">Hotel Central</p>
           </div>
 
           <!-- Solo aparece si es Traslado -->
@@ -87,13 +79,13 @@ const {
             <p class="text-text-secondary text-sm">
               {serviceInfo.flightNumber}
             </p>
-            <p class="font-medium text-gray-800">AR1234</p>
+            <p class="font-medium">AR1234</p>
           </div>
 
           <!-- Solo aparece si es Recorrido -->
           <div>
             <p class="text-text-secondary text-sm">{serviceInfo.trip}</p>
-            <p class="font-medium text-gray-800">Tour Ciudad Completa</p>
+            <p class="font-medium">Tour Ciudad Completa</p>
           </div>
 
           <!-- Solo aparece si es Recorrido -->
@@ -101,7 +93,7 @@ const {
             <p class="text-text-secondary text-sm">
               {serviceInfo.guideLanguage}
             </p>
-            <p class="font-medium text-gray-800">Inglés</p>
+            <p class="font-medium">Inglés</p>
           </div>
         </div>
       </div>
@@ -117,17 +109,17 @@ const {
             <p class="text-text-secondary text-sm">
               {additionalInfo.passengers}
             </p>
-            <p class="font-medium text-gray-800">3</p>
+            <p class="font-medium">3</p>
           </div>
           <div>
             <p class="text-text-secondary text-sm">{additionalInfo.vehicle}</p>
-            <p class="font-medium text-gray-800">SUV</p>
+            <p class="font-medium">SUV</p>
           </div>
         </div>
 
         <div class="mt-4">
           <p class="text-text-secondary text-sm">{additionalInfo.comments}</p>
-          <p class="font-medium text-gray-800">
+          <p class="font-medium">
             Por favor, esperarme con un cartel. Viajo con niños.
           </p>
         </div>

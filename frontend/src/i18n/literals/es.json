@@ -109,8 +109,6 @@
     "button": "Consultar",
     "invalidNumber": "Número de reserva inválido o vacío",
     "bookDetails": {
-      "title": "Detalles del Viaje",
-      "subtitle": "Aquí puedes consultar la información de tu reserva.",
       "clientInfo": {
         "title": "Información del Cliente:",
         "name": "Nombre",
@@ -137,6 +135,10 @@
       }
     }
   },
+  "confirmBook": {
+  "title": "Confirmar Reserva",
+  "subtitle": "Revisa los detalles de tu reserva antes de confirmar."
+},
   "footer": {
     "brand": {
       "name": "Crystal Sands Ride",
