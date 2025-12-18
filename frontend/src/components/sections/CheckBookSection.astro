@@ -3,7 +3,6 @@ import BookDetails from '@/components/sections/details-sections/BookDetails'
 import CheckBookForm from '@/components/forms/CheckBookForm'
 import type {
   bookingLabels,
-  bookingData,
 } from '@/components/sections/types/types'
 
 interface Props {
@@ -12,7 +11,6 @@ interface Props {
   button: string
   invalidNumber: string
   bookingLabels: bookingLabels
-  bookingData: bookingData
 }
 
 const {
@@ -21,7 +19,6 @@ const {
   button,
   invalidNumber,
   bookingLabels,
-  bookingData,
 } = Astro.props
 ---
 
@@ -43,7 +40,7 @@ const {
       />
     </div>
     <div class="mt-5">
-      <BookDetails labels={bookingLabels} data={bookingData} client:load />
+      <BookDetails labels={bookingLabels} client:load />
     </div>
   </div>
 </section>

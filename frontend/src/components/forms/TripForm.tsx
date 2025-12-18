@@ -1,5 +1,4 @@
 import type { TripFormData, TripFormProps } from '@/components/forms/types'
-import { submitTrip } from '@/api/trips'
 import { useForm } from 'react-hook-form'
 
 function TripForm({
@@ -7,7 +6,6 @@ function TripForm({
   title,
   subtitle,
   fields,
-  validationMessages,
   vehicleOptions,
   tripOptions,
   noGuide,
@@ -18,7 +16,6 @@ function TripForm({
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<TripFormData>({
     defaultValues: {
       passengers: 1,
@@ -26,24 +23,17 @@ function TripForm({
     },
   })
 
-  const onSubmit = handleSubmit(async (data) => {
-    const withGuide = data.guideLanguaje !== 'noGuide'
-
-    const { guideLanguaje, ...cleaned } = data
+  const onSubmit = handleSubmit((data) => {
     const payload = {
-      type: 'Recorrido',
-      withGuide,
-      languaje: withGuide ? data.guideLanguaje : null,
-      ...cleaned,
+      ...data,
+      pickupDate: data.pickupDate, // guardar como string
     }
-    console.log(payload)
-    try {
-      const resData = await submitTrip(payload)
-      console.log('Response:', resData)
-      reset()
-    } catch (err) {
-      console.error('Error:', err)
-    }
+
+    // Guardar en localStorage y redirigir
+    localStorage.setItem('bookingData', JSON.stringify(payload))
+    const currentPath = window.location.pathname
+    const locale = currentPath.split('/')[1]
+    window.location.href = `/${locale}/confirm-book`
   })
 
   return (
@@ -66,9 +56,7 @@ function TripForm({
               <input
                 type="text"
                 className={errors.ownerName ? 'input-error' : 'input-component'}
-                {...register('ownerName', {
-                  required: true,
-                })}
+                {...register('ownerName', { required: true })}
               />
             </label>
           </div>
@@ -77,22 +65,14 @@ function TripForm({
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.ownerEmail}
-              {errors.ownerEmail && (
-                <span className="absolute ml-2 font-semibold text-red-500">
-                  {errors.ownerEmail.message}
-                </span>
-              )}
               <input
-                type="ownerEmail"
+                type="email"
                 className={
                   errors.ownerEmail ? 'input-error' : 'input-component'
                 }
                 {...register('ownerEmail', {
                   required: true,
-                  pattern: {
-                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: validationMessages.invalidEmail,
-                  },
+                  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                 })}
               />
             </label>
@@ -107,9 +87,7 @@ function TripForm({
                 className={
                   errors.pickupLocation ? 'input-error' : 'input-component'
                 }
-                {...register('pickupLocation', {
-                  required: true,
-                })}
+                {...register('pickupLocation', { required: true })}
               />
             </label>
           </div>
@@ -122,20 +100,18 @@ function TripForm({
                 className={
                   errors.packageName ? 'input-error' : 'input-component'
                 }
-                {...register('packageName', {
-                  required: true,
-                })}
+                {...register('packageName', { required: true })}
               >
-                {Object.entries(tripOptions).map((v) => (
-                  <option key={v[0]} value={v[0]}>
-                    {v[1]}
+                {Object.entries(tripOptions).map(([key, value]) => (
+                  <option key={key} value={key}>
+                    {value}
                   </option>
                 ))}
               </select>
             </label>
           </div>
 
-          {/* Fecha de recogida */}
+          {/* Fecha y hora de recogida */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.pickupDate}
@@ -144,24 +120,11 @@ function TripForm({
                 className={
                   errors.pickupDate ? 'input-error' : 'input-component'
                 }
-                {...register('pickupDate', {
-                  required: true,
-                  valueAsDate: true,
-                  validate: (value) => {
-                    const inputValue = new Date(value)
-                    const currentDate = new Date()
-                    currentDate.setHours(0, 0, 0, 0)
-
-                    return (
-                      inputValue >= currentDate || validationMessages.futureDate
-                    )
-                  },
-                })}
+                {...register('pickupDate', { required: true })}
               />
             </label>
           </div>
 
-          {/* Hora de recogida */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.pickupTime}
@@ -170,9 +133,7 @@ function TripForm({
                 className={
                   errors.pickupTime ? 'input-error' : 'input-component'
                 }
-                {...register('pickupTime', {
-                  required: true,
-                })}
+                {...register('pickupTime', { required: true })}
               />
             </label>
           </div>
@@ -186,9 +147,9 @@ function TripForm({
                 {...register('guideLanguaje')}
               >
                 <option value="noGuide">{noGuide}</option>
-                {Object.entries(languajes).map((g) => (
-                  <option key={g[0]} value={g[0]}>
-                    {g[1]}
+                {Object.entries(languajes).map(([key, value]) => (
+                  <option key={key} value={key}>
+                    {value}
                   </option>
                 ))}
               </select>
@@ -217,9 +178,9 @@ function TripForm({
             <label className="text-text-secondary text-sm leading-7">
               {fields.vehicle}
               <select className="input-component" {...register('vehicle')}>
-                {Object.entries(vehicleOptions).map((v) => (
-                  <option key={v[0]} value={v[0]}>
-                    {v[1]}
+                {Object.entries(vehicleOptions).map(([key, value]) => (
+                  <option key={key} value={key}>
+                    {value}
                   </option>
                 ))}
               </select>
@@ -234,7 +195,7 @@ function TripForm({
                 className="textarea-component textarea-scroll"
                 spellCheck="false"
                 {...register('comments')}
-              ></textarea>
+              />
             </label>
           </div>
 

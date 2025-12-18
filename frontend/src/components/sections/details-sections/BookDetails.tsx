@@ -1,17 +1,26 @@
-import type {
-  bookingLabels,
-  bookingData,
-} from '@/components/sections/types/types'
+import { useEffect, useState } from 'react'
+import type { bookingLabels } from '@/components/sections/types/types'
+import type { TransferFormData, TripFormData } from '@/components/forms/types'
 
 interface BookDetailsProps {
   labels: bookingLabels
-  data: bookingData | null
 }
 
-function BookDetails({ labels, data }: BookDetailsProps) {
-  if (!data) return null
+function BookDetails({ labels }: BookDetailsProps) {
+  const [formData, setFormData] = useState<TransferFormData | TripFormData | null>(null)
 
+  useEffect(() => {
+    const storedData = localStorage.getItem('bookingData')
+    if (storedData) {
+      setFormData(JSON.parse(storedData))
+    }
+  }, [])
+
+  if (!formData) return <p>No booking data found.</p>
+
+  const isTransfer = 'destination' in formData // type guard para Transfer vs Trip
   const { clientInfo, pickupDetails, serviceInfo, additionalInfo } = labels
+
   return (
     <section>
       <div className="container mx-auto px-5 py-12">
@@ -22,45 +31,30 @@ function BookDetails({ labels, data }: BookDetailsProps) {
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <p className="text-text-secondary text-sm">{clientInfo.name}</p>
-                <p className="font-medium">{data.clientInfo.name}</p>
+                <p className="font-medium">{formData.ownerName}</p>
               </div>
               <div>
-                <p className="text-text-secondary text-sm">
-                  {clientInfo.email}
-                </p>
-                <p className="font-medium">{data.clientInfo.email}</p>
+                <p className="text-text-secondary text-sm">{clientInfo.email}</p>
+                <p className="font-medium">{formData.ownerEmail}</p>
               </div>
             </div>
           </div>
 
           {/* Datos de Pickup */}
           <div>
-            <h2 className="mb-4 text-xl font-semibold">
-              {pickupDetails.title}
-            </h2>
-
+            <h2 className="mb-4 text-xl font-semibold">{pickupDetails.title}</h2>
             <div className="grid gap-4 md:grid-cols-3">
               <div>
-                <p className="text-text-secondary text-sm">
-                  {pickupDetails.pickupLocation}
-                </p>
-                <p className="font-medium">
-                  {data.pickupDetails.pickupLocation}
-                </p>
+                <p className="text-text-secondary text-sm">{pickupDetails.pickupLocation}</p>
+                <p className="font-medium">{formData.pickupLocation}</p>
               </div>
-
               <div>
-                <p className="text-text-secondary text-sm">
-                  {pickupDetails.date}
-                </p>
-                <p className="font-medium">{data.pickupDetails.date}</p>
+                <p className="text-text-secondary text-sm">{pickupDetails.date}</p>
+                <p className="font-medium">{formData.pickupDate}</p>
               </div>
-
               <div>
-                <p className="text-text-secondary text-sm">
-                  {pickupDetails.time}
-                </p>
-                <p className="font-medium">{data.pickupDetails.time}</p>
+                <p className="text-text-secondary text-sm">{pickupDetails.time}</p>
+                <p className="font-medium">{formData.pickupTime}</p>
               </div>
             </div>
           </div>
@@ -68,68 +62,51 @@ function BookDetails({ labels, data }: BookDetailsProps) {
           {/* Información del Servicio */}
           <div>
             <h2 className="mb-4 text-xl font-semibold">{serviceInfo.title}</h2>
-
             <div className="grid gap-4 md:grid-cols-2">
-              {/* Solo aparece si es Traslado */}
-              <div>
-                <p className="text-text-secondary text-sm">
-                  {serviceInfo.destination}
-                </p>
-                <p className="font-medium">{data.serviceInfo.destination}</p>
-              </div>
-
-              {/* Solo aparece si es Traslado */}
-              <div>
-                <p className="text-text-secondary text-sm">
-                  {serviceInfo.flightNumber}
-                </p>
-                <p className="font-medium">{data.serviceInfo.flightNumber}</p>
-              </div>
-
-              {/* Solo aparece si es Recorrido */}
-              <div>
-                <p className="text-text-secondary text-sm">
-                  {serviceInfo.trip}
-                </p>
-                <p className="font-medium">{data.serviceInfo.trip}</p>
-              </div>
-
-              {/* Solo aparece si es Recorrido */}
-              <div>
-                <p className="text-text-secondary text-sm">
-                  {serviceInfo.guideLanguage}
-                </p>
-                <p className="font-medium">{data.serviceInfo.guideLanguage}</p>
-              </div>
+              {isTransfer ? (
+                <>
+                  <div>
+                    <p className="text-text-secondary text-sm">{serviceInfo.destination}</p>
+                    <p className="font-medium">{(formData as TransferFormData).destination}</p>
+                  </div>
+                  <div>
+                    <p className="text-text-secondary text-sm">{serviceInfo.flightNumber}</p>
+                    <p className="font-medium">
+                      {(formData as TransferFormData).flightNumber || '-'}
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div>
+                    <p className="text-text-secondary text-sm">{serviceInfo.trip}</p>
+                    <p className="font-medium">{(formData as TripFormData).packageName}</p>
+                  </div>
+                  <div>
+                    <p className="text-text-secondary text-sm">{serviceInfo.guideLanguage}</p>
+                    <p className="font-medium">{(formData as TripFormData).guideLanguaje}</p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
           {/* Datos extra */}
           <div>
-            <h2 className="mb-4 text-xl font-semibold">
-              {additionalInfo.title}
-            </h2>
-
+            <h2 className="mb-4 text-xl font-semibold">{additionalInfo.title}</h2>
             <div className="grid gap-4 md:grid-cols-3">
               <div>
-                <p className="text-text-secondary text-sm">
-                  {additionalInfo.passengers}
-                </p>
-                <p className="font-medium">{data.additionalInfo.passengers}</p>
+                <p className="text-text-secondary text-sm">{additionalInfo.passengers}</p>
+                <p className="font-medium">{formData.passengers}</p>
               </div>
               <div>
-                <p className="text-text-secondary text-sm">
-                  {additionalInfo.vehicle}
-                </p>
-                <p className="font-medium">{data.additionalInfo.vehicle}</p>
+                <p className="text-text-secondary text-sm">{additionalInfo.vehicle}</p>
+                <p className="font-medium">{formData.vehicle}</p>
               </div>
             </div>
-
             <div className="mt-4">
-              <p className="text-text-secondary text-sm">
-                {additionalInfo.comments}
-              </p>
-              <p className="font-medium">{data.additionalInfo.comments}</p>
+              <p className="text-text-secondary text-sm">{additionalInfo.comments}</p>
+              <p className="font-medium">{formData.comments || '-'}</p>
             </div>
           </div>
         </div>
@@ -137,4 +114,5 @@ function BookDetails({ labels, data }: BookDetailsProps) {
     </section>
   )
 }
+
 export default BookDetails

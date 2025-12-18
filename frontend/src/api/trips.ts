@@ -1,5 +1,3 @@
-import { unknown } from 'astro:schema'
-
 export const submitTrip = async (payload: Object) => {
   const res = await fetch(
     'https://enterprising-florida-chunkily.ngrok-free.dev/api/reservations',

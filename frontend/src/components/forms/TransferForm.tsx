@@ -4,7 +4,7 @@ import type {
 } from '@/components/forms/types'
 import { submitTransfer } from '@/api/transfers'
 import { useForm } from 'react-hook-form'
-import { useState } from 'react'
+import { setTransferFormData } from '@/store/formStore'
 
 function TransferForm({
   title,
@@ -14,9 +14,6 @@ function TransferForm({
   vehicleOptions,
   submitButton,
 }: TransferFormProps) {
-
-  const [formData, setFormData] = useState<Object>()
-
   const {
     register,
     handleSubmit,
@@ -33,12 +30,17 @@ function TransferForm({
     const payload = {
       type: 'Traslado',
       ...data,
+      pickupDate: data.pickupDate, // guardar como string
     }
-    console.log(payload)
+    // console.log(payload)
     try {
-      setFormData(payload)
-      const resData = await submitTransfer(payload)
-      console.log('Response:', resData)
+    localStorage.setItem('bookingData', JSON.stringify(payload))
+    const currentPath = window.location.pathname
+    const locale = currentPath.split('/')[1]
+    window.location.href = `/${locale}/confirm-book`
+
+      // const resData = await submitTransfer(payload)
+      // console.log('Response:', resData)
       reset()
     } catch (err) {
       console.error('Error:', err)
