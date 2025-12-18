@@ -1,6 +1,7 @@
 ---
-import BookDetails from '@/components/sections/details-sections/BookDetails.astro'
+import BookDetails from '@/components/sections/details-sections/BookDetails'
 import BaseLayout from '@/layouts/BaseLayout.astro'
+import type { bookingData } from '@/components/sections/types/types'
 import { getTranslations } from '@/i18n/index'
 import type { Language } from '@/i18n/types'
 import { LANG_PATHS } from '@/i18n/ui'
@@ -12,6 +13,11 @@ export async function getStaticPaths() {
 const lang = Astro.params.lang as Language
 
 const t = await getTranslations('literals', lang)
+
+interface Props {
+  data: bookingData
+}
+const { data } = Astro.props
 ---
 
 <BaseLayout
@@ -28,6 +34,6 @@ const t = await getTranslations('literals', lang)
         {t.confirmBook.subtitle}
       </p>
     </div>
-    <BookDetails bookDetails={t.checkBook.bookDetails} />
+    <BookDetails labels={t.checkBook.bookDetails} data={data} />
   </div>
 </BaseLayout>

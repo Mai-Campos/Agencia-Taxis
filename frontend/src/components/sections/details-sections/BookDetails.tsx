@@ -1,16 +1,17 @@
 import type {
-  bookDetails,
+  bookingLabels,
   bookingData,
 } from '@/components/sections/types/types'
 
 interface BookDetailsProps {
-  bookDetails: bookDetails
-  bookingData: bookingData
+  labels: bookingLabels
+  data: bookingData | null
 }
 
-function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
-  const { clientInfo, pickupDetails, serviceInfo, additionalInfo } = bookDetails
+function BookDetails({ labels, data }: BookDetailsProps) {
+  if (!data) return null
 
+  const { clientInfo, pickupDetails, serviceInfo, additionalInfo } = labels
   return (
     <section>
       <div className="container mx-auto px-5 py-12">
@@ -21,13 +22,13 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
             <div className="grid gap-4 md:grid-cols-2">
               <div>
                 <p className="text-text-secondary text-sm">{clientInfo.name}</p>
-                <p className="font-medium">{bookingData.clientInfo.name}</p>
+                <p className="font-medium">{data.clientInfo.name}</p>
               </div>
               <div>
                 <p className="text-text-secondary text-sm">
                   {clientInfo.email}
                 </p>
-                <p className="font-medium">{bookingData.clientInfo.email}</p>
+                <p className="font-medium">{data.clientInfo.email}</p>
               </div>
             </div>
           </div>
@@ -44,7 +45,7 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
                   {pickupDetails.pickupLocation}
                 </p>
                 <p className="font-medium">
-                  {bookingData.pickupDetails.pickupLocation}
+                  {data.pickupDetails.pickupLocation}
                 </p>
               </div>
 
@@ -52,14 +53,14 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
                 <p className="text-text-secondary text-sm">
                   {pickupDetails.date}
                 </p>
-                <p className="font-medium">{bookingData.pickupDetails.date}</p>
+                <p className="font-medium">{data.pickupDetails.date}</p>
               </div>
 
               <div>
                 <p className="text-text-secondary text-sm">
                   {pickupDetails.time}
                 </p>
-                <p className="font-medium">{bookingData.pickupDetails.time}</p>
+                <p className="font-medium">{data.pickupDetails.time}</p>
               </div>
             </div>
           </div>
@@ -74,9 +75,7 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
                 <p className="text-text-secondary text-sm">
                   {serviceInfo.destination}
                 </p>
-                <p className="font-medium">
-                  {bookingData.serviceInfo.destination}
-                </p>
+                <p className="font-medium">{data.serviceInfo.destination}</p>
               </div>
 
               {/* Solo aparece si es Traslado */}
@@ -84,9 +83,7 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
                 <p className="text-text-secondary text-sm">
                   {serviceInfo.flightNumber}
                 </p>
-                <p className="font-medium">
-                  {bookingData.serviceInfo.flightNumber}
-                </p>
+                <p className="font-medium">{data.serviceInfo.flightNumber}</p>
               </div>
 
               {/* Solo aparece si es Recorrido */}
@@ -94,7 +91,7 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
                 <p className="text-text-secondary text-sm">
                   {serviceInfo.trip}
                 </p>
-                <p className="font-medium">{bookingData.serviceInfo.trip}</p>
+                <p className="font-medium">{data.serviceInfo.trip}</p>
               </div>
 
               {/* Solo aparece si es Recorrido */}
@@ -102,9 +99,7 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
                 <p className="text-text-secondary text-sm">
                   {serviceInfo.guideLanguage}
                 </p>
-                <p className="font-medium">
-                  {bookingData.serviceInfo.guideLanguage}
-                </p>
+                <p className="font-medium">{data.serviceInfo.guideLanguage}</p>
               </div>
             </div>
           </div>
@@ -120,17 +115,13 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
                 <p className="text-text-secondary text-sm">
                   {additionalInfo.passengers}
                 </p>
-                <p className="font-medium">
-                  {bookingData.additionalInfo.passengers}
-                </p>
+                <p className="font-medium">{data.additionalInfo.passengers}</p>
               </div>
               <div>
                 <p className="text-text-secondary text-sm">
                   {additionalInfo.vehicle}
                 </p>
-                <p className="font-medium">
-                  {bookingData.additionalInfo.vehicle}
-                </p>
+                <p className="font-medium">{data.additionalInfo.vehicle}</p>
               </div>
             </div>
 
@@ -138,9 +129,7 @@ function BookDetails({ bookDetails, bookingData }: BookDetailsProps) {
               <p className="text-text-secondary text-sm">
                 {additionalInfo.comments}
               </p>
-              <p className="font-medium">
-                {bookingData.additionalInfo.comments}
-              </p>
+              <p className="font-medium">{data.additionalInfo.comments}</p>
             </div>
           </div>
         </div>

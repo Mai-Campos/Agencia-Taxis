@@ -1,4 +1,4 @@
-export type bookDetails = {
+export type bookingLabels = {
   clientInfo: {
     title: string
     name: string
