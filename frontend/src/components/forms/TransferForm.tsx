@@ -4,6 +4,7 @@ import type {
 } from '@/components/forms/types'
 import { submitTransfer } from '@/api/transfers'
 import { useForm } from 'react-hook-form'
+import { useState } from 'react'
 
 function TransferForm({
   title,
@@ -13,6 +14,9 @@ function TransferForm({
   vehicleOptions,
   submitButton,
 }: TransferFormProps) {
+
+  const [formData, setFormData] = useState<Object>()
+
   const {
     register,
     handleSubmit,
@@ -32,6 +36,7 @@ function TransferForm({
     }
     console.log(payload)
     try {
+      setFormData(payload)
       const resData = await submitTransfer(payload)
       console.log('Response:', resData)
       reset()
