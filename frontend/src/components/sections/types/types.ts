@@ -24,3 +24,26 @@ export type bookDetails = {
     comments: string
   }
 }
+
+export type bookingData = {
+  clientInfo: {
+    name: string
+    email: string
+  }
+  pickupDetails: {
+    pickupLocation: string
+    date: string
+    time: string
+  }
+  serviceInfo: {
+    destination?: string
+    trip?: string
+    flightNumber?: string
+    guideLanguage?: string
+  }
+  additionalInfo: {
+    passengers: number
+    vehicle: string
+    comments?: string
+  }
+}

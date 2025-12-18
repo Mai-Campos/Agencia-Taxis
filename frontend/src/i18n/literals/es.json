@@ -136,9 +136,9 @@
     }
   },
   "confirmBook": {
-  "title": "Confirmar Reserva",
-  "subtitle": "Revisa los detalles de tu reserva antes de confirmar."
-},
+    "title": "Confirmar Reserva",
+    "subtitle": "Revisa los detalles de tu reserva antes de confirmar."
+  },
   "footer": {
     "brand": {
       "name": "Crystal Sands Ride",

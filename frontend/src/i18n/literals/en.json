@@ -136,10 +136,10 @@
       }
     }
   },
-"confirmBook": {
-  "title": "Confirm Booking",
-  "subtitle": "Review your booking details before confirming."
-},
+  "confirmBook": {
+    "title": "Confirm Booking",
+    "subtitle": "Review your booking details before confirming."
+  },
   "footer": {
     "brand": {
       "name": "Crystal Sands Ride",

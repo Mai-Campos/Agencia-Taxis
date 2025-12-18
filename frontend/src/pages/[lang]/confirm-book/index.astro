@@ -22,7 +22,6 @@ const t = await getTranslations('literals', lang)
   lang={lang}
 >
   <div class="container mx-auto px-5 py-24">
-
     <div class="mb-10 text-center">
       <h1 class="text-3xl font-semibold">{t.confirmBook.title}</h1>
       <p class="text-text-secondary mt-2">
@@ -30,5 +29,5 @@ const t = await getTranslations('literals', lang)
       </p>
     </div>
     <BookDetails bookDetails={t.checkBook.bookDetails} />
-</div>
+  </div>
 </BaseLayout>
