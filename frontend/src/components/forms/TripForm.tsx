@@ -75,7 +75,7 @@ function TripForm({
                   required: true,
                   pattern: {
                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: validationMessages.invalidEmail
+                    message: validationMessages.invalidEmail,
                   },
                 })}
               />

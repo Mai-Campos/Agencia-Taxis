@@ -7,20 +7,22 @@ interface BookDetailsProps {
 }
 
 function BookDetails({ labels }: BookDetailsProps) {
+  const [formData, setFormData] = useState<
+    TransferFormData | TripFormData | null
+  >(null)
 
-  const [formData, setFormData] = useState<TransferFormData | TripFormData | null>(null)
-
-  useEffect(()=>{
+  useEffect(() => {
     const storedData = localStorage.getItem('bookingData')
     if (storedData) {
       setFormData(JSON.parse(storedData))
     }
   }, [])
 
-  if (!formData) return <div className='py-12 mx-auto px-5 container'>No data</div>
+  if (!formData)
+    return <div className="container mx-auto px-5 py-12">No data</div>
 
   const isTransfer = 'destination' in formData
- const { clientInfo, pickupDetails, serviceInfo, additionalInfo } = labels
+  const { clientInfo, pickupDetails, serviceInfo, additionalInfo } = labels
 
   return (
     <section>

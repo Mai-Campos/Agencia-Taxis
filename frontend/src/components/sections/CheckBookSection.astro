@@ -1,9 +1,7 @@
 ---
 import BookDetails from '@/components/sections/details-sections/BookDetails'
 import CheckBookForm from '@/components/forms/CheckBookForm'
-import type {
-  bookingLabels,
-} from '@/components/sections/types/types'
+import type { bookingLabels } from '@/components/sections/types/types'
 
 interface Props {
   title: string
@@ -13,13 +11,7 @@ interface Props {
   bookingLabels: bookingLabels
 }
 
-const {
-  title,
-  description,
-  button,
-  invalidNumber,
-  bookingLabels,
-} = Astro.props
+const { title, description, button, invalidNumber, bookingLabels } = Astro.props
 ---
 
 <section>
