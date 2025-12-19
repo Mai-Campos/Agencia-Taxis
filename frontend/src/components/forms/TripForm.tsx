@@ -8,6 +8,7 @@ function TripForm({
   fields,
   vehicleOptions,
   tripOptions,
+  validationMessages,
   noGuide,
   languajes,
   submitButton,
@@ -25,12 +26,14 @@ function TripForm({
 
   const onSubmit = handleSubmit((data) => {
     const payload = {
+      type: 'Viaje',
       ...data,
       pickupDate: data.pickupDate, // guardar como string
     }
 
     // Guardar en localStorage y redirigir
     localStorage.setItem('bookingData', JSON.stringify(payload))
+    
     const currentPath = window.location.pathname
     const locale = currentPath.split('/')[1]
     window.location.href = `/${locale}/confirm-book`
@@ -72,7 +75,10 @@ function TripForm({
                 }
                 {...register('ownerEmail', {
                   required: true,
-                  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  pattern: {
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: validationMessages.invalidEmail
+                  },
                 })}
               />
             </label>

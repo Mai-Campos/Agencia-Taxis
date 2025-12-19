@@ -2,9 +2,7 @@ import type {
   TransferFormData,
   TransferFormProps,
 } from '@/components/forms/types'
-import { submitTransfer } from '@/api/transfers'
 import { useForm } from 'react-hook-form'
-import { setTransferFormData } from '@/store/formStore'
 
 function TransferForm({
   title,
@@ -18,7 +16,6 @@ function TransferForm({
     register,
     handleSubmit,
     formState: { errors },
-    reset,
   } = useForm<TransferFormData>({
     defaultValues: {
       flightNumber: null,
@@ -26,25 +23,19 @@ function TransferForm({
     },
   })
 
-  const onSubmit = handleSubmit(async (data) => {
+  const onSubmit = handleSubmit((data) => {
     const payload = {
       type: 'Traslado',
       ...data,
       pickupDate: data.pickupDate, // guardar como string
     }
-    // console.log(payload)
-    try {
+
+    // Guardar en localStorage y redirigir
     localStorage.setItem('bookingData', JSON.stringify(payload))
+
     const currentPath = window.location.pathname
     const locale = currentPath.split('/')[1]
     window.location.href = `/${locale}/confirm-book`
-
-      // const resData = await submitTransfer(payload)
-      // console.log('Response:', resData)
-      reset()
-    } catch (err) {
-      console.error('Error:', err)
-    }
   })
 
   return (
@@ -140,19 +131,7 @@ function TransferForm({
                 className={
                   errors.pickupDate ? 'input-error' : 'input-component'
                 }
-                {...register('pickupDate', {
-                  required: true,
-                  valueAsDate: true,
-                  validate: (value) => {
-                    const inputValue = new Date(value)
-                    const currentDate = new Date()
-                    currentDate.setHours(0, 0, 0, 0)
-
-                    return (
-                      inputValue >= currentDate || validationMessages.futureDate
-                    )
-                  },
-                })}
+                {...register('pickupDate', { required: true })}
               />
             </label>
           </div>
