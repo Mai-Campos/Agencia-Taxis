@@ -1,7 +1,7 @@
 import type { BookingLabels } from '@/components/sections/types/types'
 import type { TransferFormData, TripFormData } from '@/components/forms/types'
+import SubmitBtn from '@/components/sections/details-sections/SubmitBtn'
 import { useEffect, useState } from 'react'
-import SubmitBtn from './SubmitBtn'
 
 interface BookDetailsProps {
   labels: BookingLabels

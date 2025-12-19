@@ -1,3 +1,5 @@
+import type { VehicleType } from "@/constants/vehiclePricing"
+
 // data que envia el formulario de Traslados
 export type TransferFormData = {
   ownerName: string
@@ -8,7 +10,7 @@ export type TransferFormData = {
   destination: string
   flightNumber: string | null
   passengers: number
-  vehicle: string
+  vehicle: VehicleType
   comments?: string
 }
 
@@ -37,11 +39,7 @@ export type TransferFormProps = {
     vehicle: string
     comments: string
   }
-  vehicleOptions: {
-    taxi: string
-    classicCar: string
-    van: string
-  }
+  vehicleOptions: Record<VehicleType, string>
   validationMessages: {
     invalidEmail: string
     futureDate: string
