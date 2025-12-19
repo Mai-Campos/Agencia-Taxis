@@ -1,4 +1,5 @@
 import type { TripFormData, TripFormProps } from '@/components/forms/types'
+import { localePathname } from '@/utils/localePathname'
 import { useForm } from 'react-hook-form'
 
 function TripForm({
@@ -33,10 +34,7 @@ function TripForm({
 
     // Guardar en localStorage y redirigir
     localStorage.setItem('bookingData', JSON.stringify(payload))
-    
-    const currentPath = window.location.pathname
-    const locale = currentPath.split('/')[1]
-    window.location.href = `/${locale}/confirm-book`
+    localePathname('confirm-book')
   })
 
   return (
