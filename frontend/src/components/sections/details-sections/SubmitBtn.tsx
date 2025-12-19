@@ -5,9 +5,10 @@ import type { TransferFormData, TripFormData } from '@/components/forms/types'
 type SubmitBtnProps = {
     formData: TransferFormData | TripFormData | null
     isTransfer: boolean
+    text: string
 }
 
-function SubmitBtn({ formData, isTransfer }: SubmitBtnProps) {
+function SubmitBtn({ formData, isTransfer, text }: SubmitBtnProps) {
 
   const onSubmit = async () => {
     if (!formData) {
@@ -37,7 +38,7 @@ function SubmitBtn({ formData, isTransfer }: SubmitBtnProps) {
       className='cta-btn'
       disabled={!formData}
     >
-      Confirmar Reserva
+      {text}
     </button>
   )
 }

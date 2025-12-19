@@ -23,4 +23,5 @@ export type BookingLabels = {
     vehicle: string
     comments: string
   }
+  submitButton: string
 }

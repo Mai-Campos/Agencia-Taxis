@@ -57,7 +57,7 @@
       "invalidEmail": "Invalid email address",
       "futureDate": "Please enter a date after today"
     },
-    "submitButton": "Submit Reservation"
+    "submitButton": "View summary and price"
   },
   "tripForm": {
     "title": "Book a Trip",
@@ -102,7 +102,7 @@
       "invalidEmail": "Invalid email address",
       "futureDate": "Please enter a date after today"
     },
-    "submitButton": "Submit Reservation"
+    "submitButton": "View summary and price"
   },
   "checkBook": {
     "title": "Check Booking",
@@ -133,7 +133,8 @@
         "passengers": "Passengers",
         "vehicle": "Vehicle",
         "comments": "Comments"
-      }
+      },
+      "submitButton": "Submit Reservation"
     }
   },
   "confirmBook": {

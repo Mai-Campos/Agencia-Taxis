@@ -147,7 +147,7 @@ function BookDetails({ labels }: BookDetailsProps) {
           </div>
         </div>
         <div className="mt-6 flex justify-center">
-              <SubmitBtn formData={formData} isTransfer={isTransfer} />
+              <SubmitBtn formData={formData} isTransfer={isTransfer} text={labels.submitButton} />
           </div>
       </div>
     </section>

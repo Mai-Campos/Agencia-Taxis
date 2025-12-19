@@ -56,7 +56,7 @@
       "invalidEmail": "Correo electrónico inválido",
       "futureDate": "Ingrese una fecha posterior al día de hoy"
     },
-    "submitButton": "Enviar Reserva"
+    "submitButton": "Ver resumen y precio"
   },
   "tripForm": {
     "title": "Reservar Viaje",
@@ -101,7 +101,7 @@
       "invalidEmail": "Correo electrónico inválido",
       "futureDate": "Ingrese una fecha posterior al día de hoy"
     },
-    "submitButton": "Enviar Reserva"
+    "submitButton": "Ver resumen y precio"
   },
   "checkBook": {
     "title": "Consultar Reserva",
@@ -132,7 +132,8 @@
         "passengers": "Pasajeros",
         "vehicle": "Vehículo",
         "comments": "Comentarios"
-      }
+      },
+      "submitButton": "Enviar Reserva"
     }
   },
   "confirmBook": {
