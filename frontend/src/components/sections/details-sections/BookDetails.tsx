@@ -1,6 +1,7 @@
 import type { BookingLabels } from '@/components/sections/types/types'
 import type { TransferFormData, TripFormData } from '@/components/forms/types'
 import { useEffect, useState } from 'react'
+import SubmitBtn from './SubmitBtn'
 
 interface BookDetailsProps {
   labels: BookingLabels
@@ -19,7 +20,7 @@ function BookDetails({ labels }: BookDetailsProps) {
   }, [])
 
   if (!formData)
-    return <div className="container mx-auto px-5 py-12">No data</div>
+    return <div className="grid place-items-center py-12">No data</div>
 
   const isTransfer = 'destination' in formData
   const { clientInfo, pickupDetails, serviceInfo, additionalInfo } = labels
@@ -145,6 +146,9 @@ function BookDetails({ labels }: BookDetailsProps) {
             </div>
           </div>
         </div>
+        <div className="mt-6 flex justify-center">
+              <SubmitBtn formData={formData} isTransfer={isTransfer} />
+          </div>
       </div>
     </section>
   )
