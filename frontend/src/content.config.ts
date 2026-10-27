@@ -9,7 +9,7 @@ const tripsCollection = defineCollection({
       path: z.string(),
       img: image(),
       placesToVisit: z.array(z.string()),
-      price: z.string(),
+      price: z.number(),
     }),
 })
 

@@ -23,7 +23,7 @@
           }
         },
         "price": {
-          "type": "string"
+          "type": "number"
         },
         "$schema": {
           "type": "string"
