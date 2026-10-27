@@ -16,7 +16,7 @@ const t = await getTranslations('literals', lang)
 
 <BaseLayout
   headerType="static"
-  title="Inicio"
+  title={t.confirmBook.title}
   footer={t.footer}
   navbar={t.navbar}
   lang={lang}
@@ -28,6 +28,16 @@ const t = await getTranslations('literals', lang)
         {t.confirmBook.subtitle}
       </p>
     </div>
-    <BookDetails labels={t.checkBook.bookDetails} client:load />
+    <BookDetails
+      labels={t.checkBook.bookDetails}
+      options={{
+        tripOptions: t.tripForm.tripOptions,
+        vehicleOptions: t.tripForm.vehicleOptions,
+        languajes: t.tripForm.languajes,
+        noGuide: t.tripForm.noGuide,
+      }}
+      lang={lang}
+      client:load
+    />
   </div>
 </BaseLayout>

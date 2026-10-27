@@ -1,17 +1,30 @@
 ---
 import BookDetails from '@/components/sections/details-sections/BookDetails'
 import CheckBookForm from '@/components/forms/CheckBookForm'
-import type { bookingLabels } from '@/components/sections/types/types'
+import type {
+  BookingLabels,
+  BookingOptions,
+} from '@/components/sections/types/types'
 
 interface Props {
   title: string
   description: string
   button: string
   invalidNumber: string
-  bookingLabels: bookingLabels
+  bookingLabels: BookingLabels
+  options: BookingOptions
+  lang: string
 }
 
-const { title, description, button, invalidNumber, bookingLabels } = Astro.props
+const {
+  title,
+  description,
+  button,
+  invalidNumber,
+  bookingLabels,
+  options,
+  lang,
+} = Astro.props
 ---
 
 <section>
@@ -32,7 +45,12 @@ const { title, description, button, invalidNumber, bookingLabels } = Astro.props
       />
     </div>
     <div class="mt-5">
-      <BookDetails labels={bookingLabels} client:load />
+      <BookDetails
+        labels={bookingLabels}
+        options={options}
+        lang={lang}
+        client:load
+      />
     </div>
   </div>
 </section>

@@ -1,6 +1,14 @@
-import type { TripFormData, TripFormProps } from '@/components/forms/types'
+import type {
+  TripBooking,
+  TripFormData,
+  TripFormProps,
+} from '@/components/forms/types'
 import { localePathname } from '@/utils/localePathname'
 import { useForm } from 'react-hook-form'
+import { DEFAULT_TRIP, getTripKey } from '@/constants/tripsPricing'
+import { DEFAULT_VEHICLE } from '@/constants/vehiclePricing'
+import { NO_GUIDE } from '@/constants/guidePricing'
+import { priceSummary } from '@/utils/priceSummary'
 
 function TripForm({
   packageName,
@@ -14,6 +22,8 @@ function TripForm({
   languajes,
   submitButton,
 }: TripFormProps) {
+  const defaultPackage = getTripKey(packageName) ?? DEFAULT_TRIP
+
   const {
     register,
     handleSubmit,
@@ -21,18 +31,22 @@ function TripForm({
   } = useForm<TripFormData>({
     defaultValues: {
       passengers: 1,
-      packageName: packageName ?? '',
+      packageName: defaultPackage,
+      vehicle: DEFAULT_VEHICLE,
+      guideLanguaje: NO_GUIDE,
     },
   })
 
   const onSubmit = handleSubmit((data) => {
-    const payload = {
-      type: 'Viaje',
-      ...data,
-      pickupDate: data.pickupDate, // guardar como string
-    }
+    const prices = priceSummary({
+      trip: data.packageName,
+      vehicle: data.vehicle,
+      guideLanguage: data.guideLanguaje,
+    })
 
-    // Guardar en localStorage y redirigir
+    const payload: TripBooking = { type: 'Viaje', ...data, ...prices }
+
+    // Save the selection and its prices, then redirect to the confirm page
     localStorage.setItem('bookingData', JSON.stringify(payload))
     localePathname('confirm-book')
   })
@@ -50,7 +64,7 @@ function TripForm({
 
       <div className="mx-auto md:w-2/3 lg:w-1/2">
         <form onSubmit={onSubmit} noValidate className="-m-2 flex flex-wrap">
-          {/* Nombre completo */}
+          {/* Full Name */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.fullName}
@@ -62,7 +76,7 @@ function TripForm({
             </label>
           </div>
 
-          {/* Correo electrónico */}
+          {/* Email */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.ownerEmail}
@@ -82,7 +96,7 @@ function TripForm({
             </label>
           </div>
 
-          {/* Lugar de recogida */}
+          {/* Pickup Location */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.pickupLocation}
@@ -96,7 +110,7 @@ function TripForm({
             </label>
           </div>
 
-          {/* Recorrido (Nombre del paquete) */}
+          {/* Trip Package */}
           <div className="w-2/2 p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.trip}
@@ -115,7 +129,7 @@ function TripForm({
             </label>
           </div>
 
-          {/* Fecha y hora de recogida */}
+          {/* Date */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.pickupDate}
@@ -129,6 +143,7 @@ function TripForm({
             </label>
           </div>
 
+          {/* Time */}
           <div className="w-full p-2 sm:w-1/2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.pickupTime}
@@ -142,7 +157,7 @@ function TripForm({
             </label>
           </div>
 
-          {/* Guía Turístico */}
+          {/* Guide Language */}
           <div className="w-full p-2 sm:w-1/3">
             <label className="text-text-secondary text-sm leading-7">
               {fields.guide}
@@ -160,7 +175,7 @@ function TripForm({
             </label>
           </div>
 
-          {/* Cantidad de pasajeros */}
+          {/* Passengers */}
           <div className="w-full p-2 sm:w-1/3">
             <label className="text-text-secondary text-sm leading-7">
               {fields.passengers}
@@ -177,7 +192,7 @@ function TripForm({
             </label>
           </div>
 
-          {/* Tipo de vehículo */}
+          {/* Vehicle */}
           <div className="w-full p-2 sm:w-1/3">
             <label className="text-text-secondary text-sm leading-7">
               {fields.vehicle}
@@ -191,7 +206,7 @@ function TripForm({
             </label>
           </div>
 
-          {/* Detalles opcionales */}
+          {/* Comments */}
           <div className="w-full p-2">
             <label className="text-text-secondary text-sm leading-7">
               {fields.comments}

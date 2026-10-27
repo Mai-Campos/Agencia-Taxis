@@ -1,29 +1,10 @@
-import type { VehicleType } from "@/constants/vehiclePricing"
+import type { TripOptionKey } from '@/constants/tripsPricing'
+import type { VehicleOptionKey } from '@/constants/vehiclePricing'
+import type { PriceSummary } from '@/utils/priceSummary'
 
-// data que envia el formulario de Traslados
-export type TransferFormData = {
-  ownerName: string
-  ownerEmail: string
-  pickupLocation: string
-  pickupDate: string
-  pickupTime: string
-  destination: string
-  flightNumber: string | null
-  passengers: number
-  vehicle: VehicleType
-  comments?: string
-}
+export type VehicleOptions = Record<VehicleOptionKey, string>
 
-// data que envia el formulario de Recorridos
-export type TripFormData = Omit<
-  TransferFormData,
-  'destination' | 'flightNumber'
-> & {
-  packageName: string
-  guideLanguaje: string
-}
-
-// data de textos
+// TransferForm labels
 export type TransferFormProps = {
   title: string
   subtitle: string
@@ -39,15 +20,15 @@ export type TransferFormProps = {
     vehicle: string
     comments: string
   }
-  vehicleOptions: Record<VehicleType, string>
   validationMessages: {
     invalidEmail: string
     futureDate: string
   }
+  vehicleOptions: VehicleOptions
   submitButton: string
 }
 
-// data de textos
+// TripForm labels
 export type TripFormProps = Omit<TransferFormProps, 'fields'> & {
   packageName?: string
 
@@ -56,17 +37,7 @@ export type TripFormProps = Omit<TransferFormProps, 'fields'> & {
     guide: string
   }
 
-  tripOptions: {
-    baracoa: string
-    cayoCoco: string
-    cienfuegosPerla: string
-    havanaVieja: string
-    santaClaraChe: string
-    santiagoCuba: string
-    trinidadColonial: string
-    varaderoPlaya: string
-    vinalesMogotes: string
-  }
+  tripOptions: Record<TripOptionKey, string>
 
   languajes: {
     spanish: string
@@ -78,6 +49,39 @@ export type TripFormProps = Omit<TransferFormProps, 'fields'> & {
   noGuide: string
 }
 
+// TransferForm data
+export type TransferFormData = {
+  ownerName: string
+  ownerEmail: string
+  pickupLocation: string
+  pickupDate: string
+  pickupTime: string
+  destination: string
+  flightNumber: string | null
+  passengers: number
+  vehicle: VehicleOptionKey
+  comments?: string
+}
+
+// TripForm data
+export type TripFormData = Omit<
+  TransferFormData,
+  'destination' | 'flightNumber'
+> & {
+  packageName: string
+  guideLanguaje: string
+}
+
+// Booking payload stored before confirmation
+export type TransferBooking = TransferFormData & {
+  type: 'Traslado'
+} & PriceSummary
+
+export type TripBooking = TripFormData & { type: 'Viaje' } & PriceSummary
+
+export type Booking = TransferBooking | TripBooking
+
+// CheckBookForm types
 export type CheckBookFormData = {
   bookNumber: string
 }

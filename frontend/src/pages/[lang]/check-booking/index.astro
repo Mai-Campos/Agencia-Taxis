@@ -16,10 +16,20 @@ const t = await getTranslations('literals', lang)
 
 <BaseLayout
   headerType="static"
-  title="Inicio"
+  title={t.checkBook.title}
   footer={t.footer}
   navbar={t.navbar}
   lang={lang}
 >
-  <CheckBookSection {...t.checkBook} />
+  <CheckBookSection
+    {...t.checkBook}
+    bookingLabels={t.checkBook.bookDetails}
+    options={{
+      tripOptions: t.tripForm.tripOptions,
+      vehicleOptions: t.tripForm.vehicleOptions,
+      languajes: t.tripForm.languajes,
+      noGuide: t.tripForm.noGuide,
+    }}
+    lang={lang}
+  />
 </BaseLayout>

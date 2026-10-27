@@ -23,5 +23,16 @@ export type BookingLabels = {
     vehicle: string
     comments: string
   }
+  totalPrice: string
+  noData: string
+  successMessage: string
+  errorMessage: string
   submitButton: string
+}
+
+export type BookingOptions = {
+  tripOptions: Record<string, string>
+  vehicleOptions: Record<string, string>
+  languajes: Record<string, string>
+  noGuide: string
 }

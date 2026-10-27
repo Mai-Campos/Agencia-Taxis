@@ -1,9 +1,12 @@
 import type {
+  TransferBooking,
   TransferFormData,
   TransferFormProps,
 } from '@/components/forms/types'
 import { localePathname } from '@/utils/localePathname'
 import { useForm } from 'react-hook-form'
+import { DEFAULT_VEHICLE } from '@/constants/vehiclePricing'
+import { priceSummary } from '@/utils/priceSummary'
 
 function TransferForm({
   title,
@@ -21,17 +24,14 @@ function TransferForm({
     defaultValues: {
       flightNumber: null,
       passengers: 1,
+      vehicle: DEFAULT_VEHICLE,
     },
   })
 
   const onSubmit = handleSubmit((data) => {
-    const payload = {
-      type: 'Traslado',
-      ...data,
-      pickupDate: data.pickupDate, // guardar como string
-    }
+    const prices = priceSummary({ vehicle: data.vehicle })
+    const payload: TransferBooking = { type: 'Traslado', ...data, ...prices }
 
-    // Guardar en localStorage y redirigir
     localStorage.setItem('bookingData', JSON.stringify(payload))
     localePathname('confirm-book')
   })
