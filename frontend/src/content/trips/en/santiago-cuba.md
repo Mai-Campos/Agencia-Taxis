@@ -2,7 +2,7 @@
 location: 'Santiago de Cuba'
 packageName: 'Cradle of Son and Revolution'
 path: 'santiago-cuba'
-img: '../trips-images/havana.webp'
+img: '../trips-images/santiago.jpg'
 placesToVisit:
   - 'Morro Castle'
   - 'Céspedes Park'

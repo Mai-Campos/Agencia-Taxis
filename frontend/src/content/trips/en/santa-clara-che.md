@@ -2,7 +2,7 @@
 location: 'Santa Clara'
 packageName: 'Che Guevara Historical Route'
 path: 'santa-clara-che'
-img: '../trips-images/havana.webp'
+img: '../trips-images/santa-clara.jpg'
 placesToVisit:
   - 'Armored Train Monument'
   - 'Che Guevara Mausoleum'

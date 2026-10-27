@@ -2,7 +2,7 @@
 location: 'Viñales'
 packageName: 'Aventura entre Mogotes y Cuevas'
 path: 'vinales-mogotes'
-img: '../trips-images/havana.webp'
+img: '../trips-images/vinales.jpg'
 placesToVisit:
   - 'Mural de la Prehistoria'
   - 'Cueva del Indio'

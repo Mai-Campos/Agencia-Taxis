@@ -2,7 +2,7 @@
 location: 'Baracoa'
 packageName: 'Authentic Nature of Baracoa'
 path: 'baracoa'
-img: '../trips-images/havana.webp'
+img: '../trips-images/baracoa.jpg'
 placesToVisit:
   - 'Toa River'
   - 'Yunque de Baracoa'

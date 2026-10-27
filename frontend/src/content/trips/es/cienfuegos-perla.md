@@ -2,7 +2,7 @@
 location: 'Cienfuegos'
 packageName: 'Cienfuegos, la Perla del Sur'
 path: 'cienfuegos-perla'
-img: '../trips-images/havana.webp'
+img: '../trips-images/cienfuegos.jpg'
 placesToVisit:
   - 'Parque José Martí'
   - 'Teatro Terry'

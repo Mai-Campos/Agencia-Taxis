@@ -2,7 +2,7 @@
 location: 'Viñales'
 packageName: 'Adventure Among Mogotes and Caves'
 path: 'vinales-mogotes'
-img: '../trips-images/havana.webp'
+img: '../trips-images/vinales.jpg'
 placesToVisit:
   - 'Mural of Prehistory'
   - 'Indian Cave'
